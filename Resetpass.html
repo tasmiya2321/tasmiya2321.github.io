@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset password</title>
+    <style>
+         body {
+            background-color: #fff;
+            /* font-family: Arial, sans-serif; */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            justify-content: center;
+        }
+        .form-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background-color: white; 
+            width: 290px; 
+            height: 400px; 
+            /* padding: 40px; */
+            transform:translate(-50%,-50%);
+            /* display: inline-block; */
+            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px grey;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .logo img {
+            width: 200px;
+        height: 130px;
+        margin: 0; 
+        display: block;
+
+        }
+        .form-box form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .form-box input[type="password"] {
+        width: 85%; 
+        padding: 8px;
+        margin: 5px 0; 
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        text-align: left;
+        margin-top: 0%;
+    }
+
+        .form-box input[type="submit"] {
+            width: 70%;
+            padding: 5px;
+            background-color: #ffb217;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .div_img img {
+            width: 225%;
+            height: 120%;
+            z-index: 2;
+            position: absolute;
+            right: 30%; 
+            top: 50%; 
+            transform: translateY(-50%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="Resetackground.png">
+        <div class="form-box">
+            <div class="logo">
+                <img src="./cf_logo.png" alt="Logo">
+            </div>
+            <div class="heading"><h2>Reset Password</h2> </div>
+        <!-- <div style="margin-top: 2px;"></div> -->
+        <form>
+            <input type="password" name="password" placeholder="&#128274;   New password"   required>
+            <input type="password" name="password" placeholder="&#128274; Confirm password"  required><br>
+            <input type="submit" value="Submit">
+        </form>
+        <div class="div_img">
+            <img src="./ResetMan.png" alt="Left Image">
+        </div>
+    </div>
+</body>
+</html>
