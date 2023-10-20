@@ -6,6 +6,55 @@
     <title>Document</title>
     <link rel="stylesheet" href="session2.css">
 </head>
+    <style>
+         body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #fffcfc;
+        overflow: hidden;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+    
+    .logo img {
+        height: 40px;
+    }
+    
+    nav#sidebar {
+        position: fixed;
+        left: 0; /* Display the sidebar by default on the landing page */
+        top: 0;
+        width: 250px;
+        height: 100%;
+        background-color: white;
+        overflow-y: auto;
+        transform: scaleX(1); /* Display the sidebar by default on the landing page */
+    }
+    
+    nav#sidebar ul {
+        padding: 0;
+        list-style: none;
+    }
+    
+    nav#sidebar ul li {
+        padding: 15px;
+        text-align: center;
+    }
+    
+    nav#sidebar ul li a {
+        text-decoration: none;
+        color: #100d0d;
+    }
+    iframe {
+    width: 250px;
+    }
+    </style>
 <body>
      <iframe src="nav.html" frameborder="0" width="250" style="position: fixed; left: 0; top: 0; height: 100%;"></iframe>
     <center><h1>Session</h1></center>
