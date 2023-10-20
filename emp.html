@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="employee.css"> -->
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(247, 241, 233);
+}
+
+h3 {
+    margin-top: 20px;
+}
+
+h1 {
+    margin-top: 15px;
+}
+
+hr {
+    margin-top: 15px;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+button {
+font-size: 1.em;
+padding: 10px 41px;
+display: block;
+margin: 10px;
+margin-left:550px;
+}
+
+
+input[type="text"] {
+    height: 25px;
+    margin: 5px;
+}
+
+td {
+    font-size: 20px;
+    padding: 5px;
+}
+
+textarea {
+    width: calc(100% - 10px);
+    margin: 5px;
+    height: 100px;
+    resize: vertical;
+}
+
+select {
+    margin: 5px;
+}
+
+.twobox {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    padding: 0;
+}
+body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #fffcfc;
+        overflow-x: auto;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+    
+    .logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+    
+    nav#sidebar {
+        position: fixed;
+        left: 0; /* Display the sidebar by default on the landing page */
+        top: 0;
+        width: 250px;
+        height: 100%;
+        background-color: white;
+        
+        transform: scaleX(1); /* Display the sidebar by default on the landing page */
+    }
+    
+    nav#sidebar ul {
+        padding: 0;
+        list-style: none;
+    }
+    iframe {
+    width: 250px;
+    }
+    
+    nav#sidebar ul li {
+        padding: 15px;
+        text-align: center;
+    }
+    
+    nav#sidebar ul li a {
+        text-decoration: none;
+        color: #100d0d;
+    }
+
+    </style>
+</head>
+<body>
+    <iframe src="navbar.html" frameborder="0"></iframe>
+    <header>
+        <div class="menu-toggle" id="menuToggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <img src="./cf_logo.png" width="105%">
+            </li>
+            <li><a href="#"><i class="fa-solid fa-house" style="color: #d66e29;"></i>Home</a></li>
+            <li><a href="sessdetails.html"><i class="fa-solid fa-business-time" style="color: #c58326;"></i>Sessions</a></li>
+            <li><a href="emp.html"><i class="fa-solid fa-chart-simple" style="color: #dd7c22;"></i>Details</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!-- Content for the landing page goes here -->
+    </main>
+
+
+    <form action="">
+        <center>
+            <h1>Details</h1>
+        </center>
+        <hr>
+        <center>
+            <h3>Personal Details</h3>
+        </center>
+
+        <table style="margin-left: 435px;">
+
+            <tr>
+                <td>Full name</td>
+                <td><input type="text" size="30"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><textarea rows="4" cols="50"></textarea></td>
+            </tr>
+            <!-- <tr class="twobox">
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr> -->
+            <tr>
+                <td>Date</td>
+                <td><input type="date" id="date" name="date"></td>
+            </tr>
+
+            <td>Phone</td>
+            <td><input type="number" size="30"></td>
+            </tr>
+            <tr>
+                <td>Email ID</td>
+                <td><input type="email" placeholder="*****.com" size="30"></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <center>
+            <h3>Employee Details</h3>
+        </center>
+        <table>
+            <tr>
+                <td>Employee ID</td>
+                <td><input type="text" size="30"></td>
+            </tr>
+            <tr>
+                <td>Centre</td>
+                <td><input type="text" size="30"></td>
+            </tr>
+            <tr>
+                <td>Designation</td>
+                <td><input type="text" size="30"></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="year">Year of Joining</label>
+                </td>
+                <td>
+                    <select id="year" name="year">
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Status">Status</label>
+                </td>
+                <td>
+                    <select>
+                        <option value="Active">Active</option>
+                        <option value="resigned">resigned</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="year">Resource</label>
+                </td>
+                <td>
+                    <select>
+                        <option value="Employee">Employee</option>
+                        <option value="part-time">part-time</option>
+                        <option value="consultants">consultants</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <center>
+            <h3>Account Details</h3>
+        </center>
+        <table>
+            <tr>
+                <td>Bank Name</td>
+                <td><input type="text" size="30"></td>
+            </tr>
+            <tr>
+                <td>Centre</td>
+                <td><input type="text" size="30"></td>
+            </tr>
+            <tr>
+                <td>IFSC</td>
+                <td><input type="text" size="30"></td>
+            </tr>
+            <tr>
+                <td>Branch</td>
+                <td><input type="text" size="30"></td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- Update button -->
+    <button type="button" onclick="updateForm()">Update</button>
+
+    <!-- Submit button -->
+    <button type="submit">Submit</button>
+
+    <script>
+        function updateForm() {
+            // Add your update logic here
+            alert('Form updated!');
+        }
+    </script>
+</body>
+</html>
