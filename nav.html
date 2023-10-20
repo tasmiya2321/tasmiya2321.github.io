@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Fantastic Side Navigation Bar</title>
+    <script src="https://kit.fontawesome.com/bc0ac06df1.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #fffcfc;
+        overflow: hidden;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+    
+    .logo img {
+        height: 40px;
+    }
+    
+    nav#sidebar {
+        position: fixed;
+        left: 0; /* Display the sidebar by default on the landing page */
+        top: 0;
+        width: 250px;
+        height: 100%;
+        background-color: white;
+        overflow-y: auto;
+        transform: scaleX(1); /* Display the sidebar by default on the landing page */
+    }
+    
+    nav#sidebar ul {
+        padding: 0;
+        list-style: none;
+    }
+    
+    nav#sidebar ul li {
+        padding: 15px;
+        text-align: center;
+    }
+    
+    nav#sidebar ul li a {
+        text-decoration: none;
+        color: #100d0d;
+    }
+    iframe {
+    width: 250px;
+    }
+</style>
+<body>
+    <header>
+        <div class="menu-toggle" id="menuToggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <img src="./cf_logo.png" width="105%">
+            </li>
+            <li><a href="#"><i class="fa-solid fa-house" style="color: #d66e29;"></i>Home</a></li>
+            <li><a href="sessdetails.html"><i class="fa-solid fa-business-time" style="color: #c58326;"></i>Sessions</a></li>
+            <li><a href="emp.html"><i class="fa-solid fa-chart-simple" style="color: #dd7c22;"></i>Details</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!-- Content for the landing page goes here -->
+    </main>
+</body>
+</html>
