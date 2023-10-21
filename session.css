@@ -20,22 +20,5 @@ input,type[text]{
 h1{
     margin-top: 10px;
 }
- 
-button{
-    margin-left: 1000px;
-    margin-bottom: 18px;
-}
 
 
-.table {
-        margin: 20px; /* Adjust this value to add more or less space around the table */
-    }
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-    th, td {
-        padding: 8px;
-        text-align: center;
-        border: 1px solid black;
-    }
