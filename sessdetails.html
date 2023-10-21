@@ -5,21 +5,172 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="session.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(247,241,233)
+        }
+
+        input, type[text] {
+            height: 25px;
+            margin-top: 20px;
+        }
+
+        .CenterType {
+            height: 25px;
+            padding-right: 55px;
+            margin-top: 47px;
+            margin-left: 530px;
+        }
+
+        h1 {
+            margin-top: 10px;
+        }
+
+        button {
+            margin-left: 1000px;
+            margin-bottom: 18px;
+        }
+
+
+        .table {
+            margin: 20px; /* Adjust this value to add more or less space around the table */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+
+
+
+
+        <style >
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fffcfc;
+            overflow: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .menu-toggle {
+            margin-top: -721px;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+            .menu-toggle:hover {
+                transform: scale(1.1);
+            }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #1e1c1c;
+            margin: 3px 0;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+            .bar:hover {
+                background-color: orange;
+            }
+
+        nav#sidebar {
+            position: fixed;
+            left: -250px;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background-color: white;
+            overflow-y: auto;
+            transition: left 0.5s, transform 0.5s;
+            transform: scaleX(0);
+        }
+
+            nav#sidebar.active {
+                left: 0;
+                transform: scaleX(1);
+            }
+
+            nav#sidebar ul {
+                padding: 0;
+                list-style: none;
+            }
+
+                nav#sidebar ul li {
+                    padding: 15px;
+                    text-align: center;
+                    opacity: 0;
+                    transform: translateY(20px);
+                    transition: opacity 0.5s, transform 0.5s;
+                }
+
+            nav#sidebar.active ul li {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            nav#sidebar ul li a {
+                text-decoration: none;
+                color: #100d0d;
+                transition: color 0.3s;
+            }
+
+                nav#sidebar ul li a:hover {
+                    color: orange;
+                }
+    </style>
+
+
+
+
+
+
+
+
+
+    </style>
 </head>
 <body>
     <center>
-    <h1>Session Details</h1>
-    <div class="button">
-        <button onclick="redirectToCreatePage()">Create</button>
-        <button>Edit</button>
-    </div>
+        <h1>Session Details</h1>
+        <div class="button">
+            <button onclick="redirectToCreatePage()">Create</button>
+            <button>Edit</button>
+        </div>
 
- <form action="/search" method="get">
-        <input type="text" name="q" placeholder=" Search ( Program, Activity)">
-        <input type="submit" value="Search" size="30"> <br>
+        <form action="/search" method="get">
+            <input type="text" name="q" placeholder=" Search ( Program, Activity)">
+            <input type="submit" value="Search" size="30"> <br>
     </center>
-       
-       <div class="CenterType">
+
+    <div class="CenterType">
         <tr>
             <td>Center Type</td>
             <td>
@@ -35,55 +186,104 @@
 
     <!-- <div class="button">
 
-   
-<button>Create</button>
-<button>Edit</button>
-</div> -->
+
+    <button>Create</button>
+    <button>Edit</button>
+    </div> -->
 
 
-<div class="table">
+    <div class="table">
 
-<table  bgcolor="">
-    <tr bgcolor="orange">
+        <table bgcolor="">
+            <tr bgcolor="orange">
 
-            <th>Date</th>
-            <th>Program</th>
-            <th>Project</th>
-            <th>Activity</th>
-            <th>Center Type</th>
-            <!-- <th>Role</th> -->
-
-
-            <th>Beneficiaries</th>
-            <!-- <th>Start Time</th>
-            <th>End Time</th>
-            <th>Category</th> -->
+                <th>Date</th>
+                <th>Program</th>
+                <th>Project</th>
+                <th>Activity</th>
+                <th>Center Type</th>
+                <!-- <th>Role</th> -->
 
 
-        </tr>
-        <tr bgcolor="white">
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <!-- <td>1</td> -->
-             <td>1</td>
-             <!-- <td>1</td>
-             <td>1</td>
-             <td>1</td> -->
+                <th>Beneficiaries</th>
+                <!-- <th>Start Time</th>
+                <th>End Time</th>
+                <th>Category</th> -->
 
-            
-        </tr>
-    </table>
-</div>
-<script>
-    function redirectToCreatePage() {
-        window.location.href = "session2.html"; // Redirect to session2.html
-    }
-</script>
+
+            </tr>
+            <tr bgcolor="white">
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <!-- <td>1</td> -->
+                <td>1</td>
+                <!-- <td>1</td>
+                <td>1</td>
+                <td>1</td> -->
+
+
+            </tr>
+        </table>
+    </div>
+    <script>
+        function redirectToCreatePage() {
+            window.location.href = "session2.html"; // Redirect to session2.html
+        }
+    </script>
     <a href="emp.html">SESSION</a><br>
-<a href="home.html">HOME</a>
+    <a href="index.html">HOME</a>
+
+
+
+
+    <header>
+
+        <div class="menu-toggle" id="menuToggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <img src="./Copy of Creating Futures Desktop Prototype (1).jpg" width="105%">
+            </li>
+            <li><a href="index.html"><i class="fa-solid fa-house" style="color: #d66e29;"></i>Home</a></li>
+            <li><a href="sessdetails.html"><i class="fa-solid fa-business-time" style="color: #c58326;"></i>Sessions</a></li>
+            <li><a href="emp.html"><i class="fa-solid fa-chart-simple" style="color: #dd7c22;"></i>Details</a></li>
+
+        </ul>
+    </nav>
+    <main>
+
+
+    </main>
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const sidebar = document.getElementById("sidebar");
+
+        menuToggle.addEventListener("click", () => {
+            sidebar.classList.toggle("active");
+        });
+
+        // Close the sidebar if the user clicks outside of it
+        window.addEventListener("click", (event) => {
+            if (sidebar.classList.contains("active") && event.target !== menuToggle && event.target !== sidebar) {
+                sidebar.classList.remove("active");
+            }
+        });
+
+    </script>
+
+
+
+
+
+
 </body>
 </html>
 
