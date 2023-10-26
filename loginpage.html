@@ -29,13 +29,18 @@
                
             </div>
             <a href="Forgotpass.html">Forgot Password?</a>
-            <input type="submit" value="Login">
+            <input type="submit" value="Login" onclick=" redirectToHome()">
         
         </form>
       
        
     </div>
     <script src="script.js"></script>
+      <script>
+        function redirectToHome() {
+            window.location.href = "home.html";
+        }
+    </script>
 
 </body>
 </html>
