@@ -12,7 +12,7 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family:  Helvetica;
             background-color: #fffcfc;
             overflow-y: scroll;
         }
@@ -33,6 +33,9 @@
             flex-direction: column;
             cursor: pointer;
             transition: transform 0.3s;
+            justify-content: space-between;
+            width:25px;
+            height:20px;
         }
 
             .menu-toggle:hover {
@@ -40,11 +43,11 @@
             }
 
         .bar {
-            width: 25px;
-            height: 3px;
+            width: 100%;
+            height: 4px;
             background-color: #1e1c1c;
-            margin: 3px 0;
-            transition: background-color 0.3s, transform 0.3s;
+            /* margin: 3px 0;
+            transition: background-color 0.3s, transform 0.3s; */
         }
 
             .bar:hover {
@@ -90,24 +93,11 @@
                 text-decoration: none;
                 color: #100d0d;
                 transition: color 0.3s;
-            }
+                }
 
                 nav#sidebar ul li a:hover {
                     color: orange;
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         * {
             margin: 0;
@@ -121,36 +111,98 @@
 
         h3 {
             margin-top: 20px;
+             
         }
 
         h1 {
             margin-top: 15px;
+            text-align: center;
         }
 
         hr {
-            margin-top: 15px;
-        }
+
+        width: 50%; 
+        margin-left: 30%;
+        border: none;
+        border-top: 1px solid black;
+         }
 
         table {
             margin-left: auto;
             margin-right: auto;
             margin-top: 20px;
         }
-
+/* 
         button {
             font-size: 1.em;
             padding: 10px 41px;
             display: block;
             margin: 10px;
             margin-left: 550px;
+        }*/
+        .dropbtn,p {
+        background-color: rgb(247, 241, 233);
+        color: rgb(17, 17, 17);
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        margin-left: 90%;
         }
 
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-left: 80%;
+        }
+
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+ 
 
         input[type="text"] {
             height: 25px;
             margin: 5px;
         }
-
+        
+        input[type="Date"] {
+            height: 25px;
+            margin: 5px;
+        }
+        input[type="number"] {
+            height: 25px;
+            margin: 5px;
+        }
+        input[type="Email"] {
+            height: 25px;
+            margin: 5px;
+        }
+        input[type="radio"] {
+            height: 25px;
+            margin: 5px;
+        }
+        
+  
         td {
             font-size: 20px;
             padding: 5px;
@@ -172,6 +224,30 @@
             justify-content: space-between;
             margin: 5px;
             padding: 0;
+        }
+        select#year {
+        width: 50%; 
+        height: 30px; 
+        }
+       
+        .header-container hr {
+            width: 100%;
+            border: none;
+            border-top: 1px solid black;
+            margin: 0;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40%;
+            
+            
+        }
+
+        button {
+            padding: 10px 20px; 
+            background-color: #FCAF40;
         }
     </style>
 </head>
@@ -202,7 +278,7 @@
 
     </main>
     <script>
-        const menuToggle = document.getElementById("menuToggle");
+        const menuToggle = document.getElementById("menuToggle")
         const sidebar = document.getElementById("sidebar");
 
         menuToggle.addEventListener("click", () => {
@@ -217,104 +293,120 @@
         });
 
     </script>
+<form action="">
+    <div class="header-container">
+        <h1>Details</h1>
+        
+          <div class="dropdown">
+          <button class="dropbtn">Jimmy Cherian<i class="fa-solid fa-circle-user fa-2xl" style="color: #5c626a;"></i></button>
+          <p>Administrator</p>
+          <div class="dropdown-content">
+            <a href="#"><i class="fa-solid fa-key"></i>Change Password</a>
+            <a href="#"><i class="fa-solid fa-right-from-bracket"></i>Log out</a>
+          </div>
+          </div>
 
-
-
-
-
-
-
-
-
-
-
-
-    <form action="">
-        <center>
-            <h1>Details</h1>
-        </center>
         <hr>
-        <center>
-            <h3>Personal Details</h3>
-        </center>
+    </div>
+    <br>
 
-        <table style="margin-left: 435px;">
+    <center>
+        <h3>Personal Details</h3>
+    </center>
 
-            <tr>
-                <td>Full name</td>
-                <td><input type="text" size="30" required></td>
-            </tr>
-            <tr>
-                <td>Address</td>
-                <td><textarea rows="4" cols="50"></textarea></td>
-            </tr>
-            <!-- <tr class="twobox">
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-            </tr> -->
-            <tr>
-                <td>Date</td>
-                <td><input type="date" id="date" name="date" required></td>
-            </tr>
-
+    <table style="margin-left: 435px; width: 60%;">
+        <tr>
+            <td style="width: 30%;">Full name</td>
+            <td><input type="text" style="width: 50%;" size="30"  required></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><textarea style="width: 50%; height: 5%;" size="30" required ></textarea></td>
+        </tr>
+        <tr>
+            <td>Date of Birth</td>
+            <td><input type="Date" id="Date of Birth" name="Date of Birth" style="width: 50%;" size="30" required></td>
+        </tr>
+        <tr>
             <td>Phone</td>
-            <td><input type="number" size="30" required></td>
-            </tr>
-            <tr>
-                <td>Email ID</td>
-                <td><input type="email" placeholder="*****.com" size="30" required></td>
-            </tr>
-            <tr>
-                <td>Gender:</td>
-                <td>
-                    <input type="radio" id="male" name="gender" value="male" required>
-                    <label for="male">Male</label>
-                    <input type="radio" id="female" name="gender" value="female" required>
-                    <label for="female">Female</label>
-                    <input type="radio" id="other" name="gender" value="other" required>
-                    <label for="other">Other</label>
-                </td>
-            </tr>
-        </table>
-
-        <hr>
-
-        <center>
+            <td><input type="number" id="Phonenumber" name="Phonenumber" style="width: 50%;" size="30"  required></td>
+        </tr>
+        <tr>
+            <td>Email ID</td>
+            <td><input type="email" placeholder="example@mail.com" style="width: 50%;" size="30" required></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="other" required>
+                <label for="other">Other</label>
+            </td>
+        </tr>
+    </table><br>
+        <hr><br>
+       <center>
             <h3>Employee Details</h3>
         </center>
-        <table>
+        
+        <table style="margin-left: 435px; width: 60%;">
             <tr>
-                <td>Employee ID</td>
-                <td><input type="text" size="30" required></td>
+                <td style="width: 30%;">Employee ID</td>
+                <td><input type="text"  style="width: 50%;" size="30"  required></td>
             </tr>
             <tr>
+                
                 <td>Centre</td>
-                <td><input type="text" size="30" required></td>
+                <td>
+                  <select required style="width: 50%; height: 30px; margin: 5px;">
+                    <option value="">Select an option</option>
+                    <option value="DJ Halli 1">DJ Halli1</option>
+                    <option value="DJ Halli 2">DJ Halli2</option>
+                    <option value="Bagalur">Bagalur</option>
+                    <option value="Mylanahalli">Mylanahalli</option>
+                    <option value="Kannur">Kannur</option>
+                    <option value="Koramangala">Koramangala</option>
+                  </select>
+                </td>
+                
+                
             </tr>
             <tr>
                 <td>Designation</td>
-                <td><input type="text" size="30" required></td>
+                <td><input type="text" style="width: 50%;" size="30"  required></td>
             </tr>
             <tr>
                 <td>
-                    <label for="year">Year of Joining</label>
+                    <label for="year" >Year of Joining</label>
                 </td>
                 <td>
                     <select id="year" name="year">
-                        <option value="2023">2023</option>
-                        <option value="2022">2022</option>
-                        <option value="2021">2021</option>
+                        <option value="">Select Year</option>
+                        <script>
+                            const currentYear = new Date().getFullYear();
+                            for (let year = 1990; year <= currentYear; year++) {
+                                document.write(`<option value="${year}">${year}</option>`);
+                            }
+                        </script>
                     </select>
                 </td>
+            </tr>
+            <tr>
+                <td>Education Qualification</td>
+                <td><input type="text" style="width: 50%;" size="30"  required></td>
             </tr>
             <tr>
                 <td>
                     <label for="Status">Status</label>
                 </td>
                 <td>
-                    <select>
+                    <select style="width:50%; height:30px; margin: 5px;">
+                        <option value="">Select an option</option>
                         <option value="Active">Active</option>
-                        <option value="resigned">resigned</option>
+                        <option value="Resigned">Resigned</option>
                     </select>
                 </td>
             </tr>
@@ -323,51 +415,72 @@
                     <label for="year">Resource</label>
                 </td>
                 <td>
-                    <select>
+                    <select  style="width:50%; height:30px; margin: 5px;">
+                        <option value="">Select an option</option>
                         <option value="Employee">Employee</option>
-                        <option value="part-time">part-time</option>
-                        <option value="consultants">consultants</option>
+                        <option value="Part-time">Part-time</option>
+                        <option value="Consultant">Consultant</option>
                     </select>
                 </td>
             </tr>
-        </table>
+        </table><br>
 
-        <hr>
+        <hr><br>
 
         <center>
             <h3>Account Details</h3>
         </center>
-        <table>
+        <table style="margin-left: 435px; width: 60%;">
             <tr>
-                <td>Bank Name</td>
-                <td><input type="text" size="30" required></td>
+                <td style="width: 30%;">Name of the Bank</td>
+                <td><input type="text" style="width: 50%;" size="30"  required></td>
+            </tr>
+            <tr>
+                <td>As per Bank</td>
+                <td><input type="text" style="width: 50%;" size="30" placeholder="   As per Bank" required></td>
             </tr>
             <tr>
                 <td>Centre</td>
-                <td><input type="text" size="30" required></td>
+                <td><input type="text" style="width: 50%;" size="30"  required></td>
             </tr>
             <tr>
                 <td>IFSC</td>
-                <td><input type="text" size="30" required></td>
+                <td><input type="text" style="width: 50%;" size="30"  required></td>
             </tr>
             <tr>
                 <td>Branch</td>
-                <td><input type="text" size="30" required></td>
+                <td><input type="text" style="width: 50%;" size="30"  required></td>
             </tr>
         </table>
-    </form>
+    </form><br><br>
 
-    <!-- Update button -->
-    <button type="button" onclick="updateForm()">Update</button>
+    <!-- Update button
+     <button type="button" onclick="updateForm()">Update</button> -->
     <!-- Submit button -->
-    <button type="submit">Submit</button>
+    <!-- <button type="Edit">Edit</button> -->
+    
     <!--<input type="submit" value="Submit" required>-->
-
+<!-- 
     <script>
-        function updateForm() {
-            // Add your update logic here
+        function updateForm() { -->
+            <!-- // Add your update logic here
             alert('Form updated!');
         }
+    </script> --> 
+    <div class="button-container">
+        <button id="editButton" type="button" onclick="toggleEditUpdate()">Edit</button>
+    </div>
+      
+    <script>
+    function toggleEditUpdate() {
+        const editButton = document.getElementById("editButton");
+        if (editButton.textContent === "Edit") {
+            editButton.textContent = "Update";
+        } else {
+            editButton.textContent = "Edit";
+        }
+    }
     </script>
+    
 </body>
 </html>
