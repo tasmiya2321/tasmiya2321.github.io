@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bc0ac06df1.js" crossorigin="anonymous"></script>
     <title>Document</title>
     <!-- <link rel="stylesheet" href="employee.css"> -->
     <style>
-
-
-
+        * {
+            padding: 0;
+            margin: 0;
+        }
         body {
             margin: 0;
             padding: 0;
@@ -38,7 +40,7 @@
             height:20px;
         }
 
-            .menu-toggle:hover {
+        .menu-toggle:hover {
                 transform: scale(1.1);
             }
 
@@ -50,7 +52,7 @@
             transition: background-color 0.3s, transform 0.3s; */
         }
 
-            .bar:hover {
+        .bar:hover {
                 background-color: orange;
             }
 
@@ -98,11 +100,6 @@
                 nav#sidebar ul li a:hover {
                     color: orange;
                 }
-
-        * {
-            margin: 0;
-            padding: 0;
-        }
 
         body {
             overflow-y: scroll;
@@ -241,14 +238,78 @@
             justify-content: center;
             align-items: center;
             height: 40%;
-            
-            
         }
+        .dropbtn,p {
+            background-color: rgb(247, 241, 233);
+            color: rgb(17, 17, 17);
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            margin-left: 90%;
+            margin-top: -5px;
+            margin-right: -5px;
+            }
+    
+    
 
         button {
             padding: 10px 20px; 
             background-color: #FCAF40;
         }
+        
+        .dropbtn,p {
+            background-color: rgb(247, 241, 233);
+            color: rgb(17, 17, 17);
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            margin-left: 90%;
+            margin-top: -5px;
+            margin-right: -5px;
+            }
+    
+    
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                margin-left: 80%;
+            }
+    
+    
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+    
+    
+            .dropdown-content a:hover {
+                background-color: #f1f1f1;
+            }
+    
+    
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            .left{
+                margin-left: 95%;
+
+            }
+            .dropdown{
+                margin-right: 5%;
+                margin-top: -2%;
+            }
+           .container{
+                margin-top: -3%;
+           }
+          
     </style>
 </head>
 <body>
@@ -293,19 +354,23 @@
         });
 
     </script>
-<form action="">
+    <form action="">
     <div class="header-container">
         <h1>Details</h1>
         
-          <div class="dropdown">
-          <button class="dropbtn">Jimmy Cherian<i class="fa-solid fa-circle-user fa-2xl" style="color: #5c626a;"></i></button>
-          <p>Administrator</p>
-          <div class="dropdown-content">
-            <a href="#"><i class="fa-solid fa-key"></i>Change Password</a>
-            <a href="#"><i class="fa-solid fa-right-from-bracket"></i>Log out</a>
-          </div>
-          </div>
-
+        <div class="left">
+            <i class="fa-solid fa-circle-user fa-2xl" style="color: #5c626a;"></i>
+        </div>
+        
+        <div class="dropdown"> 
+        <button class="dropbtn">Jimmy Cherian</button>
+        <center><p>Administrator</p></center>
+        <div class="dropdown-content">
+          <a href="#"><i class="fa-solid fa-key"></i>Change Password</a>
+        </div>
+        </div>
+        <br><br>
+        <hr>
         <hr>
     </div>
     <br>
@@ -436,11 +501,11 @@
                 <td><input type="text" style="width: 50%;" size="30"  required></td>
             </tr>
             <tr>
-                <td>As per Bank</td>
+                <td>Name </td>
                 <td><input type="text" style="width: 50%;" size="30" placeholder="   As per Bank" required></td>
             </tr>
             <tr>
-                <td>Centre</td>
+                <td>Account Number</td>
                 <td><input type="text" style="width: 50%;" size="30"  required></td>
             </tr>
             <tr>
@@ -451,22 +516,21 @@
                 <td>Branch</td>
                 <td><input type="text" style="width: 50%;" size="30"  required></td>
             </tr>
+            <tr>
+                <td>
+                    <label for="Account Type">Account Type</label>
+                </td>
+                <td>
+                    <select style="width:50%; height:30px; margin: 5px;">
+                        <option value="">Select an option</option>
+                        <option value="Savings">Savings</option>
+                        <option value="Current">Current</option>
+                    </select>
+                </td>
+            </tr>
         </table>
     </form><br><br>
 
-    <!-- Update button
-     <button type="button" onclick="updateForm()">Update</button> -->
-    <!-- Submit button -->
-    <!-- <button type="Edit">Edit</button> -->
-    
-    <!--<input type="submit" value="Submit" required>-->
-<!-- 
-    <script>
-        function updateForm() { -->
-            <!-- // Add your update logic here
-            alert('Form updated!');
-        }
-    </script> --> 
     <div class="button-container">
         <button id="editButton" type="button" onclick="toggleEditUpdate()">Edit</button>
     </div>
