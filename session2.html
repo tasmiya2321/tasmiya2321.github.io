@@ -5,27 +5,269 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="session2.css">
+    <script src="https://kit.fontawesome.com/bc0ac06df1.js" crossorigin="anonymous"></script> 
+    <style>
+        
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 1263px;
+            height: 600px;
+            background-color: rgb(247, 241, 233);
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            transition: transform 0.3s;
+            justify-content: space-between;
+            width:25px;
+            height:20px;
+        }
+
+            .menu-toggle:hover {
+                transform: scale(1.1);
+            }
+
+        .bar {
+            width: 100%;
+            height: 4px;
+            background-color: #1e1c1c;
+            /* margin: 3px 0;
+            transition: background-color 0.3s, transform 0.3s; */
+        }
+        nav#sidebar {
+            position: fixed;
+            left: 0; /* Change this to 0 to make the navigation bar visible by default */
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background-color: white;
+            overflow-y: auto;
+            transition: left 0.5s, transform 0.5s;
+            transform: scaleX(1);
+        }
+
+        nav#sidebar ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        nav#sidebar ul li {
+            padding: 15px;
+            text-align: center;
+            opacity: 1; /* Change this to 1 to make the items visible by default */
+            transform: translateY(0);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        nav#sidebar ul li a {
+            text-decoration: none;
+            color: #100d0d;
+            transition: color 0.3s;
+        }
+
+        nav#sidebar ul li a:hover {
+            color: orange;
+        }
+
+        h1 {
+            margin-top: 14px;
+            margin-bottom: -20px;
+        }
+        hr{
+            width: 150%;
+        }
+
+        input[type="time"] {
+            font-size: 1em;
+            margin: 15px 0;
+            padding: 5px;
+            margin-left: 50px;
+        }
+
+        .container {
+            width: 500px;
+            height: 663px;
+            margin-top: 0;
+            margin-left: 300px;
+            padding-top: 41px;
+            padding-left: 142px;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            height: 25px;
+            margin: 15px 0;
+            margin-left: 50px;
+        }
+
+        input[type="date"] {
+            margin-left: 50px;
+            height: 25px;
+        }
+
+        textarea {
+            margin-left: 50px;
+        }
+
+        td {
+            font-size: 20px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-right:30%;
+            justify-content:space-evenly;
+        }
+
+        .buttons button {
+            margin: 10px 5px;
+            height: 30px;
+        }
+
+        .colored-button {
+            background-color: #FCAF40;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        #edit-button {
+            background-color: #FCAF40;
+            margin-top: 30px;
+            
+            margin-left: 80%;
+            width: 70px;
+            height: 30px;
+
+        }
+
+
+        .dropbtn,p {
+            background-color: rgb(247, 241, 233);
+            color: rgb(17, 17, 17);
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            margin-left: 90%;
+            margin-top: -5px;
+            margin-right: -5px;
+            }
+    
+    
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                margin-left: 80%;
+            }
+    
+    
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+    
+    
+            .dropdown-content a:hover {
+                background-color: #f1f1f1;
+            }
+    
+    
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            .left{
+                margin-left: 95%;
+            
+            }
+            .dropdown{
+                margin-right: 5%;
+                margin-top: -2%;
+            }
+           .container{
+                margin-top: -3%;
+           }
+          
+
+    </style>    
 </head>
 
+
 <body>
-     
+    
+    <header>
 
-
-
-
-
-
-
-
-
-
+        <div class="menu-toggle" id="menuToggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <img src="./cf_logo.png" width="105%">
+            </li>
+            <li><a href="index.html"><i class="fa-solid fa-house" style="color: #d66e29;"></i>Home</a></li>
+            <li><a href="sessdetails.html"><i class="fa-solid fa-business-time" style="color: #c58326;"></i>Sessions</a></li>
+            <li><a href="emp.html"><i class="fa-solid fa-chart-simple" style="color: #dd7c22;"></i>Details</a></li>
+        </ul>
+    </nav>
+    <div class="menu-toggle" id="menuToggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    
+    
+    
     <center><h1>Session</h1></center>
+    <div class="left">
+        <i class="fa-solid fa-circle-user fa-2xl" style="color: #5c626a;"></i>
+  </div>
+    
+  <div class="dropdown"> 
+    <button class="dropbtn">Jimmy Cherian</button>
+    <center><p>Administrator</p></center>
+    <div class="dropdown-content">
+      <a href="#"><i class="fa-solid fa-key"></i>Change Password</a>
+    </div>
+    </div>
+    <br><br>
+    <hr>
+    <button id="edit-button">Edit</button>
     <div class="container">
     <form >
         <table>
+         
             <tr>
                 <td>Employee ID   </td>
                 <td><input type="text" size="30" required></td>
+                
             </tr>
 
             <tr>
@@ -37,13 +279,14 @@
                 <td>Program</td>
                 <td>
                     <select name="program"  >
+                        <option value="Select an option">Select an option</option>
                         <option value="program1">Program 1</option>
                         <option value="program2">Program 2</option>
-                        <option value="program3">Program 3kvhjkdrhgklseughuise</option>
+                        <option value="program3">Program 3</option>
                         
                     </select>
                 </td>
-            </tr>
+            </tr><br><br>
             
 
             <tr>
@@ -60,16 +303,31 @@
                 <td>Center Type</td>
                 <td>
                     <select name="center-type">
+                        <option value="Select an option">Select an option</option>
                         <option value="option1">Option 1</option>
                         <option value="option2">Option 2</option>
                         <option value="option3">Option 3</option>
                     </select>
                 </td>
             </tr>
-            
-
-                <td>Role  </td>
-                <td><input type="text" size="20" required></td>
+            <tr>
+                <td>Trainer Type </td>
+                <td><input type="text" size="30" required></td>
+           </tr>
+           
+            <tr> 
+                <td>Role</td>
+                <td>
+                    <select name="Role" >
+                        <option value="Select an option">Select an option</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        
+                    </select>
+                </td>
             </tr>
             
             <tr>
@@ -77,9 +335,19 @@
                 <td><input type="text" size="30" required></td>
             </tr>
 
-            <tr>
-                <td>Category </td>
-                <td><input type="text"  size="30" required></td>
+            <tr> 
+                <td>Category</td>
+                <td>
+                    <select name="Category" >
+                        <option value="Select an option">Select an option</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        
+                    </select>
+                </td>
             </tr>
 
             <tr>
@@ -93,33 +361,31 @@
                 <td><input type="time" id="end-time" name="end-time" step="60" required></td>
             </tr>
             
+            <tr>
+                <td>Status</td>
+                <td><input type="text" size="30" required></td>
+            </tr>
            
             <tr>
-                <td colspan="2">
-                    <div class="clock" id="clock"></div>
-                </td>
-            </tr>
-            <tr>
                 <td>Comment</td> 
-                <td><textarea id="comment" ></textarea></td>
+                <td><textarea id="comment"   required></textarea></td>
             </tr>
+         </table><br><br>
+         <div class="buttons">
+            
+            <button id="add-session-button" class="colored-button">Add Session</button>
+            <button id="duplicate-button" class="colored-button">Duplicate</button>
+        </div>
         
-            <tr>
-                <td>
-                    <button>Update</button>
-                </td>
-            </tr>
-       
-
-        </table>
     </form>
     </div>
 </div>
 
-
-
-
     <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+        document.getElementById('sidebar').classList.toggle('active');
+        });
+
         function updateClock() {
             const now = new Date();
             let hours = now.getHours();
@@ -127,20 +393,16 @@
             const seconds = now.getSeconds().toString().padStart(2, '0');
 
             const amPm = hours >= 12 ? 'PM' : 'AM';
-            hours = hours % 12 || 12;
+            hours = hours % 12 || 12; // Convert to 12-hour format
 
             const clockElement = document.getElementById('clock');
-            clockElement.textContent = `${hours}:${minutes}:${seconds} ${amPm}`;
+            clockElement.textContent = ${hours}:${minutes}:${seconds} ${amPm};
 
             setTimeout(updateClock, 1000);
         }
 
         updateClock();
+</script>
 
-
-
-
-    </script>
-    <a href="emp.html">Go to Employee_Details page</a>
 </body>
 </html>
