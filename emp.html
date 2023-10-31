@@ -112,9 +112,11 @@
         }
 
         h1 {
-            margin-top: 15px;
+            top: 0;
             text-align: center;
+           
         }
+      
 
         hr {
 
@@ -239,25 +241,25 @@
             align-items: center;
             height: 40%;
         }
-        .dropbtn,p {
+        .dropbtn{
             background-color: rgb(247, 241, 233);
             color: rgb(17, 17, 17);
             font-size: 16px;
             border: none;
             cursor: pointer;
             padding: 5px;
+            top: -50px;
             margin-left: 90%;
-            margin-top: -5px;
+            margin-top: -10px;
             margin-right: -5px;
             }
-    
+        
     
 
         button {
             padding: 10px 20px; 
             background-color: #FCAF40;
         }
-        
         .dropbtn,p {
             background-color: rgb(247, 241, 233);
             color: rgb(17, 17, 17);
@@ -309,6 +311,7 @@
            .container{
                 margin-top: -3%;
            }
+           }
           
     </style>
 </head>
@@ -316,7 +319,7 @@
 
 
     <header>
-
+        
         <div class="menu-toggle" id="menuToggle">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -334,10 +337,7 @@
 
         </ul>
     </nav>
-    <main>
-
-
-    </main>
+   <h1>Details</h1>
     <script>
         const menuToggle = document.getElementById("menuToggle")
         const sidebar = document.getElementById("sidebar");
@@ -355,24 +355,30 @@
 
     </script>
     <form action="">
-    <div class="header-container">
-        <h1>Details</h1>
-        
-        <div class="left">
-            <i class="fa-solid fa-circle-user fa-2xl" style="color: #5c626a;"></i>
-        </div>
-        
-        <div class="dropdown"> 
-        <button class="dropbtn">Jimmy Cherian</button>
-        <center><p>Administrator</p></center>
-        <div class="dropdown-content">
-          <a href="#"><i class="fa-solid fa-key"></i>Change Password</a>
-        </div>
-        </div>
+        <div class="header-container">
+         
+            
+            <div class="left">
+                <i class="fa-solid fa-circle-user fa-2xl" style="color: #5c626a;"></i>
+            </div>
+            
+            <div class="dropdown"> 
+            <button class="dropbtn">Jimmy Cherian</button>
+            <center><p>Administrator</p></center>
+            <div class="dropdown-content">
+              <a href="#"><i class="fa-solid fa-key"></i>Change Password</a>
+              <a href="#"><i class="fa-solid fa-right-from-bracket"></i>Log out</a>
+            </div>
+            </div>
+       
         <br><br>
+      
+        <div class="container">
+            <hr>
+        </div>
         <hr>
-        <hr>
-    </div>
+     
+        </div>
     <br>
 
     <center>
