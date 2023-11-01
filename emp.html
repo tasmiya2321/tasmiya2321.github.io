@@ -41,7 +41,7 @@
             height: 20px;
         }
 
-            .menu-toggle:hover {
+        .menu-toggle:hover {
                 transform: scale(1.1);
             }
 
@@ -53,7 +53,7 @@
             transition: background-color 0.3s, transform 0.3s; */
         }
 
-            .bar:hover {
+        .bar:hover {
                 background-color: orange;
             }
 
@@ -96,7 +96,7 @@
                 text-decoration: none;
                 color: #100d0d;
                 transition: color 0.3s;
-            }
+                }
 
                 nav#sidebar ul li a:hover {
                     color: orange;
@@ -659,6 +659,7 @@
 
         h3 {
             margin-top: 20px;
+             
         }
 
         h1 {
@@ -725,7 +726,7 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
-
+ 
 
         input[type="text"] {
             height: 25px;
@@ -897,34 +898,40 @@
 
     </script>
     <form action="">
-
-        <div class="header-container">
-
-
-            <div class="left">
-                <i class="fa-solid fa-circle-user fa-2xl" style="color: #5c626a;"></i>
-            </div>
-
-            <div class="dropdown">
-                <button class="dropbtn">Jimmy Cherian</button>
-
-                <center><p>Administrator</p></center>
-                <div class="dropdown-content">
-                    <a href="chagepass.html"><i class="fa-solid fa-key"></i>Change Password</a>
-                    <a href="#"><i class="fa-solid fa-right-from-bracket"></i>Log out</a>
-                </div>
-            </div>
-
-            <br><br>
-
-            <div class="container">
-                <hr>
-            </div>
-            <hr>
-
+    <div class="header-container">
+        <h1>Details</h1>
+        
+        <div class="left">
+            <i class="fa-solid fa-circle-user fa-2xl" style="color: #5c626a;"></i>
         </div>
-        <br>
+        
+        <div class="dropdown"> 
+        <button class="dropbtn">Jimmy Cherian</button>
+        <center><p>Administrator</p></center>
+        <div class="dropdown-content">
+          <a href="#"><i class="fa-solid fa-key"></i>Change Password</a>
+        </div>
+        </div>
+        <br><br>
+        <hr>
+        <hr>
+    </div>
+    <br>
 
+
+
+
+
+
+
+
+
+
+    <form action="">
+        <center>
+            <h1>Details</h1>
+        </center>
+        <hr>
         <center>
             <h3>Personal Details</h3>
         </center>
@@ -995,7 +1002,7 @@
             </tr>
             <tr>
                 <td>
-                    <label for="year">Year of Joining</label>
+                    <label for="year" >Year of Joining</label>
                 </td>
                 <td>
                     <select id="year" name="year">
