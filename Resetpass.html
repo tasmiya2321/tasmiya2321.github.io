@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset password</title>
+    <link rel="stylesheet" type="text/css" href="common.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="resetbody">
+    <div class="Reset-container">
+        <div class="resetform-box">
+            <div class="resetlogo">
+                <img src="./cf_logo.png" alt="Logo">
+            </div>
+            <div class="resetheading"><h2>Reset Password</h2></div>
+            <form id="ResetPasswordForm">
+                <div class="password1">
+                    <input type="password" name="new_password" placeholder="Enter your password"  required> 
+                    <button class="toggle1" type="button" onclick="toggle1Password(this)"></button>
+                </div>
+                <div class="password2">
+                    <input type="password" name="confirm_password" placeholder="Confirm password" required><br>
+                    <button class="toggle2" type="button"  onclick="toggle2Password(this)"></button>
+                </div>
+
+                <input type="submit" value="Submit" onclick="redirectToLoginPage()">
+            </form>
+            <div class="resetdiv_img">
+                <img src="./ResetMan.png" alt="Left Image">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+   
+    
+    
+</body>
+</html>
