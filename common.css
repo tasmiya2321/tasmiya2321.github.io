@@ -47,6 +47,7 @@ body .resetbody{
     padding: 0;
 }
 .resetlogo img {
+    z-index: 1;
     width: 230px;
     height: 135px;
     margin: 0;
@@ -332,7 +333,7 @@ font-size: 22px;
 .changediv_img img {
     width: 300%;
     height: 130%;
-  
+    z-index: 1;
     position: absolute;
     right: 15%; 
     top: 55%; 
