@@ -399,8 +399,8 @@ a
 }
 .toggle{
     position:absolute;
-    top: 45%;
-    right: 120px;
+    top: 60%;
+    right: 15px;
     translate: 0 -50%;
     width: 25px;
     height: 25px;
