@@ -415,7 +415,14 @@ a
 .toggle.showing{
     background-image:url("open-eye.png") ;
 }
-
+.toggle.showing{
+    background-image:url("open-eye.png") ;
+}
+@media screen and (max-width: 768px) {
+    .toggle {
+        right: 10px; 
+    }
+}
 
 
 
