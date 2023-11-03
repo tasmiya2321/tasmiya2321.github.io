@@ -8,427 +8,400 @@
     <style>
 
 
-        * {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #F5F0EC;
-            overflow-y: auto;
-        }
-
-        img src {
-            margin-top: 300px;
-        }
-
-        .slideshow-container {
-            max-width: 1000px;
-            position: relative;
-            margin: auto;
-            margin-top: 3%;
-            border-radius: 2px;
-            margin-left: 278px;
-            height: 720px;
-        }
-
-
-
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            margin-top: -22px;
-            padding: 16px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-        }
-
-
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-
-
-            .prev:hover, .next:hover {
-                background-color: rgba(0,0,0,0.8);
-            }
-
-        /* Caption text */
-        .text {
-            color: #f2f2f2;
-            font-size: 15px;
-            padding: 8px 12px;
-            position: absolute;
-            bottom: 8px;
-            width: 100%;
-            text-align: center;
-        }
-
-        /* Number text (1/3 etc) */
-        .numbertext {
-            color: #f2f2f2;
-            font-size: 12px;
-            padding: 8px 12px;
-            position: absolute;
-            top: 0;
-        }
-
-        /* The dots/bullets/indicators */
-        .dot {
-            cursor: pointer;
-            height: 1px;
-            width: 1px;
-            margin: 0 2px;
-            background-color: none;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
-
-            .active, .dot:hover {
-                background-color: #717171;
-            }
-
-
-        .fade {
-            animation-name: fade;
-            animation-duration: 5s;
-        }
-
-        @keyframes fade {
-            from {
-                opacity: .4
-            }
-
-            to {
-                opacity: 1
-            }
-        }
-
-
-
-        .white-footer {
-            background-color: #ffffff;
-            padding: 73px;
-            padding-left: 700px;
-            /* text-align: center;  */
-        }
-
-        .white-footer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #ffffff;
-            padding: 20px;
-        }
-
-            .white-footer a {
-                text-decoration: none;
-            }
-
-
-
-
-
-        .footer-section {
-            margin: 0 174px;
-        }
-
-        .vertical-line {
-            height: 100px;
-            border-left: 1px solid #ccc;
-            margin: 0 20px;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            background-image: url(./cf_logo.png);
-            width: 30%;
-        }
-
-        @media (max-width: 600px) {
-            .footer-content {
-                flex-direction: column;
-            }
-        }
-
-        center {
-            font-size: 25px;
-            margin-top: 2%;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-
-
-
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px;
-            background-color: #f8f8f8; /* Add your desired background color */
-            margin-top: -23px;
-        }
+                * {
+                    box-sizing: border-box;
+                    padding: 0;
+                    margin: 0;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
 
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            margin-left: -65%;
-            margin-top: -30%;
-        }
+                body {
+                    margin: 0;
+                    padding: 0;
+                    font-family: Arial, sans-serif;
+                    background-color: #F5F0EC;
+                    overflow-y: auto;
+                }
+
+                img src {
+                    margin-top: 300px;
+                }
+
+                */
+
+
+
+                .white-footer {
+                    background-color: #ffffff;
+                    padding: 73px;
+                    padding-left: 700px;
+                    /* text-align: center;  */
+                }
+
+                .white-footer {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #ffffff;
+                    padding: 20px;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                }
+
+
+
+
+                    .white-footer a {
+                        text-decoration: none;
+                    }
+
+
+
+
+
+                .footer-section {
+                    margin: 0 174px;
+                }
+
+                .vertical-line {
+                    height: 100px;
+                    border-left: 1px solid #ccc;
+                    margin: 0 20px;
+                }
+
+                .logo {
+                    font-size: 24px;
+                    font-weight: bold;
+                    background-image: url(./cf_logo.png);
+                    width: 30%;
+                }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #FCAF40;
-            min-width: 160px;
-            z-index: 1;
-            border-radius: none;
-            background: none;
-        }
+                @media (max-width: 600px) {
+                    .footer-content {
+                        flex-direction: column;
+                    }
+                }
+
+                center {
+                    font-size: 25px;
+                    margin-top: 2%;
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                }
 
-            .dropdown-content a {
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-                color: black;
-            }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-            border-radius: 10px;
-            margin-left: -64px;
-            border-radius: 10px solid orange;
-            background: orange;
-            display: flex;
-            flex-direction: column;
-            font-size: 15px;
-        }
 
-        .para {
-            font-size: 12px;
-            margin-left: 14px;
-            padding: 3px;
-        }
+                .header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 10px;
+                    background-color: #f8f8f8; /* Add your desired background color */
+                    margin-top: -54px;
+                    margin-bottom: 20px;
+                }
 
-        .dropbtn {
-            font-size: 16px;
-        }
+                .dropdown {
+                    position: relative;
+                    display: inline-block;
+                    margin-left: -65%;
+                    margin-top: -30%;
+                }
 
 
-        .card {
-            width: 25%;
-            height: 30%;
-            background-color: rgb(233, 166, 21);
-            margin-top: -38%;
-            margin-left: 1.5%;
-            border-radius: 3px;
-            border: 2px solid rgb(10, 10, 10);
-            margin-left: -102px;
-        }
 
-        .card, h3 {
-            margin-left: 60px;
-        }
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: #FCAF40;
+                    min-width: 160px;
+                    z-index: 1;
+                    border-radius: none;
+                    background: none;
+                }
 
-            .card.p {
-                margin-left: 100px;
-            }
+                    .dropdown-content a {
+                        padding: -10px 16px;
+                        text-decoration: none;
+                        display: block;
+                        color: black;
+                    }
 
+                .dropdown:hover .dropdown-content {
+                    display: block;
+                    border-radius: 10px;
+                    border-radius: 10px solid orange;
+                    background: orange;
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 15px;
+                    margin-left: -91px;
+                }
 
-        .table {
-            margin: 20px;
-            margin-top: 100px;
-            margin-left: -207px;
-        }
+                .para {
+                    font-size: 12px;
+                    margin-left: 14px;
+                    padding: 3px;
+                }
 
+                .dropbtn {
+                    font-size: 16px;
+                }
 
 
+                .card {
+                    width: 25%;
+                    height: 30%;
+                    background-color: rgb(233, 166, 21);
+                    margin-top: -38%;
+                    margin-left: 1.5%;
+                    border-radius: 3px;
+                    border: 2px solid rgb(10, 10, 10);
+                    margin-left: -102px;
+                }
 
+                .card, h3 {
+                    margin-left: 60px;
+                }
 
+                    .card.p {
+                        margin-left: 100px;
+                    }
 
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
 
-        th, td {
-            padding: 8px;
-            text-align: center;
-            border: 1px solid black;
-        }
 
 
+                /*
+        table */
 
 
 
+                .table {
+                    margin: 50px;
+                    margin-top: 100px;
+                    margin-left: 65px;
+                }
 
 
 
 
 
-        .footer-text {
-            margin-right: 80%;
-            list-style-type: none;
-            margin-top: -2%;
-        }
 
-        .footer-text {
-            margin-left: 5%;
-            font-size: 8px;
-        }
+                table {
+                    border-collapse: collapse;
+                    width: 100%;
+                }
 
-        .sas {
-            font-size: 10px;
-        }
-
-        .map {
-            margin-left: 23%;
-        }
-
-        .About {
-            margin-left: 2%;
-            color: white;
-            list-style-type: none;
-        }
-
-            .About a {
-                color: #f1f1f1;
-                margin-left: 90%;
-                list-style-type: none;
-            }
-
-
-
-
-
-
-
-        iframe {
-            width: 250px;
-        }
-
-
-        /* Style the login button */
-        .login-button {
-            background-color: #ff6600;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-right: -950px;
-        }
-
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-        }
-
-        .logo img {
-            height: 40px;
-        }
-
-        .menu-toggle {
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-            .menu-toggle:hover {
-                transform: scale(1.1);
-            }
-
-        .bar {
-            width: 25px;
-            height: 3px;
-            background-color: #1e1c1c;
-            margin: 3px 0;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-            .bar:hover {
-                background-color: orange;
-            }
-
-        nav#sidebar {
-            position: fixed;
-            left: -250px;
-            top: 0;
-            width: 250px;
-            height: 100%;
-            background-color: white;
-            overflow-y: auto;
-            transition: left 0.5s, transform 0.5s;
-            transform: scaleX(0);
-        }
-
-            nav#sidebar.active {
-                left: 0;
-                transform: scaleX(1);
-            }
-
-            nav#sidebar ul {
-                padding: 0;
-                list-style: none;
-            }
-
-                nav#sidebar ul li {
-                    padding: 15px;
+                th, td {
+                    padding: 8px;
                     text-align: center;
-                    opacity: 0;
-                    transform: translateY(20px);
-                    transition: opacity 0.5s, transform 0.5s;
+                    border: 1px solid black;
                 }
 
-            nav#sidebar.active ul li {
-                opacity: 1;
-                transform: translateY(0);
-            }
 
-            nav#sidebar ul li a {
-                text-decoration: none;
-                color: #100d0d;
-                transition: color 0.3s;
-            }
 
-                nav#sidebar ul li a:hover {
-                    color: orange;
+
+
+
+
+
+
+
+                .footer-text {
+                    margin-right: 80%;
+                    list-style-type: none;
+                    margin-top: -2%;
                 }
 
-        .left {
-            margin-left: 50%;
-            margin-bottom: -8px;
-        }
+                .footer-text {
+                    margin-left: 5%;
+                    font-size: 8px;
+                }
+
+                .sas {
+                    font-size: 10px;
+                }
+
+                .map {
+                    margin-left: 23%;
+                }
+
+                .About {
+                    margin-left: 2%;
+                    color: white;
+                    list-style-type: none;
+                }
+
+                    .About a {
+                        color: #f1f1f1;
+                        margin-left: 90%;
+                        list-style-type: none;
+                    }
 
 
 
 
-        .menu-icon {
-            margin-right: 10px; /* Adjust the value to control the space between the icon and text */
-        }
 
-        /* Rest of your existing CSS for the navigation menu */
-        .menu-icon {
-            margin-right: 10px; /* Adjust the value to control the space between the icon and text */
-        }
+
+
+                iframe {
+                    width: 250px;
+                }
+
+
+                /* Style the login button */
+                .login-button {
+                    background-color: #ff6600;
+                    color: #fff;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    margin-right: -950px;
+                    margin-bottom: 20px;
+                }
+
+
+                header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 20px;
+                    height: 134px;
+                    margin-bottom: 26px;
+                }
+
+                .logo img {
+                    height: 40px;
+                }
+
+                .menu-toggle {
+                    display: flex;
+                    flex-direction: column;
+                    cursor: pointer;
+                    transition: transform 0.3s;
+                }
+
+                    .menu-toggle:hover {
+                        transform: scale(1.1);
+                    }
+
+                .bar {
+                    width: 25px;
+                    height: 3px;
+                    background-color: #1e1c1c;
+                    margin: 3px 0;
+                    transition: background-color 0.3s, transform 0.3s;
+                }
+
+                    .bar:hover {
+                        background-color: orange;
+                    }
+
+                nav#sidebar {
+                    position: fixed;
+                    left: -250px;
+                    top: 0;
+                    width: 250px;
+                    height: 100%;
+                    background-color: white;
+                    overflow-y: auto;
+                    transition: left 0.5s, transform 0.5s;
+                    transform: scaleX(0);
+                }
+
+                    nav#sidebar.active {
+                        left: 0;
+                        transform: scaleX(1);
+                    }
+
+                    nav#sidebar ul {
+                        padding: 0;
+                        list-style: none;
+                    }
+
+                        nav#sidebar ul li {
+                            padding: 15px;
+                            text-align: center;
+                            opacity: 0;
+                            transform: translateY(20px);
+                            transition: opacity 0.5s, transform 0.5s;
+                        }
+
+                    nav#sidebar.active ul li {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+
+                    nav#sidebar ul li a {
+                        text-decoration: none;
+                        color: #100d0d;
+                        transition: color 0.3s;
+                    }
+
+                        nav#sidebar ul li a:hover {
+                            color: orange;
+                        }
+
+                .left {
+                    margin-left: 50%;
+                    margin-bottom: -8px;
+                    margin-top: 54px
+                }
+
+
+
+
+                .menu-icon {
+                    margin-right: 10px; /* Adjust the value to control the space between the icon and text */
+                }
+
+                /* Rest of your existing CSS for the navigation menu */
+                .menu-icon {
+                    margin-right: 10px; /* Adjust the value to control the space between the icon and text */
+                }
+
+
+
+
+                /* image */
+                .slider-container {
+                    position: relative;
+                    width: 100%;
+                    max-width: 500px;
+                    margin: 0 auto;
+                    overflow: hidden;
+                }
+
+                .slide-image {
+                    display: none;
+                    width: 100%;
+                    height: auto;
+                }
+
+                    .slide-image.active {
+                        display: block;
+                    }
+
+                .prev, .next {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background-color: rgba(0,0,0,0.5);
+                    color: white;
+                    border: none;
+                    padding: 10px 15px;
+                    cursor: pointer;
+                }
+
+                .prev {
+                    left: 10px;
+                }
+
+                .next {
+                    right: 10px;
+                }
     </style>
 </head>
 <body>
@@ -478,207 +451,218 @@
                 </div>
 
                 <div class="dropdown">
-                    <button class="dropbtn" style="border: none;">Jimmy Cherian</button>
+                    <button class="dropbtn" style="border: none; background: none;">Jimmy Cherian</button>
                     <p class="para">Administrator</p>
                     <div class="dropdown-content">
-                        <a href="chagepass.html"><i class="fa-solid fa-key"></i>Change Password</a>
-                        <a href="#"><i class="fa-solid fa-right-from-bracket"></i>Log out</a>
+                        <a href="chagepass.html"><i class="fa-solid fa-key" style="margin: 10px;"></i>Change Password</a>
+                        <a href="#"><i class="fa-solid fa-right-from-bracket" style="margin: 10px;"></i>Log out</a>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- imege -->
 
 
-
-
-        <div class="slideshow-container">
-
-
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="./16.jpg" style="width: 800px; height: 400px;">
-                <div class="text"></div>
-            </div>
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="./17.jpg" style="width: 800px; height: 400px;">
-                <div class="text"></div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="./18.jpg" style="width: 800px; height: 400px;">
-                <div class="text"></div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="./20.jpg" style="width: 800px; height: 400px;">
-                <div class="text"></div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="./23.jpg" style="width: 800px; height: 400px;">
-                <div class="text"></div>
-            </div>
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="./29.jpg" style="width: 800px; height: 400px;">
-                <div class="text"></div>
-            </div>
-
-
-
-
-
-            <div class="table">
-
-                <table bgcolor="">
-                    <tr bgcolor="orange">
-
-                        <th>Date</th>
-                        <th>Program</th>
-                        <th>Project</th>
-                        <th>Activity</th>
-                        <th>Center Type</th>
-                        <!-- <th>Role</th> -->
-
-
-                        <th>Beneficiaries</th>
-                        <!-- <th>Start Time</th>
-                        <th>End Time</th>
-                        <th>Category</th> -->
-
-
-                    </tr>
-                    <tr bgcolor="white">
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <!-- <td>1</td> -->
-                        <td>1</td>
-                        <!-- <td>1</td>
-                        <td>1</td>
-                        <td>1</td> -->
-
-
-                    </tr>
-                    <tr bgcolor="white">
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <!-- <td>1</td> -->
-                        <td>1</td>
-
-
-
-                    </tr>
-                    <tr bgcolor="white">
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <!-- <td>1</td> -->
-                        <td>1</td>
-
-
-                    </tr>
-                    <tr bgcolor="white">
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <!-- <td>1</td> -->
-                        <td>1</td>
-
-
-                    </tr>
-                    <tr bgcolor="white">
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <!-- <td>1</td> -->
-                        <td>1</td>
-
-
-                    </tr>
-                    <tr bgcolor="white">
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <!-- <td>1</td> -->
-                        <td>1</td>
-
-
-                    </tr>
-
-                </table>
-            </div>
-
-            <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div class="slider-container">
+            <img src="./16.jpg" alt="" class="slide-image active">
+            <img src="./17.jpg" alt="" class="slide-image">
+            <img src="./18.jpg" alt="" class="slide-image">
+            <img src="./20.jpg" alt="" class="slide-image">
+            <img src="./23.jpg" alt="" class="slide-image">
+            <img src="./cf_logo.png" alt="" class="slide-image">
+            <button class="prev" id="prev">&#10094;</button>
+            <button class="next" id="next">&#10095;</button>
         </div>
-        <br>
+        <!-- <div class="slideshow-container">
 
-        <!-- The dots/circles -->
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
-        <footer class="white-footer">
-            <div class="footer-section footerwords1">
-                <a href="https://www.creatingfutures.in">About Us</a><br><br>
-                <a href="#">Gallery</a><br><br>
-                <a href="#">FAQs</a><br><br>
+
+                   <div class="mySlides fade">
+                       <div class="numbertext"></div>
+                       <img src="./16.jpg" style="width: 800px; height: 400px;">
+                       <div class="text"></div>
+                   </div>
+                   <div class="mySlides fade">
+                       <div class="numbertext"></div>
+                       <img src="./17.jpg" style="width: 800px; height: 400px;">
+                       <div class="text"></div>
+                   </div>
+
+                   <div class="mySlides fade">
+                       <div class="numbertext"></div>
+                       <img src="./18.jpg" style="width: 800px; height: 400px;">
+                       <div class="text"></div>
+                   </div>
+
+                   <div class="mySlides fade">
+                       <div class="numbertext"></div>
+                       <img src="./20.jpg" style="width: 800px; height: 400px;">
+                       <div class="text"></div>
+                   </div>
+
+                   <div class="mySlides fade">
+                       <div class="numbertext"></div>
+                       <img src="./23.jpg" style="width: 800px; height: 400px;">
+                       <div class="text"></div>
+                   </div>
+                   <div class="mySlides fade">
+                       <div class="numbertext"></div>
+                       <img src="./29.jpg" style="width: 800px; height: 400px;">
+                       <div class="text"></div>
+                   </div>
+
+        -->
+
+
+
+        <div class="table">
+
+            <table bgcolor="">
+                <tr bgcolor="orange">
+
+                    <th>Date</th>
+                    <th>Program</th>
+                    <th>Project</th>
+                    <th>Activity</th>
+                    <th>Center Type</th>
+                    <!-- <th>Role</th> -->
+
+
+                    <th>Beneficiaries</th>
+                    <!-- <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Category</th> -->
+
+
+                </tr>
+                <tr bgcolor="white">
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <!-- <td>1</td> -->
+                    <td>1</td>
+                    <!-- <td>1</td>
+                    <td>1</td>
+                    <td>1</td> -->
+
+
+                </tr>
+                <tr bgcolor="white">
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <!-- <td>1</td> -->
+                    <td>1</td>
+
+
+
+                </tr>
+                <tr bgcolor="white">
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <!-- <td>1</td> -->
+                    <td>1</td>
+
+
+                </tr>
+                <tr bgcolor="white">
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <!-- <td>1</td> -->
+                    <td>1</td>
+
+
+                </tr>
+                <tr bgcolor="white">
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <!-- <td>1</td> -->
+                    <td>1</td>
+
+
+                </tr>
+                <tr bgcolor="white">
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <!-- <td>1</td> -->
+                    <td>1</td>
+
+
+                </tr>
+
+            </table>
+            <br><br>
+
+            <br>
+
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
             </div>
+            <footer class="white-footer">
+                <div class="footer-section footerwords1">
+                    <a href="https://www.creatingfutures.in">About Us</a><br><br>
+                    <a href="#">Gallery</a><br><br>
+                    <a href="#">FAQs</a><br><br>
+                </div>
 
-            <div class="vertical-line"></div>
+                <div class="vertical-line"></div>
 
-            <div class="footer-section footerwords2">
-                <a href="sessdetails.html">Session </a><br><br>
-                <a href="emp.html">Details</a><br><br>
-            </div>
-        </footer>
-
-
+                <div class="footer-section footerwords2">
+                    <a href="sessdetails.html">Session </a><br><br>
+                    <a href="emp.html">Details</a><br><br>
+                </div>
+            </footer>
 
 
 
 
-        <script>
-            let slideIndex = 0;
-            showSlides();
 
-            function showSlides() {
-                let i;
-                let slides = document.getElementsByClassName("mySlides");
-                let dots = document.getElementsByClassName("dot");
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
+
+            <script>
+                //  images
+                let index = 0;
+                const images = document.querySelectorAll('.slide-image');
+                const totalImages = images.length;
+
+                function showImage(idx) {
+                    images.forEach(img => img.classList.remove('active'));
+                    images[idx].classList.add('active');
                 }
-                slideIndex++;
-                if (slideIndex > slides.length) { slideIndex = 1 }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].className += " active";
-                setTimeout(showSlides, 10000);
-            }
+
+                document.getElementById('next').addEventListener('click', function () {
+                    index = (index + 1) % totalImages;
+                    showImage(index);
+                });
+
+                document.getElementById('prev').addEventListener('click', function () {
+                    index = (index - 1 + totalImages) % totalImages;
+                    showImage(index);
+                });
+
+                setInterval(() => {
+                    index = (index + 1) % totalImages;
+                    showImage(index);
+                }, 10000);  // 10 seconds
+            </script>
 
 
 
@@ -689,22 +673,23 @@
 
 
 
+            <script>
 
 
 
 
-            const menuToggle = document.getElementById("menuToggle");
-            const sidebar = document.getElementById("sidebar");
+                const menuToggle = document.getElementById("menuToggle");
+                const sidebar = document.getElementById("sidebar");
 
-            menuToggle.addEventListener("click", () => {
-                sidebar.classList.toggle("active");
-            });
+                menuToggle.addEventListener("click", () => {
+                    sidebar.classList.toggle("active");
+                });
 
-            window.addEventListener("click", (event) => {
-                if (sidebar.classList.contains("active") && event.target !== menuToggle && event.target !== sidebar) {
-                    sidebar.classList.remove("active");
-                }
-            });
-        </script>
+                window.addEventListener("click", (event) => {
+                    if (sidebar.classList.contains("active") && event.target !== menuToggle && event.target !== sidebar) {
+                        sidebar.classList.remove("active");
+                    }
+                });
+            </script>
     </body>
 </html>
