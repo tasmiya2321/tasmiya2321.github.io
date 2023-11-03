@@ -1,6 +1,6 @@
 
 html, body {
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 body .resetbody{
@@ -18,27 +18,43 @@ body .resetbody{
     top: 50%;
     left: 50%;
     background-color: white; 
-    width: 290px; 
-    height: 400px; 
+    width: 30%; 
+    height: 85%;  
     /* padding: 40px; */
     transform:translate(-50%,-50%);
     /* display: inline-block; */
     box-sizing: border-box;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px grey;
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px lightgray;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     
 }
-.resetlogo img {
-    width: 200px;
-height: 130px;
-margin: 0; 
-display: block;
 
+.Reset-container{
+    background-image: url('./Resetackground.png');
+    height: 100vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;  
 }
+*{
+    margin: 0;
+    padding: 0;
+}
+.resetlogo img {
+    z-index: 1;
+    width: 230px;
+    height: 135px;
+    margin: 0;
+    margin-bottom: 34px;
+    }
+
+
 .resetform-box form {
 display: flex;
 flex-direction: column;
@@ -46,40 +62,105 @@ align-items: center;
 justify-content: center;
 margin-top: 10px;
 }
-.resetform-box input[type="password"] {
-width: 85%; 
-padding: 8px;
-margin: 5px 0; 
-border: 1px solid #ccc;
-border-radius: 25px;
-text-align: left;
-margin-top: 0%;
+
+.resetheading h2 {
+    margin: 6px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:large;
+    color: #361463;
+    font-size: 22px;
+     }
+
+.password1 input[type="password"],
+.password2 input[type="password"]  {
+    width: 200px;
+    padding: 10px 35px 10px 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: -64px;
+    margin-left: -70px;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.password1, 
+.password2 {
+    position: relative;
+}
+.toggle1{
+    position:absolute;
+    top: 45%;
+    right: -35px;
+    translate: 0 -50%;
+    width: 25px;
+    height: 25px;
+    background-image: url("closed.png");
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: white;
+}
+
+.toggle1.showing{
+    background-image:url("open-eye.png") ;
+}
+
+.toggle2{
+    position:absolute;
+    top: 50%;
+    right: -40px;
+    translate: 0 -50%;
+    width: 25px;
+    height: 25px;
+    background-image: url("closed.png");
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: white;
+}
+
+.toggle2.showing{
+    background-image:url("open-eye.png") ;
 }
 
 
+
 .resetform-box input[type="submit"] {
-    width: 70%;
-    padding: 5px;
+    width: 130%;
+    padding: 10px 15px;
     background-color: #ffb217;
     color: white;
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    text-align: center;
+    
+    margin: 5px;
 }
 .resetdiv_img img {
-    width: 225%;
-    height: 120%;
-    z-index: 2;
+    width: 300%;
+    height: 130%;
+  
     position: absolute;
-    right: 30%; 
-    top: 50%; 
+    right: 15%; 
+    top: 55%; 
     transform: translateY(-50%);
 }
 
+
+
+
+
+/* chage password */
+
 body .Change {
-    background-color: #fff;
-    /* font-family: Arial, sans-serif; */
+   
+    /* font-family: Arial, sans-serif; */   
     margin: 0;
     padding: 0;
     display: flex;
@@ -87,77 +168,180 @@ body .Change {
     overflow: hidden;
     justify-content: center;
 }
+
+.change-container{
+    background-image: url('./Resetackground.png');
+    height: 100vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+*{
+     margin: 0;
+     padding: 0;
+}
 .changeform-box {
     position: absolute;
     top: 50%;
     left: 50%;
     background-color: white; 
-    width: 290px; 
-    height: 400px; 
+    width: 30%; 
+    height: 85%; 
     /* padding: 40px; */
     transform:translate(-50%,-50%);
     /* display: inline-block; */
     box-sizing: border-box;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px grey;
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px lightgray;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     
 }
 .logo img {
-width: 200px;
-height: 130px;
+width: 220px;
+height: 132px;
 margin: 0;
-margin-top: 0%; 
-display: block;
+margin-bottom: 5px;
+/* margin-top: -100px;  */
+/* display: block; */
 
 }
 .changeform-box form {
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: center;
+/* justify-content: center; */
 margin-top: 10px;
 }
-.changeform-box input[type="password"] {
-width: 85%; 
-padding: 8px;
-margin: 5px 0; 
-border: 1px solid #ccc;
-border-radius: 25px;
-text-align: left;
-margin-top: 0%;
+.password01 input[type="password"],
+.password02 input[type="password"],
+.password03 input[type="password"]{
+    width: 200px;
+    padding: 10px 35px 10px 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: -64px;
+    margin-left: -70px;
+    text-align: left;
+    margin-top: 10px;
 }
+
+.changeform-box form hr {
+    width: 200%;
+    border: none;
+    height: 2px;
+    background-color: lightgray;
+    margin: 5px 0; 
+    margin-top: 1px;
+    margin-bottom: 27px;
+    text-align: left;
+}
+
 .heading h2 {
-margin: 6px;
+/* margin: 6px; */
+margin-top: 0px;
+margin-bottom: 15px;
 text-align: center;
 font-family: Arial, Helvetica, sans-serif;
 font-size:large;
 color: #361463;
+font-size: 22px;
+ }
 
-    }
+ .password01, 
+ .password02,
+ .password03 {
+     position: relative;
+ }
+ .ex-toggle{
+     position:absolute;
+     top: 45%;
+     right: -35px;
+     translate: 0 -50%;
+     width: 25px;
+     height: 25px;
+     background-image: url("closed.png");
+     background-size: 80%;
+     background-position: center;
+     background-repeat: no-repeat;
+     border: none;
+     background-color: white;
+ }
+ 
+ .ex-toggle.showing{
+     background-image:url("open-eye.png") ;
+ }
+ 
+ .new-toggle{
+     position:absolute;
+     top: 50%;
+     right: -40px;
+     translate: 0 -50%;
+     width: 25px;
+     height: 25px;
+     background-image: url("closed.png");
+     background-size: 80%;
+     background-position: center;
+     background-repeat: no-repeat;
+     border: none;
+     background-color: white;
+ }
+ 
+ .new-toggle.showing{
+     background-image:url("open-eye.png") ;
+ }
+
+ .conf-toggle{
+    position:absolute;
+    top: 50%;
+    right: -40px;
+    translate: 0 -50%;
+    width: 25px;
+    height: 25px;
+    background-image: url("closed.png");
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: white;
+}
+
+.conf-toggle.showing{
+    background-image:url("open-eye.png") ;
+}
+
+ 
 
 .changeform-box input[type="submit"] {
-    width: 70%;
-    padding: 5px 50px;
-    background-color: #361463;
+    width: 130%;
+    padding: 10px 15px;
+    background-color: #ffb217;
     color: white;
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    text-align: center;
+    
+    margin: 5px;
 }
 .changediv_img img {
-    width: 225%;
-    height: 120%;
-    z-index: 2;
+    width: 300%;
+    height: 130%;
+    z-index: 1;
     position: absolute;
-    right: 30%; 
-    top: 50%; 
+    right: 15%; 
+    top: 55%; 
     transform: translateY(-50%);
 }
+
+
+
 /* login.html */
 body {
     margin: 0;
@@ -198,78 +382,71 @@ p {
     margin-bottom: 15%;
 }
 
-.login-container input[type="text"]{
+.login-container input[type="text"],
+.login-container input[type="password"] {
     width: 100%;
     padding: 10px 15px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 15px;
     margin-top: 20px;
-    margin-bottom:10%;
+    margin-bottom: 10%;
     font-size: 15px;
-
 }
+a
 
-/* Your existing CSS styles... */
-
-.login-container .password-container {
+.password {
     position: relative;
 }
-
-.login-container .password-container input[type="password"] {
-    width: 100%;
-    padding: 10px 15px;
-    margin:  0;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    margin-top: 20px;
-    margin-bottom:2%;
-    font-size: 15px; 
+.toggle{
+    position:absolute;
+    top: 60%;
+    right: 15px;
+    translate: 0 -50%;
+    width: 25px;
+    height: 25px;
+    background-image: url("closed.png");
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: white;
 }
 
-.login-container .password-container .password-icon {
-    position: absolute;
-    top: 30px;
-    right: 0px;
-    cursor: pointer;
-  
+.toggle.showing{
+    background-image:url("open-eye.png") ;
+}
+.toggle.showing{
+    background-image:url("open-eye.png") ;
+}
+@media screen and (max-width: 768px) {
+    .toggle {
+        right: 10px; 
+    }
 }
 
-.hide{
-    visibility: hidden;
-}
 
 
-/* .login-container input[type="password"]{
-    width: 100%;
-    padding: 10px 15px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    margin-top: 20px;
-    margin-bottom:2%;
-    font-size: 15px;
-}
-.fa-eye{
-    position: absolute;
-    right: 4px;
-   
-
-    
-} */
 
 .login-container a {
     text-decoration: none;
     color: black;
-    margin-left: 177px;
+    /* margin-left: 177px;
     margin-top: 2px;
     padding-top: 7px;
     justify-content: left;
-    margin-bottom:20%;
+    
+    font-size: 15px; */
+    display: flex;
     font-size: 15px;
+    margin:-6px 0 15px;
+    justify-content: right;
 }
+
+
 .login-container a:hover{
     color: white;
+    text-decoration: underline;
 }
 
 .login-container input[type="submit"] {
@@ -295,4 +472,91 @@ p {
     margin-top: -17%;
     margin-left: 2%;
 }
+
+/* FORGOT PASSWORD */
+body.forgotpass{
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /* flex-direction: row;  */
+    height: 100vh;
+    overflow: hidden;
+}
+.left-div {
+    background-color: #f5f0ec; /* Off-white background color for left div */
+    width: 40%; /* Adjust the width as desired */
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.right-div {
+    background-color: white;
+    width: 70%; /* Adjust the width as desired */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+
+.Forgot-logo img{
+    width: 40%;
+    
+    margin: 0;
+    margin-top: 70px;
+    
+   
+}
+
+input[type="email"] {
+    width: 348px;
+    padding: 10px 35px 10px 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: -64px;
+    margin-left: -70px;
+    text-align: left;
+    margin-top: 10px;
+}
+input[type="submit"] {
+    width: 400px;
+    padding: 10px 50px 10px 10px;
+    background-color: #ffb217;
+    color: #fff;
+    border: 2px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 70%;
+    cursor: pointer;
+    transition-duration: 0.4s;
+
+}
+
+
+
+.div_img img {
+    width: 120%; 
+    margin-left: -30px;
+
+}
+
+.forgot-heading {
+    margin-top: -35px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:large;
+    color: #361463;
+    font-size: 28.4px;
+        /* margin: 6px; */
+
+}
+
+
 
