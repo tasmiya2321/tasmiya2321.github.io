@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bc0ac06df1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="Comm.css"> 
+
+    <title>Forgot-Password</title>
+
+</head>
+<body class="forgotpass">
+    
+
+ <div class="left-div">
+        <div class="div_img">
+            <img src="./div_reset.png" >
+        </div>
+    </div>
+
+    <div class="right-div">
+        <div class="Forgot-logo">
+            <img src="./cf_logo.png" alt="Logo">
+        </div>    
+        <div class="forgot-heading"><h2>Forgot Password?</h2></div>     
+        <form id="forgotPasswordForm">
+            <input type="email" name="email" placeholder="&#9993; Enter your email" requiredd><br><br>            
+            <input type="submit" value="Send">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("forgotPasswordForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            window.location.href = "Resetpass.html"; // Redirect to Reset.html
+        });
+    </script>
+    
+</body>
+</html>
