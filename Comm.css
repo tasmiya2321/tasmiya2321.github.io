@@ -1,4 +1,6 @@
-
+html, body {
+    overflow: hidden;
+}
 .log-login-body {
 margin: 0;
 padding: 0;
