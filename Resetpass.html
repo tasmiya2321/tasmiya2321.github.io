@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Comm.css">
+    <title>Reset Password</title>
+
+</head>
+<body class="res-body">
+    <div class="res-box">
+        <div class="res-logo">
+            <img src="./cf_logo.png" alt="Logo">
+        </div>
+        <h2>Reset Password</h2>
+        <form id="reset-form">
+            <div class="res-password">
+                <input type="password" id="res-password" name="password" placeholder="Existing Password" required>
+                <button class="res-toggle" type="button" onclick="togglePassword(this)"></button>
+            </div>
+           
+            <div class="res-password">
+                <input type="password" id="res-newPassword" name="newPassword" placeholder="New Password" required>
+                <button class="res-toggle" type="button" onclick="togglePassword(this)"></button>
+            </div>
+            
+            <input type="submit" value="Submit" onclick="redirectToHome()">
+        </form>
+        <div class="res-div_img">
+            <img src="./ResetMan.png" alt="Left Image">
+        </div>
+    </div>
+
+    <!-- <script src="reset.js"></script> -->
+    <script>
+        function togglePassword(button) {
+    button.classList.toggle("res-showing");
+    const input = button.previousElementSibling;
+    input.type = input.type === "password" ? "text" : "password";
+    }
+
+    function redirectToHome() {
+        window.location.href = "index.html";
+    }
+
+    document.getElementById("reset-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        redirectToHome();
+    });
+
+    </script>
+</body>
+</html>
