@@ -310,3 +310,117 @@ hr {
     transform: translateY(-50%);
     pointer-events: none;
 }
+
+/* //////////////////////////////RESET PASSWORD////////////////////////////////////// */
+
+.res-body {
+    font-family: Arial, sans-serif;
+    background-image: url('./Resetackground.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Box styles */
+.res-box {
+    margin-top: 7%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    width: 30%;
+    height: 85%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Logo styles */
+.res-logo img {
+    width: 220px;
+    height: 132px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+/* Header styles */
+.res-box h2 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: #361463;
+}
+
+/* Password input container styles */
+.res-password {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Password input styles */
+.res-password input {
+    width: 220px;
+    padding: 10px 35px 10px 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    text-align: left;
+}
+
+/* Toggle button styles */
+.res-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    background-image: url("closed.png");
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: white;
+}
+
+.res-toggle.showing {
+    background-image: url("open-eye.png");
+}
+
+/* Submit button styles */
+.res-box input[type="submit"] {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #ffb217;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+/* Image styles */
+.res-div_img img {
+    width: 300%;
+    height: 130%;
+    position: absolute;
+    right: 15%;
+    top: 55%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
