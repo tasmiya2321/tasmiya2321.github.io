@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Comm.css">
+    <title>Change Password</title>
+    <script src="common.js"></script>
+
+</head>
+<body class="chg-change-body">
+    <div class="chg-changeform-box">
+        <div class="chg-change-logo">
+            <img src="./cf_logo.png" alt="Logo">
+        </div>
+        <h2>Change Password</h2>
+        <form id="changepass-form">
+            <div class="chg-password">
+                <input type="password" id="chg-password" name="password" placeholder="Existing Password" required>
+                <button class="chg-toggle" type="button" onclick="togglePassword(this)"></button>
+            </div>
+            <hr>
+            <div class="chg-password">
+                <input type="password" id="chg-newPassword" name="newPassword" placeholder="New Password" required>
+                <button class="chg-toggle" type="button" onclick="togglePassword(this)"></button>
+            </div>
+            <div class="chg-password">
+                <input type="password" id="chg-confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                <button class="chg-toggle" type="button" onclick="togglePassword(this)"></button>
+            </div>
+            <input type="submit" value="Submit"  onclick="redirectToHome()">
+        </form>
+        <div class="chg-changediv_img">
+            <img src="./ResetMan.png" alt="Left Image">
+        </div>
+    </div>
+
+    <!-- <script>
+        const togglePassword = button => {
+            button.classList.toggle("chg-showing");
+            const input = button.previousElementSibling;
+            input.type = input.type === "password" ? "text" : "password";
+        }   
+        function redirectToHome() {
+            window.location.href = "home.html";
+        }
+
+        document.getElementById("changepass-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            redirectToHome();
+        });
+    </script> -->
+
+
+
+</body>
+</html>

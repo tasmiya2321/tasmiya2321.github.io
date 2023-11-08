@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Comm.css">
+    <script src="common.js"></script>
+
+    <title>Login</title>
+
+
+
+
+</head>
+<body class="log-login-body">
+    <div class="log-loginlogo">
+        <img src="./cf_logo.png" alt="Cf" width="30%">
+    </div>
+    <div class="log-downlogo">
+        <img src="downlogo.png" alt="cf" width="45%">
+    </div>
+    <div class="log-login-container">
+        <h1>Welcome!</h1>
+        <form action="index.html" method="POST" id="log-login-form">
+            <input type="text" name="Username" placeholder="Username" required>
+            <div class="log-password">
+                <input type="password" id="password" name="password" placeholder="Password...." required>
+                <button class="log-toggle" type="button" onclick="togglePassword(this)"></button>
+            </div>
+            <a href="Forgotpass.html">Forgot Password?</a>
+            <input type="submit" value="Login" onclick="redirectToHome()">
+        </form>
+    </div>
+
+    <!-- <script>
+        const togglePassword = button => {
+            button.classList.toggle("log-showing");
+            const input = button.previousElementSibling;
+            input.type = input.type === "password" ? "text" : "password";
+        }
+
+        function redirectToHome() {
+            window.location.href = "home.html";
+        }
+
+        document.getElementById("log-login-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            redirectToHome();
+        });
+    </script> -->
+</body>
+</html>
