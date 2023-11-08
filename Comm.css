@@ -1,5 +1,6 @@
-html, body {
-    overflow:auto;
+body {
+   /* overflow: auto;*/
+    background-color: rgb(247,241,233);
 }
 .log-login-body {
 margin: 0;
