@@ -160,333 +160,342 @@
 
 </head>
 <body>
-    
-    <center>
-        <h1>Session Details</h1>
-        
-        <div class="button">
-            <button onclick="redirectToCreatePage()">Create</button>
-            <button>Edit</button>
-        </div>
-        <div class="search-box">
-            <input type="text" name="q" placeholder=" Search ( Program, Activity)" required>
-            <button type="submit" class="search-btn">
-                <i class="fas fa-search"></i>
-            </button>
-           
-        </div>
-      
-        <div class="filter-options">
-            <i class="fas fa-filter filter-icon"></i>
-            <div class="dropdowns">
-                <select id="filter-select">
-                    <option value="none">-- Select Filter Option --</option>
-                    <option value="Program">Program</option>
-                    <option value="Project">Project</option>
-                    <option value="Date">Date</option>
-                    <option value="Center">Center Type</option>
-                    <option value="Trainer">Trainer</option>
-                
-                </select><br>
-                
-                <div id="programDropdown" class="dropdown">
-                    
-                    <label for="program-select"></label>
-                    <select id="program-select">
-                        <option value="">Select an option</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="D">D</option>
-                        <option value="E">E</option>
-                    </select>
-                </div>
-        
-                <div id="projectDropdown" class="dropdown">
-                    <label for="project-select"></label>
-                    <select id="project-select">
-                        <option value="">Select an option</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="D">D</option>
-                        <option value="E">E</option>
 
-                    </select>
-                </div>
-                        
-                <div id="dateDropdown" class="dropdown">
-                    <label>From: </label><input type="date" id="from-date">
-                    <label>To: </label><input type="date" id="to-date"><br><br>
-                    <!-- or -->
-                    <select id="past-days-select">
-                        <option value="28">Past 28 days</option>
-                        <option value="30">Past 30 days</option>
-                        <!-- Add more options as needed -->
-                    </select>
-                </div>
-                <div id="centerDropdown" class="dropdown">
-                    <label for="center-select"></label>
-                    <select id="center-select">
-                        <option value="">Select an option</option>
-                        <option value="DJ Halli 1">DJ Halli 1</option>
-                        <option value="DJ Halli 2">DJ Halli 2</option>
-                        <option value="Bagalur">Bagalur</option>
-                        <option value="Mylanahalli">Mylanahalli</option>
-                        <option value="Kannur">Kannur</option>
-                        <option value="Koramangala">Koramangala</option>
-                    </select>
-                </div>
-        
-                <div id="trainerDropdown" class="dropdown">
-                    <label for="trainer-select"></label>
-                    <select id="trainer-select">
-                        <option value="">Select an option</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="D">D</option>
-                        <option value="E">E</option>
-                    </select>
-                </div>
+    <div class="header">
+
+        <header>
+
+            <div class="menu-toggle" id="menuToggle" style="margin-top: 33px;">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
             </div>
-        </div>
-       
+        </header>
+        <nav id="sidebar">
+            <ul>
+                <li>
+                    <img src="./cf_logo.png" width="105%">
+                </li>
+                <li><a href="home.html"><span class="menu-icon"><i class="fa-solid fa-house" style="color: #d66e29;"></i></span> Home</a></li>
+                <li>
+                    <a href="sessdetails.html">
+                        <span class="menu-icon">
+                            <i class="fa-solid fa-business-time" style="color: #c58326;
+                        margin-left: 15px;"></i>
+                        </span> Sessions
+                    </a>
+                </li>
+                <li><a href="emp.html"><span class="menu-icon"><i class="fa-solid fa-chart-simple" style="color: #dd7c22;"></i></span> Details</a></li>
 
-    </center>
+            </ul>
+        </nav>
+        <main>
 
-    <div class="table">
-
-        <table bgcolor="">
-            <tr bgcolor="orange">
-                <th>Edit</th>
-                <th>Date</th>
-                <th>Program</th>
-                <th>Project</th>
-                <th>Activity</th>
-                <th>Center Type</th>
-                <th>Beneficiaries</th>
-              
-
-            </tr>
-            <tr bgcolor="white">
-                <td><input type="radio" name="selection"></td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-            </tr>
-            <tr bgcolor="white">
-               
-                <td><input type="radio" name="selection"></td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-            </tr>
-            <tr bgcolor="white">
-                
-                <td><input type="radio" name="selection"></td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-            </tr>
-            <tr bgcolor="white">
-               
-                <td><input type="radio" name="selection"></td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-            </tr>
-            <tr bgcolor="white">
-               
-                <td><input type="radio" name="selection"></td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-            </tr>
-            <tr bgcolor="white">
-                
-                <td><input type="radio" name="selection"></td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-            </tr>
-            <tr bgcolor="white">
-                
-                <td><input type="radio" name="selection"></td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-            </tr>
-            <tr bgcolor="white">
-                
-                <td><input type="radio" name="selection"></td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-            </tr>
-            <tr bgcolor="white">
-                
-                <td><input type="radio" name="selection"></td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-            </tr>
-            <tr bgcolor="white">
-                
-                <td><input type="radio" name="selection"></td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-            </tr>
-        </table>
-    </div>
-    <script>
-        function redirectToCreatePage() {
-            window.location.href = "session2.html"; // Redirect to session2.html
-        }
-    </script>
-    <!-- <a href="emp.html">SESSION</a><br>
-    <a href="index.html">HOME</a> -->
+        </main>
+        <center>
+            <img src="./cf_logo.png" width="200px">
+        </center>
+        <div>
+            <div class="left">
+                <i class="fa-solid fa-circle-user fa-2xl" style="color: #5c626a;"></i>
 
 
+                <center>
+                    <h1>Session Details</h1>
+
+                    <div class="button">
+                        <button onclick="redirectToCreatePage()">Create</button>
+                        <button>Edit</button>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" name="q" placeholder=" Search ( Program, Activity)" required>
+                        <button type="submit" class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="filter-options">
+                        <i class="fas fa-filter filter-icon"></i>
+                        <div class="dropdowns">
+                            <select id="filter-select">
+                                <option value="none">-- Select Filter Option --</option>
+                                <option value="Program">Program</option>
+                                <option value="Project">Project</option>
+                                <option value="Date">Date</option>
+                                <option value="Center">Center Type</option>
+                                <option value="Trainer">Trainer</option>
+
+                            </select><br>
+
+                            <div id="programDropdown" class="dropdown">
+
+                                <label for="program-select"></label>
+                                <select id="program-select">
+                                    <option value="">Select an option</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                </select>
+                            </div>
+
+                            <div id="projectDropdown" class="dropdown">
+                                <label for="project-select"></label>
+                                <select id="project-select">
+                                    <option value="">Select an option</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+
+                                </select>
+                            </div>
+
+                            <div id="dateDropdown" class="dropdown">
+                                <label>From: </label><input type="date" id="from-date">
+                                <label>To: </label><input type="date" id="to-date"><br><br>
+                                <!-- or -->
+                                <select id="past-days-select">
+                                    <option value="28">Past 28 days</option>
+                                    <option value="30">Past 30 days</option>
+                                    <!-- Add more options as needed -->
+                                </select>
+                            </div>
+                            <div id="centerDropdown" class="dropdown">
+                                <label for="center-select"></label>
+                                <select id="center-select">
+                                    <option value="">Select an option</option>
+                                    <option value="DJ Halli 1">DJ Halli 1</option>
+                                    <option value="DJ Halli 2">DJ Halli 2</option>
+                                    <option value="Bagalur">Bagalur</option>
+                                    <option value="Mylanahalli">Mylanahalli</option>
+                                    <option value="Kannur">Kannur</option>
+                                    <option value="Koramangala">Koramangala</option>
+                                </select>
+                            </div>
+
+                            <div id="trainerDropdown" class="dropdown">
+                                <label for="trainer-select"></label>
+                                <select id="trainer-select">
+                                    <option value="">Select an option</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
 
 
-  
-    <header>
+                </center>
 
-        <div class="menu-toggle" id="menuToggle" style="margin-bottom: 1537px;">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-    </header>
-    <nav id="sidebar">
-        <ul>
-            <li>
-                <img src="./cf_logo.png" width="105%">
-            </li>
-            <li><a href="home.html"><span class="menu-icon"><i class="fa-solid fa-house" style="color: #d66e29;"></i></span> Home</a></li>
-            <li>
-                <a href="sessdetails.html">
-                    <span class="menu-icon">
-                        <i class="fa-solid fa-business-time" style="color: #c58326;
-                margin-left: 15px;"></i>
-                    </span> Sessions
-                </a>
-            </li>
-            <li><a href="emp.html"><span class="menu-icon"><i class="fa-solid fa-chart-simple" style="color: #dd7c22;"></i></span> Details</a></li>
+                <div class="table">
 
-        </ul>
-    </nav>
-    <main>
-
-    </main>
-
- 
-    <script>
-        const menuToggle = document.getElementById("menuToggle");
-        const sidebar = document.getElementById("sidebar");
-
-        menuToggle.addEventListener("click", () => {
-            sidebar.classList.toggle("active");
-        });
-
-        // Close the sidebar if the user clicks outside of it
-        window.addEventListener("click", (event) => {
-            if (sidebar.classList.contains("active") && event.target !== menuToggle && event.target !== sidebar) {
-                sidebar.classList.remove("active");
-            }
-        });
-
-        
-      
-        document.getElementById("filter-select").addEventListener("change", function() {
-            // Initially hide all dropdowns
-            document.querySelectorAll(".dropdowns .dropdown").forEach(dropdown => {
-                dropdown.style.display = "none";
-            });
-
-            switch(this.value) {
-                case "Program":
-                    document.getElementById("programDropdown").style.display = "block";
-                    break;
-                case "Project":
-                    document.getElementById("projectDropdown").style.display = "block";
-                    break;
-                case "Date":
-                    document.getElementById("dateDropdown").style.display = "block";
-                    break;
-                case "Center":
-                    document.getElementById("centerDropdown").style.display = "block";
-                    break;
-                case "Trainer":
-                    document.getElementById("trainerDropdown").style.display = "block";
-                    break;
-                default:
-                    break;
-            }
-        });
-
-        document.querySelector(".filter-icon").addEventListener("click", function() {
-            const dropdownsDiv = document.querySelector(".dropdowns");
-            if (dropdownsDiv.style.display === "none" || dropdownsDiv.style.display === "") {
-                dropdownsDiv.style.display = "flex";
-            } else {
-                dropdownsDiv.style.display = "none";
-            }
-        });
-
-        function toggleDropdown(nextDropdownId) {
-            const dropdown = document.getElementById(nextDropdownId);
-            if (dropdown.style.display === "none" || dropdown.style.display === "") {
-                dropdown.style.display = "block";
-            } else {
-                dropdown.style.display = "none";
-            }
-        }
+                    <table bgcolor="">
+                        <tr bgcolor="orange">
+                            <th>Edit</th>
+                            <th>Date</th>
+                            <th>Program</th>
+                            <th>Project</th>
+                            <th>Activity</th>
+                            <th>Center Type</th>
+                            <th>Beneficiaries</th>
 
 
-        function toggleDropdown(nextDropdownId) {
-            const dropdown = document.getElementById(nextDropdownId);
-            if (dropdown.style.display === "none" || dropdown.style.display === "") {
-                dropdown.style.display = "block";
-            } else {
-                dropdown.style.display ="none";
-            }
-        }
+                        </tr>
+                        <tr bgcolor="white">
+                            <td><input type="radio" name="selection"></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr bgcolor="white">
+
+                            <td><input type="radio" name="selection"></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr bgcolor="white">
+
+                            <td><input type="radio" name="selection"></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr bgcolor="white">
+
+                            <td><input type="radio" name="selection"></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr bgcolor="white">
+
+                            <td><input type="radio" name="selection"></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr bgcolor="white">
+
+                            <td><input type="radio" name="selection"></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr bgcolor="white">
+
+                            <td><input type="radio" name="selection"></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr bgcolor="white">
+
+                            <td><input type="radio" name="selection"></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr bgcolor="white">
+
+                            <td><input type="radio" name="selection"></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr bgcolor="white">
+
+                            <td><input type="radio" name="selection"></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                    </table>
+                </div>
+                <script>
+                    function redirectToCreatePage() {
+                        window.location.href = "session2.html"; // Redirect to session2.html
+                    }
+                </script>
+                <!-- <a href="emp.html">SESSION</a><br>
+                <a href="index.html">HOME</a> -->
 
 
-    </script>
+
+
+
+
+                <script>
+                    const menuToggle = document.getElementById("menuToggle");
+                    const sidebar = document.getElementById("sidebar");
+
+                    menuToggle.addEventListener("click", () => {
+                        sidebar.classList.toggle("active");
+                    });
+
+                    // Close the sidebar if the user clicks outside of it
+                    window.addEventListener("click", (event) => {
+                        if (sidebar.classList.contains("active") && event.target !== menuToggle && event.target !== sidebar) {
+                            sidebar.classList.remove("active");
+                        }
+                    });
+
+
+
+                    document.getElementById("filter-select").addEventListener("change", function () {
+                        // Initially hide all dropdowns
+                        document.querySelectorAll(".dropdowns .dropdown").forEach(dropdown => {
+                            dropdown.style.display = "none";
+                        });
+
+                        switch (this.value) {
+                            case "Program":
+                                document.getElementById("programDropdown").style.display = "block";
+                                break;
+                            case "Project":
+                                document.getElementById("projectDropdown").style.display = "block";
+                                break;
+                            case "Date":
+                                document.getElementById("dateDropdown").style.display = "block";
+                                break;
+                            case "Center":
+                                document.getElementById("centerDropdown").style.display = "block";
+                                break;
+                            case "Trainer":
+                                document.getElementById("trainerDropdown").style.display = "block";
+                                break;
+                            default:
+                                break;
+                        }
+                    });
+
+                    document.querySelector(".filter-icon").addEventListener("click", function () {
+                        const dropdownsDiv = document.querySelector(".dropdowns");
+                        if (dropdownsDiv.style.display === "none" || dropdownsDiv.style.display === "") {
+                            dropdownsDiv.style.display = "flex";
+                        } else {
+                            dropdownsDiv.style.display = "none";
+                        }
+                    });
+
+                    function toggleDropdown(nextDropdownId) {
+                        const dropdown = document.getElementById(nextDropdownId);
+                        if (dropdown.style.display === "none" || dropdown.style.display === "") {
+                            dropdown.style.display = "block";
+                        } else {
+                            dropdown.style.display = "none";
+                        }
+                    }
+
+
+                    function toggleDropdown(nextDropdownId) {
+                        const dropdown = document.getElementById(nextDropdownId);
+                        if (dropdown.style.display === "none" || dropdown.style.display === "") {
+                            dropdown.style.display = "block";
+                        } else {
+                            dropdown.style.display = "none";
+                        }
+                    }
+
+
+                </script>
 
 
 

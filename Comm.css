@@ -689,3 +689,17 @@ home */
 .next {
     right: 10px;
 }
+
+
+
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 134px;
+    margin-bottom: 26px;
+}
