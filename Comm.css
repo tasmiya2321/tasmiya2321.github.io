@@ -10,6 +10,7 @@ body {
     font-family: Helvetica, sans-serif;
     height: 100vh;
     background: linear-gradient(90deg, #fff 50%, #fcaf40 50%);
+    overflow-x: hidden;  
 }
 
 .log-login-container {
