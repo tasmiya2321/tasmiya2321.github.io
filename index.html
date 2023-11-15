@@ -32,21 +32,13 @@
         </form>
     </div>
 
-    <!-- <script>
-        const togglePassword = button => {
-            button.classList.toggle("log-showing");
-            const input = button.previousElementSibling;
-            input.type = input.type === "password" ? "text" : "password";
-        }
-
-        function redirectToHome() {
-            window.location.href = "home.html";
-        }
-
-        document.getElementById("log-login-form").addEventListener("submit", function (e) {
-            e.preventDefault();
-            redirectToHome();
-        });
-    </script> -->
+    <script src="common.js"></script>
+  
+   <script>
+       document.getElementById("log-login-form").addEventListener("submit", function (e) {
+           e.preventDefault();
+           redirectToHome();
+       });
+   </script>
 </body>
 </html>
