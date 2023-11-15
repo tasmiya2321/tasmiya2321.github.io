@@ -126,11 +126,11 @@
                 gap: 10px; /* Space between filter icon and dropdowns */
             }
 
-            .dropdown {
+            .drop_down {
                 display: none; /* Keep dropdowns hidden initially */
             }
 
-            .dropdowns {
+            .drop_downs {
                 display: none; /* Set to none by default, shown when filter icon is clicked */
                 flex-direction: row; /* Align dropdowns side by side */
                 align-items: center; /* Align dropdowns vertically in the center */
@@ -168,6 +168,7 @@
                 vertical-align: middle;
                 font-size: 16px;
             }
+   
     </style>
 
 </head>
@@ -190,7 +191,7 @@
       
         <div class="filter-options">
             <i class="fas fa-filter filter-icon"></i>
-            <div class="dropdowns">
+            <div class="drop_downs">
                 <select id="filter-select">
                     <option value="none">-- Select Filter Option --</option>
                     <option value="Program">Program</option>
@@ -201,7 +202,7 @@
                 
                 </select><br>
                 
-                <div id="programDropdown" class="dropdown">
+                <div id="programDropdown" class="drop_down">
                     
                     <label for="program-select"></label>
                     <select id="program-select">
@@ -214,7 +215,7 @@
                     </select>
                 </div>
         
-                <div id="projectDropdown" class="dropdown">
+                <div id="projectDropdown" class="drop_down">
                     <label for="project-select"></label>
                     <select id="project-select">
                         <option value="">Select an option</option>
@@ -227,7 +228,7 @@
                     </select>
                 </div>
                         
-                <div id="dateDropdown" class="dropdown">
+                <div id="dateDropdown" class="drop_down">
                     <label>From: </label><input type="date" id="from-date">
                     <label>To: </label><input type="date" id="to-date"><br><br>
                     <!-- or -->
@@ -240,7 +241,7 @@
                         <option value="24">Past 2 Years</option>
                     </select>
                 </div>
-                <div id="centerDropdown" class="dropdown">
+                <div id="centerDropdown" class="drop_down">
                     <label for="center-select"></label>
                     <select id="center-select">
                         <option value="">Select an option</option>
@@ -253,7 +254,7 @@
                     </select>
                 </div>
         
-                <div id="trainerDropdown" class="dropdown">
+                <div id="trainerDropdown" class="drop_down">
                     <label for="trainer-select"></label>
                     <select id="trainer-select">
                         <option value="">Select an option</option>
@@ -447,8 +448,8 @@
       
         document.getElementById("filter-select").addEventListener("change", function() {
             // Initially hide all dropdowns
-            document.querySelectorAll(".dropdowns .dropdown").forEach(dropdown => {
-                dropdown.style.display = "none";
+            document.querySelectorAll(".drop_downs .drop_down").forEach(drop_down => {
+                drop_down.style.display = "none";
             });
 
             switch(this.value) {
@@ -473,30 +474,30 @@
         });
 
         document.querySelector(".filter-icon").addEventListener("click", function() {
-            const dropdownsDiv = document.querySelector(".dropdowns");
-            if (dropdownsDiv.style.display === "none" || dropdownsDiv.style.display === "") {
-                dropdownsDiv.style.display = "flex";
+            const drop_downsDiv = document.querySelector(".drop_downs");
+            if (drop_downsDiv.style.display === "none" || drop_downsDiv.style.display === "") {
+                drop_downsDiv.style.display = "flex";
             } else {
-                dropdownsDiv.style.display = "none";
+                drop_downsDiv.style.display = "none";
             }
         });
 
         function toggleDropdown(nextDropdownId) {
-            const dropdown = document.getElementById(nextDropdownId);
-            if (dropdown.style.display === "none" || dropdown.style.display === "") {
-                dropdown.style.display = "block";
+            const drop_down = document.getElementById(nextDropdownId);
+            if (drop_down.style.display === "none" || drop_down.style.display === "") {
+                drop_down.style.display = "block";
             } else {
-                dropdown.style.display = "none";
+                drop_down.style.display = "none";
             }
         }
 
 
-        function toggleDropdown(nextDropdownId) {
-            const dropdown = document.getElementById(nextDropdownId);
-            if (dropdown.style.display === "none" || dropdown.style.display === "") {
-                dropdown.style.display = "block";
+        function toggleDropdown(nextDrop_downId) {
+            const drop_down = document.getElementById(nextDrop_downId);
+            if (drop_down.style.display === "none" || drop_down.style.display === "") {
+                drop_down.style.display = "block";
             } else {
-                dropdown.style.display ="none";
+                drop_down.style.display ="none";
             }
         }
 
