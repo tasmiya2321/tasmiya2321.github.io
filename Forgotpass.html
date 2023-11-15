@@ -29,10 +29,11 @@
         </form>
     </div>
 
+  <script src="common.js"></script>
     <script>
         document.getElementById("forgotPasswordForm").addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent the default form submission behavior
-            window.location.href = "Resetpass.html"; // Redirect to Reset.html
+            event.preventDefault();
+            redirectToResetPass();
         });
     </script>
     
