@@ -6,30 +6,11 @@
     <link rel="stylesheet" href="Comm.css">
     <script src="https://kit.fontawesome.com/bc0ac06df1.js" crossorigin="anonymous"></script>
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="employee.css"> -->
+
     <style>
         * {
             padding: 0;
             margin: 0;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Helvetica;
-            background-color: #fffcfc;
-            overflow-y: scroll;
-        }
-
-        /* header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-        } */
-        body {
-            overflow-y: scroll;
-            background-color: rgb(247, 241, 233);
         }
 
         h3 {
@@ -54,17 +35,8 @@
             margin-right: auto;
             margin-top: 20px;
         }
-   
-        .dropbtn, p {
-            background-color: rgb(225, 130, 4);
-            color: rgb(17, 17, 17);
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            padding: 5px;
-            margin-left: 90%;
-            border-radius: 10px solid orange;
-        }
+
+      
 
 
         .dropdown-content {
@@ -126,36 +98,6 @@
             padding: 5px;
         }
 
-        textarea {
-            width: calc(100% - 10px);
-            margin: 5px;
-            height: 100px;
-            resize: vertical;
-        }
-
-        select {
-            margin: 5px;
-        }
-
-        .twobox {
-            display: flex;
-            justify-content: space-between;
-            margin: 5px;
-            padding: 0;
-        }
-
-        select#year {
-            width: 50%;
-            height: 30px;
-        }
-
-        .header-container hr {
-            width: 100%;
-            border: none;
-            border-top: 1px solid black;
-            margin: 0;
-        }
-
         .button-container {
             display: flex;
             justify-content: center;
@@ -163,124 +105,64 @@
             height: 40%;
         }
 
-        .dropbtn {
-            background-color: rgb(247, 241, 233);
-            color: rgb(17, 17, 17);
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            padding: 5px;
-            top: -50px;
-            margin-left: 90%;
-            margin-top: -10px;
-            margin-right: -5px;
-        }
-
-
-
-        button {
-            padding: 10px 20px;
-            background-color: #FCAF40;
-        }
-
-        .dropbtn, p {
-            background-color: rgb(247, 241, 233);
-            color: rgb(17, 17, 17);
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            padding: 5px;
-            margin-left: 90%;
-            margin-top: -5px;
-            margin-right: -5px;
-        }
-
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            margin-left: 80%;
-        }
-
-
-            .dropdown-content a {
-                color: black;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-            }
-
-
-
-
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .left {
-            margin-left: 95%;
-        }
-
-        .dropdown {
-            margin-right: 5%;
-            margin-top: -2%;
-        }
-
-        .container {
-            margin-top: -3%;
-        }
-
-
-
-        .menu-icon {
-            margin-right: 10px; /* Adjust the value to control the space between the icon and text */
-        }
-
-        /* Rest of your existing CSS for the navigation menu */
-        .menu-icon {
-            margin-right: 10px; /* Adjust the value to control the space between the icon and text */
-        }
-
-        /* Rest of your existing CSS for the navigation menu */
-
 
     </style>
 </head>
 <body>
 
+    <div class="header" style=" background-color: #F5F0EC;">
 
-    <header style="position: absolute;">
 
-        <div class="menu-toggle" id="menuToggle" style=" margin-top: -53px;">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+
+        <header>
+
+            <div class="menu-toggle" id="menuToggle" style="margin-top: 33px;">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </header>
+        <nav id="sidebar">
+            <ul>
+                <li>
+                    <img src="./cf_logo.png" width="105%">
+                </li>
+                <li><a href="home.html"><span class="menu-icon"><i class="fa-solid fa-house" style="color: #d66e29;"></i></span> Home</a></li>
+                <li>
+                    <a href="sessdetails.html">
+                        <span class="menu-icon">
+                            <i class="fa-solid fa-business-time" style="color: #c58326;
+                   margin-left: 15px;"></i>
+                        </span> Sessions
+                    </a>
+                </li>
+                <li><a href="emp.html"><span class="menu-icon"><i class="fa-solid fa-chart-simple" style="color: #dd7c22;"></i></span> Details</a></li>
+
+            </ul>
+        </nav>
+        <main>
+
+        </main>
+        <h1 style=" margin-right: 40vh;">Details</h1>
+        <!--<center>
+            <img src="./cf_logo.png" width="200px" style=" margin-top: 5px; margin-right: 205px;">
+        </center>-->
+        <div>
+            <div class="left">
+                <i class="fa-solid fa-circle-user fa-2xl" style="color: #5c626a;"></i>
+            </div>
+
+            <div class="my-custom-dropdown">
+                <button class="dropbtn" style="border: none; background: none;">Jimmy Cherian</button>
+                <p class="    ">Administrator</p>
+                <div class="dropdown-content">
+                    <a href="changepass.html"><i class="fa-solid fa-key" style="margin: 10px;"></i>Change Password</a>
+                    <a href="index.html"><i class="fa-solid fa-right-from-bracket" style="margin: 10px;"></i>Log out</a>
+                </div>
+            </div>
         </div>
-    </header>
-    <nav id="sidebar">
-        <ul>
-            <li>
-                <img src="./cf_logo.png" width="105%">
-            </li>
-            <li><a href="home.html"><span class="menu-icon"><i class="fa-solid fa-house" style="color: #d66e29;"></i></span> Home</a></li>
-            <li>
-                <a href="sessdetails.html">
-                    <span class="menu-icon">
-                        <i class="fa-solid fa-business-time" style="color: #c58326;
-                margin-left: 15px;"></i>
-                    </span> Sessions
-                </a>
-            </li>
-            <li><a href="emp.html"><span class="menu-icon"><i class="fa-solid fa-chart-simple" style="color: #dd7c22;"></i></span> Details</a></li>
-
-        </ul>
-    </nav>
-    <h1 style=" margin-top: 31px;">Details</h1>
+    </div>
+    <!--<h1 style=" margin-top: 31px;">Details</h1>-->
     <script>
         const menuToggle = document.getElementById("menuToggle")
         const sidebar = document.getElementById("sidebar");
@@ -298,31 +180,16 @@
 
     </script>
     <form action="" style=" margin-top: -60px;">
-        <div class="header-container">
 
+        <div class="container">
 
-            <div class="left">
-                <i class="fa-solid fa-circle-user fa-2xl" style="color: #5c626a;"></i>
-            </div>
-
-            <div class="dropdown">
-                <button class="dropbtn">Jimmy Cherian</button>
-                <center><p>Administrator</p></center>
-                <div class="dropdown-content">
-                    <a href="#"><i class="fa-solid fa-key"></i>Change Password</a>
-                    <a href="#"><i class="fa-solid fa-right-from-bracket"></i>Log out</a>
-                </div>
-            </div>
-
-            <br><br>
-
-            <div class="container">
-             
-            </div>
-            <hr>
+        </div>
+       
 
         </div>
         <br>
+
+    <hr>
 
         <center>
             <h3>Personal Details</h3>
