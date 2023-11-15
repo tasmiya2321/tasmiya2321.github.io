@@ -1,7 +1,7 @@
 
 
 function togglePassword(button) {
-    button.classList.toggle("res-showing");
+    button.classList.toggle("showing");
     const input = button.previousElementSibling;
     input.type = input.type === "password" ? "text" : "password";
 }
