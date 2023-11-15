@@ -128,6 +128,7 @@
 
             .drop_down {
                 display: none; /* Keep dropdowns hidden initially */
+                margin-top: -30px;
             }
 
             .drop_downs {
@@ -135,6 +136,7 @@
                 flex-direction: row; /* Align dropdowns side by side */
                 align-items: center; /* Align dropdowns vertically in the center */
                 gap: 10px; /* Space between each dropdown */
+                margin-top: -10px;
             }
 
 
@@ -148,7 +150,7 @@
             }
 
             select {
-                margin-top: 0px;
+                margin-top: -30px;
                 margin-left: 6%;
             }
 
@@ -168,6 +170,26 @@
                 vertical-align: middle;
                 font-size: 16px;
             }
+           
+            input#from-date,#to-date {
+                
+                margin-top: 20px;
+                
+                
+            }
+            #to-date{
+                margin-left: 2px;
+                margin-top: -100px;
+            }
+            #past-days-select{
+                margin-left: 200px;
+                margin-top: -200px;
+            }
+            .pan{
+                margin-left: 200px;
+                margin-top: 10px;
+            }
+            
    
     </style>
 
@@ -215,7 +237,7 @@
                     </select>
                 </div>
         
-                <div id="projectDropdown" class="drop_down">
+                <div id="projectDropdown" class="drop_down" >
                     <label for="project-select"></label>
                     <select id="project-select">
                         <option value="">Select an option</option>
@@ -228,11 +250,13 @@
                     </select>
                 </div>
                         
-                <div id="dateDropdown" class="drop_down">
-                    <label>From: </label><input type="date" id="from-date">
-                    <label>To: </label><input type="date" id="to-date"><br><br>
+                <div id="dateDropdown" class="drop_down" sty>
+                    <label id="lab">From: </label><input type="date" id="from-date">
+                    <label class="labe">To: </label><input type="date" id="to-date"><br>
+                    <p class="pan">(OR)</p><br>
                     <!-- or -->
                     <select id="past-days-select">
+                        <option value="">Select month</option>
                         <option value="1">Past 1 Month</option>
                         <option value="2">Past 2 Months</option>
                         <option value="4">Past 4 Months</option>
@@ -245,7 +269,7 @@
                     <label for="center-select"></label>
                     <select id="center-select">
                         <option value="">Select an option</option>
-                        <option value="DJ Halli 1">DJ Halli 1</option>
+                        <option value="DJ Halli 1">DJ Halli 1</option>s
                         <option value="DJ Halli 2">DJ Halli 2</option>
                         <option value="Bagalur">Bagalur</option>
                         <option value="Mylanahalli">Mylanahalli</option>
