@@ -1,24 +1,66 @@
+
+
 function togglePassword(button) {
-    button.classList.toggle("showing");
+    button.classList.toggle("res-showing");
     const input = button.previousElementSibling;
     input.type = input.type === "password" ? "text" : "password";
 }
 
-function redirectToHome() {
-    window.location.href = "home.html";
+
+// #resetpass.html
+function redirectToIndex() {
+    const existingPassword = document.getElementById("res-password").value;
+    const newPassword = document.getElementById("res-newPassword").value;
+
+    if (!existingPassword || !newPassword) {
+        alert("Please fill out all the fields.");
+    } else {
+        window.location.href = "index.html";
+    }
 }
 
-document.getElementById("reset-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    redirectToHome();
-});
+// index.html
+function redirectToHome() {
+    console.log("Function redirectToHome is called.");
 
-document.getElementById("log-login-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    redirectToHome();
-});
+    const usernameElement = document.getElementsByName("Username")[0];
+    const passwordElement = document.getElementById("password");
 
-document.getElementById("changepass-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    redirectToHome();
-});
+    
+    const username = usernameElement ? usernameElement.value.trim() : '';
+    const password = passwordElement ? passwordElement.value : '';
+
+    if (username === "" || password === "") {
+        alert("Please fill out all the fields.");
+    } else {
+        console.log("Redirecting to home.html");
+        window.location.href = "home.html";
+    }
+}
+
+// redirectToChangePassword.html
+function redirectToChangePassword() {
+    // alert("Function redirectToChangePassword is called.");
+    const existingPassword = document.getElementById("chg-password").value;
+    const newPassword = document.getElementById("chg-newPassword").value;
+    const confirmPassword = document.getElementById("chg-confirmPassword").value;
+
+    if (!existingPassword || !newPassword || !confirmPassword) {
+        alert("Please fill out all the fields.");
+    } else {
+        console.log("Redirecting to home.html");
+        window.location.href = "home.html";
+    }
+}
+
+// forgotpass.html
+function redirectToResetPass() {
+    const emailInput = document.querySelector('input[name="email"]');
+    const email = emailInput.value.trim();
+
+    if (email === "") {
+        alert("Please fill out the email field.");
+    } else {
+        window.location.href = "Resetpass.html";
+    }
+}
