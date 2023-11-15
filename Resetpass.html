@@ -32,23 +32,12 @@
         </div>
     </div>
 
-    <!-- <script src="reset.js"></script> -->
-    <!-- <script>
-        function togglePassword(button) {
-    button.classList.toggle("res-showing");
-    const input = button.previousElementSibling;
-    input.type = input.type === "password" ? "text" : "password";
-    }
-
-    function redirectToHome() {
-        window.location.href = "index.html";
-    }
-
-    document.getElementById("reset-form").addEventListener("submit", function (e) {
-        e.preventDefault();
-        redirectToHome();
-    });
-
-    </script> -->
+    <script>
+        // Your resetpass-specific script here
+        document.getElementById("reset-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            redirectToIndex();
+        });
+    </script>
 </body>
 </html>
