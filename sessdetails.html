@@ -81,8 +81,8 @@
                 position: relative;
                 width: 250px;
                 margin-right:15%;
-                left: 20px;
-                top: -50px;
+                left: 34%;
+                top: -90px;
             }
 
             .search-box input {
@@ -123,12 +123,12 @@
                 flex-direction: row; /* Set children (icon and dropdowns) side by side */
                 align-items: center; /* Align items vertically in the center */
                 justify-content: center; /* Center the items horizontally */
-                gap: 10px; /* Space between filter icon and dropdowns */
+                 /* Space between filter icon and dropdowns */
             }
 
             .drop_down {
                 display: none; /* Keep dropdowns hidden initially */
-                margin-top: -30px;
+                margin-top: -100px;
             }
 
             .drop_downs {
@@ -139,19 +139,21 @@
                 margin-top: -10px;
             }
 
+          
 
             .filter-icon {
                 position: absolute;
-                right:30%;
-                top: 165px;
+                right:29.5%;
+                top: 126px;
                 font-size: 18px;
                 cursor: pointer;
                 
             }
 
             select {
-                margin-top: -30px;
+                margin-top:-106px ;
                 margin-left: 6%;
+                height: 30px;
             }
 
             input[type="radio"] {
@@ -171,24 +173,36 @@
                 font-size: 16px;
             }
            
-            input#from-date,#to-date {
+            input#from-date,#to-date,#past-days-select {
                 
                 margin-top: 20px;
+                display: flex;
+                flex-direction:column;
+                border-radius: 10px solid black;
                 
                 
+                
+            }
+
+            input#from-date,#to-date{
+                display: -webkit-inline-box; 
             }
             #to-date{
                 margin-left: 2px;
                 margin-top: -100px;
             }
             #past-days-select{
-                margin-left: 200px;
-                margin-top: -200px;
+                margin-left: 332px;
+                margin-top: -28px;
+                width: 100px;
+                height: 30px;
+                
             }
-            .pan{
-                margin-left: 200px;
-                margin-top: 10px;
+         
+            h1{
+                margin-left: 43%;
             }
+       
             
    
     </style>
@@ -196,7 +210,7 @@
 </head>
 <body>
     
-    <center>
+    <div>
         <h1>Session Details</h1>
         
         <div class="button">
@@ -214,7 +228,8 @@
         <div class="filter-options">
             <i class="fas fa-filter filter-icon"></i>
             <div class="drop_downs">
-                <select id="filter-select">
+               
+                    <select id="filter-select">
                     <option value="none">-- Select Filter Option --</option>
                     <option value="Program">Program</option>
                     <option value="Project">Project</option>
@@ -252,8 +267,8 @@
                         
                 <div id="dateDropdown" class="drop_down" sty>
                     <label id="lab">From: </label><input type="date" id="from-date">
-                    <label class="labe">To: </label><input type="date" id="to-date"><br>
-                    <p class="pan">(OR)</p><br>
+                    <label class="labe">To: </label><input type="date" id="to-date">
+                   <label id="pan">or</label>
                     <!-- or -->
                     <select id="past-days-select">
                         <option value="">Select month</option>
@@ -291,9 +306,9 @@
                 </div>
             </div>
         </div>
-       
+    </div>
 
-    </center>
+    
 
     <div class="table">
 
@@ -451,7 +466,7 @@
     <main>
 
     </main>
-        <footer class="white-footer">
+    <footer class="white-footer">
         <div class="footer-section footerwords1">
             <a href="https://www.creatingfutures.in">About Us</a><br><br>
             <a href="#">Gallery</a><br><br>
