@@ -10,6 +10,8 @@
     <script src="https://kit.fontawesome.com/bc0ac06df1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+       
+        
         
         * {
             margin: 0;
@@ -41,7 +43,7 @@
             padding-right: 40px;
             padding-top: 10px;
             padding-bottom: 10px;
-            background-color: #d7ca94;
+            background-color:orange;
         }
 
 
@@ -133,14 +135,16 @@
 
           
 
-            .filter-icon {
-                position: absolute;
-                right:29.5%;
-                top: 126px;
-                font-size: 18px;
-                cursor: pointer;
-                
-            }
+           
+.filter-icon {
+    position: absolute;
+    right: 26.5%;
+    top: 126px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
 
             select {
                 margin-top:-106px ;
@@ -171,30 +175,38 @@
                 display: flex;
                 flex-direction:column;
                 border-radius: 10px solid black;
-                
+                text-align: center;
+                justify-content: center;
                 
                 
             }
 
-            input#from-date,#to-date{
-                display: -webkit-inline-box; 
-            }
+         
+input#from-date, #to-date {
+    display: -webkit-inline-box;
+    text-align: center;
+    padding-top: 6px;
+}
             #to-date{
                 margin-left: 2px;
                 margin-top: -100px;
             }
-            #past-days-select{
+            #past-days-select {
                 margin-left: 332px;
-                margin-top: -28px;
-                width: 100px;
-                height: 30px;
-                
+                margin-top: -31px;
+                width: 106px;
+                height: 32px;
+                padding-top: 7px;
             }
          
             h1{
                 margin-left: 43%;
             }
-       
+        
+            .lab{
+                margin-top: 40px;
+                margin-left: 20px;
+            }
             
    
     </style>
@@ -258,10 +270,10 @@
                 </div>
                         
                 <div id="dateDropdown" class="drop_down" sty>
-                    <label id="lab">From: </label><input type="date" id="from-date">
+                    <label id="lab">From: </label><input type="date" id="from-date" placeholder="select-date">
                     <label class="labe">To: </label><input type="date" id="to-date">
                    <label id="pan">or</label>
-                    <!-- or -->
+                    
                     <select id="past-days-select">
                         <option value="">Select month</option>
                         <option value="1">Past 1 Month</option>
