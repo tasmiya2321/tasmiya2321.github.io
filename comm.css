@@ -673,27 +673,3 @@ header {
 
 
 
-
-
-
-  /* view  button*/
-    
-
-.button-container {
-    text-align: center;
-}
-
-.button-style {
- 
-    font-size: 15px;
-    background-color: #fdc97e;
-    border-color: #333;
-    padding: 5px;
-    width: 10%;
-    border-radius: 20px;
-}
-
-.button-style a {
-    text-decoration: none; /* Remove underline for the link */
-    color: inherit; /* Use the default color of the parent container */
-}
