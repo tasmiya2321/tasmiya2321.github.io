@@ -24,15 +24,14 @@
         hr {
             width: 150%;
         }
-
-        input[type="time"] {
-            font-size: 1em;
+        input[type="number"]{
+            width: 68%;
+            border-radius: 4px;
+            height: 30px;
             margin: 15px 0;
-            padding: 5px;
-            margin-left: 50px;
-            width: 70%;
+            margin-left: 25%;
         }
-
+ 
         .container {
             width: 500px;
             height: 663px;
@@ -43,8 +42,8 @@
         }
         input[type="text"],
         select,
-        input[type="date"],
-        input[type="time"] {
+        input[type="date"]{
+   
             width: 70%;
             border-radius: 4px;
             height: 30px;
@@ -223,6 +222,8 @@
         .container {
             margin-top: -3%;
         } */
+
+
         
     </style>
 </head>
@@ -249,12 +250,9 @@
                 <li>
                     <a href="sessdetails.html">
                         <span class="menu-icon">
-                            <i class="fa-solid fa-business-time" style="color: #c58326;
-                   margin-left: 15px;"></i>
-                        </span> Sessions
-                    </a>
-                </li>
-                <li><a href="emp.html"><span class="menu-icon"><i class="fa-solid fa-chart-simple" style="color: #dd7c22;"></i></span> Details</a></li>
+                            <i class="fa-solid fa-business-time" style="color: #d66e29; margin-left: 15px;"></i>
+                        </span> Sessions</a></li>
+                <li><a href="emp.html"><span class="menu-icon" style="margin-left: 23px;"><i class="fa-solid fa-chart-simple" style="color: #dd7c22;" ></i></span> Employee</a></li>
 
             </ul>
         </nav>
@@ -389,7 +387,11 @@
                             </td>
                         </tr>
 
-                      
+                       <tr>
+                        <td>Duration</td>
+                        <td><input type="number" size="30" style="margin-left: 25%; padding-right: 17px;"></td>
+                       </tr>
+
                         <tr>
                             <td>Status</td>
                             <td><input type="text" size="30"  style="margin-left: 25%; padding-right: 17px;"></td>
@@ -411,7 +413,7 @@
             </div>
         </div>
 
-        <script>
+        <!-- <script>
             document.getElementById('menuToggle').addEventListener('click', function () {
                 document.getElementById('sidebar').classList.toggle('active');
             });
@@ -432,7 +434,7 @@
             }
 
             updateClock();
-        </script>
+        </script> -->
 
 </body>
 </html>
