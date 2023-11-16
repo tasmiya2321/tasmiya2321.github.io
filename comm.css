@@ -4,6 +4,16 @@ body {
     background-color: #F5F0EC;
 }
 
+  @media screen and (max-width: 600px) {
+            /* Styles for screens smaller than 600px */
+          }
+          
+          @media screen and (min-width: 601px) and (max-width: 1024px) {
+            /* Styles for screens between 601px and 1024px */
+          }
+          
+
+
 .log-login-body {
     margin: 0;
     padding: 0;
