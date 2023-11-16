@@ -13,7 +13,6 @@
             box-sizing: border-box;
             padding: 0;
             margin: 0;
-    
         }
 
         .vertical-line {
@@ -29,7 +28,7 @@
             width: 30%;
         }
 
-  
+
         center {
             font-size: 25px;
             margin-top: 2%;
@@ -60,11 +59,10 @@
         }
 
         th, td {
-            padding: 8px;`
+            padding: 8px;
             text-align: center;
             border: 1px solid black;
         }
-
     </style>
 </head>
 <body>
@@ -127,7 +125,7 @@
         <!-- imege -->
 
 
-          <div class="slider-container">
+        <div class="slider-container">
             <img src="./16.jpg" alt="" class="slide-image active" >
             <img src="./17.jpg" alt="" class="slide-image" >
             <img src="./18.jpg" alt="" class="slide-image" >
@@ -156,6 +154,12 @@
             <img src="./12.jpeg" alt="" class="slide-image" >
             <img src="./13.jpeg" alt="" class="slide-image" >
             <img src="./15.jpeg" alt="" class="slide-image" >
+            
+
+
+            <button class="prev" id="prev">&#10094;</button>
+            <button class="next" id="next">&#10095;</button>
+        </div>
 
 
 
@@ -169,11 +173,11 @@
                     <th>Project</th>
                     <th>Activity</th>
                     <th>Center Type</th>
-                   
+
 
 
                     <th>Beneficiaries</th>
-               
+
 
                 </tr>
                 <tr bgcolor="white">
@@ -183,7 +187,7 @@
                     <td>1</td>
                     <td>1</td>
                     <td>1</td>
-                 
+
 
 
                 </tr>
@@ -243,6 +247,10 @@
             <br><br>
 
             <br>
+            <button style="margin-left: 48%;"><a href="sessdetails.html">View All</a></button>
+
+            <br>
+            <br>
 
             <!-- The dots/circles -->
             <div style="text-align:center">
@@ -297,19 +305,7 @@
                 }, 10000);  // 10 seconds
             </script>
 
-
-
-
-
-
-
-
-
-
             <script>
-
-
-
 
                 const menuToggle = document.getElementById("menuToggle");
                 const sidebar = document.getElementById("sidebar");
