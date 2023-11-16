@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Comm.css">
+    <link rel="stylesheet" href="comm.css">
     <script src="https://kit.fontawesome.com/bc0ac06df1.js" crossorigin="anonymous"></script>
     <title>Document</title>
 
@@ -18,8 +18,9 @@
         }
 
         h1 {
-            top: 0;
             text-align: center;
+            margin-left: 250px;
+            margin-top: 40px;
         }
 
 
@@ -36,60 +37,35 @@
             margin-top: 20px;
         }
 
-      
-
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: orange;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            margin-left: 80%;
-        }
-
-
-            .dropdown-content a {
-                color: black;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-                background: orange;
-            }
-
-
-
-
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-
+    
         input[type="text"] {
             height: 25px;
             margin: 5px;
+            margin-left: 1px;
         }
 
         input[type="Date"] {
             height: 25px;
             margin: 5px;
+            margin-left: 1px;
         }
 
         input[type="number"] {
             height: 25px;
             margin: 5px;
+            margin-left: 1px;
         }
 
-        input[type="Email"] {
+        input[type="Email ID"] {
             height: 25px;
             margin: 5px;
+            margin-left: 0px;
         }
 
         input[type="radio"] {
             height: 25px;
             margin: 5px;
+            margin-left: 1px;
         }
 
 
@@ -104,16 +80,16 @@
             align-items: center;
             height: 40%;
         }
-
+        button {
+            padding: 10px 20px;
+            background-color: #FCAF40;
+        }
 
     </style>
 </head>
 <body>
 
-    <div class="header" ">
-
-
-
+    <div class="header">
         <header>
 
             <div class="menu-toggle" id="menuToggle" style="margin-top: 33px;">
@@ -140,11 +116,9 @@
 
             </ul>
         </nav>
-        <main>
-
-        </main>
-        <h1 style=" margin-right: 30vh;">Employee Details</h1>
-       
+        <center>
+        <h1>Employee Details</h1>
+        </center>
         <div>
             <div class="left">
                 <i class="fa-solid fa-circle-user fa-2xl" style="color: #5c626a;"></i>
@@ -152,13 +126,16 @@
 
             <div class="dropdown">
                 <button class="dropbtn" style="border: none; background: none;">Jimmy Cherian</button>
-                <p class="    ">Administrator</p>
+                <p class="para">Administrator</p>
                 <div class="dropdown-content">
                     <a href="changepass.html"><i class="fa-solid fa-key" style="margin: 10px;"></i>Change Password</a>
-                    <a href="index.html"><i class="fa-solid fa-right-from-bracket" style="margin: 10px;"></i>Log out</a>
+                    <a href="#"><i class="fa-solid fa-right-from-bracket" style="margin: 10px;"></i>Log out</a>
                 </div>
             </div>
         </div>
+        <main>
+
+        </main>
     </div>
     <!--<h1 style=" margin-top: 31px;">Details</h1>-->
     <script>
@@ -177,19 +154,11 @@
         });
 
     </script>
+
     <form action="" style=" margin-top: -60px;">
 
-        <div class="container">
-
-        </div>
-       
-
-        </div>
-        <br>
-
-    <!--<hr>-->
-    <br>
-
+        <div class="container"></div>
+        <br><br>
         <center>
             <h3>Personal Details</h3>
         </center>
@@ -213,7 +182,7 @@
             </tr>
             <tr>
                 <td>Email ID</td>
-                <td><input type="email" placeholder="example@mail.com" style="width: 50%;" size="30" required></td>
+                <td><input type="Email ID" id="Email ID" name="Email ID" style="width: 50%;" size="30" required></td>
             </tr>
             <tr>
                 <td>Gender</td>
@@ -241,7 +210,7 @@
 
                 <td>Centre</td>
                 <td>
-                    <select required style="width: 50%; height: 30px; margin: 5px;">
+                    <select required style="width: 50%; height: 30px; margin: 5px; margin-left: 0px;">
                         <option value="">Select an option</option>
                         <option value="DJ Halli 1">DJ Halli1</option>
                         <option value="DJ Halli 2">DJ Halli2</option>
@@ -259,20 +228,8 @@
                 <td><input type="text" style="width: 50%;" size="30" required></td>
             </tr>
             <tr>
-                <td>
-                    <label for="year">Year of Joining</label>
-                </td>
-                <td>
-                    <select id="year" name="year">
-                        <option value="">Select Year</option>
-                        <script>
-                            const currentYear = new Date().getFullYear();
-                            for (let year = 1990; year <= currentYear; year++) {
-                                document.write(`<option value="${year}">${year}</option>`);
-                            }
-                        </script>
-                    </select>
-                </td>
+                <td>Date of joining</td>
+                <td><input type="date" style="width: 50%;" size="30" required></td>
             </tr>
             <tr>
                 <td>Education Qualification</td>
@@ -283,7 +240,7 @@
                     <label for="Status">Status</label>
                 </td>
                 <td>
-                    <select style="width:50%; height:30px; margin: 5px;">
+                    <select style="width:50%; height:30px; margin: 5px; margin-left: 0px;">
                         <option value="">Select an option</option>
                         <option value="Active">Active</option>
                         <option value="Resigned">Resigned</option>
@@ -292,10 +249,10 @@
             </tr>
             <tr>
                 <td>
-                    <label for="year">Resource</label>
+                    <label for="year">Resource Type</label>
                 </td>
                 <td>
-                    <select style="width:50%; height:30px; margin: 5px;">
+                    <select style="width:50%; height:30px; margin: 5px; margin-left: 0px;">
                         <option value="">Select an option</option>
                         <option value="Employee">Employee</option>
                         <option value="Part-time">Part-time</option>
@@ -336,7 +293,7 @@
                     <label for="Account Type">Account Type</label>
                 </td>
                 <td>
-                    <select style="width:50%; height:30px; margin: 5px;">
+                    <select style="width:50%; height:30px; margin: 5px; margin-left: 0px;">
                         <option value="">Select an option</option>
                         <option value="Savings">Savings</option>
                         <option value="Current">Current</option>
@@ -349,20 +306,6 @@
     <div class="button-container">
         <button id="editButton" type="button" onclick="toggleEditUpdate()">Edit</button>
     </div>
-        <footer class="white-footer">
-        <div class="footer-section footerwords1">
-            <a href="https://www.creatingfutures.in">About Us</a><br><br>
-            <a href="#">Gallery</a><br><br>
-            <a href="#">FAQs</a><br><br>
-        </div>
-
-        <div class="vertical-line"></div>
-
-        <div class="footer-section footerwords2">
-            <a href="sessdetails.html">Session </a><br><br>
-            <a href="emp.html">Details</a><br><br>
-        </div>
-    </footer>
 
     <script>
         function toggleEditUpdate() {
@@ -373,7 +316,7 @@
                 editButton.textContent = "Edit";
             }
         }
-    </script>
+    </script> 
 
 </body>
 </html>
