@@ -565,6 +565,7 @@ jimmy */
         text-decoration: none;
         display: block;
         color: black;
+    padding-right: 15px;
 }
 
 .dropdown:hover .dropdown-content {
