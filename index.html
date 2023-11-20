@@ -1,44 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="Comm.css">
-    <script src="common.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Login Page</title>
+    <script src="https://kit.fontawesome.com/bc0ac06df1.js" crossorigin="anonymous"></script>
+    <style>
 
-    <title>Login</title>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(90deg, #fff 50%, #fcaf40 50%);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .login-container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 5%; /* Adjusted padding for better spacing */
+            border-radius: 8px;
+            width: 90%; /* Adjusted width for larger screens */
+            max-width: 400px;
+            text-align: center;
+            border: 0.3px solid black;
+        }
+        
+        .input-container {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        
+        input {
+            width: calc(80% - 20px); /* Adjusted width to account for padding */
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin: 15px;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            background-image: url('./eyes\ open.webp'); /* Updated image path */
+            background-size: cover;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .forgot-password {
+            margin-bottom: 15px;
+            margin-left: 50%;
+            color: black;
+
+            
+        }
+        .forgot-password a{
+            text-decoration: none;
+            color: black;
+        }
+        button {
+            background-color: orange;
+            color: white;
+            padding: 10px;
+            width: 50%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color:orange;
+        
+        }
+        
+        /* Media Queries for responsiveness */
+        @media screen and (min-width: 768px) {
+            .login-container {
+                width: 80%;
+            }
+        }
+        
+        @media screen and (min-width: 1024px) {
+            .login-container {
+                width: 60%;
+            }
+        }
+        
+
+        .word {
+            font-size: 2em;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: appear 6s forwards;
+            animation-delay: 1s;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding: 5%;
+        }
+
+        @keyframes appear {
+            to {
+                width: 100%;
+            }
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            /* Set the width of the image to 25% of its container on larger screens */
+            width: 40%;
+            /* Optional: Add some styling for better visualization */
+            display: block;
+            margin-top: 0 auto;
+            margin-left: 32%;
+          }
+
+   
 
 
 
 
+
+        
+    </style>
 </head>
-<body class="log-login-body">
-    <div class="log-loginlogo">
-        <img src="./cf_logo.png" alt="Cf" width="30%">
-    </div>
-    <div class="log-downlogo">
-        <img src="downlogo.png" alt="cf" width="45%">
-    </div>
-    <div class="log-login-container">
-        <h1>Welcome!</h1>
-        <form action="index.html" method="POST" id="log-login-form">
-            <input type="text" name="Username" placeholder="Username" required>
-            <div class="log-password">
-                <input type="password" id="password" name="password" placeholder="Password" required>
-                <button class="log-toggle" type="button" onclick="togglePassword(this)"></button>
+
+
+
+<body>
+    
+    <div class="login-container">
+        <form id="loginForm">
+            <div>
+              
+                <img src="./cf_logo.png" alt="Responsive Image">
+              </div>
+            <div class="animation-container">
+                <div class="word">Welcome<i class="fa-solid fa-feather" style="color: black;"></i></div>
+               
             </div>
-            <a href="Forgotpass.html">Forgot Password?</a>
-            <input type="submit" value="Login" onclick="redirectToHome()">
+            <div class="input-container">
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+            <div class="input-container">
+                <input type="password" id="password" placeholder="Password" required>
+                <span class="toggle-password" onclick="togglePassword()"></span>
+            </div>
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="button" onclick="login()">Login</button>
         </form>
     </div>
 
-    <script src="common.js"></script>
-  
-   <script>
-       document.getElementById("log-login-form").addEventListener("submit", function (e) {
-           e.preventDefault();
-           redirectToHome();
-       });
-   </script>
+
+    
+
+    <script>
+        function togglePassword() {
+            var passwordInput = document.getElementById("password");
+            var toggleIcon = document.querySelector(".toggle-password");
+        
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.style.backgroundImage = "url('eyes\ open.webp')";
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.style.backgroundImage = "url('eyes close.jpg')";
+            }
+        }
+        
+        function login() {
+        
+            alert("Filled the details");
+        }
+        
+
+    </script>
 </body>
+
 </html>
