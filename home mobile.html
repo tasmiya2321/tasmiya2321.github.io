@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sidebar</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/bc0ac06df1.js" crossorigin="anonymous"></script>
+    <style>
+        /* Reset default margin and padding */
+        body, h1, h2, h3, ul {
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Header styles */
+        .header {
+            background-color: lightblue;
+            padding: 36px;
+            text-align: center;
+        }
+        
+        /* Container to hold sidebar and main content */
+        .container {
+            display: flex;
+        }
+
+        /* Sidebar toggle button styles */
+        .sidebar-toggle-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .sidebar-toggle-btn img {
+            width: 30px; /* Adjust image width as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+        
+        /* Sidebar styles */
+        .sidebar {
+            background-color: #333;
+            color: white;
+            width: 0;
+            overflow: hidden;
+            transition: width 0.3s ease;
+            height: 100vh;
+        }
+        
+        .sidebar.open {
+            width: 250px;
+        }
+        
+        /* Navbar styles */
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 5%;
+        }
+        
+        .navbar ul li {
+            padding: 10px;
+            text-align: center;
+            width: 100%; /* Adjust width as needed */
+        }
+        
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+            width: 100%;
+            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 3%;
+        }
+        
+        .navbar ul li a i {
+            margin-right: 10px;
+        }
+        
+        .navbar ul li a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+        
+        /* Main content styles */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        /* Media query for mobile responsiveness */
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+            }
+            .main-content {
+                margin-left: 0;
+            }
+        }.footer {
+    background-color: lightcoral;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+/* Sticky Footer */
+@media screen and (max-width: 768px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .container {
+        flex: 1;
+    }
+
+    .footer {
+        margin-top: auto;
+    }
+}
+
+
+
+
+ .slider-container {
+            position: relative;
+            margin-top: 20px;
+            overflow: hidden;
+            max-width: 100%;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide-image {
+    width: 100%;
+    max-height: 90vh; /* Adjust the maximum height as needed */
+    height: auto;
+    flex: 0 0 auto;
+}
+
+        /* Navigation button styles */
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 100;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+
+
+
+
+           /* Dropdown content styles */
+           .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-left: 82%;
+            margin-top: 3%;
+            }
+   
+       
+
+        .dropdown{
+            margin-left: 82%;
+
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Styling the ID symbol */
+        .id-symbol {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <span class="dropdown">
+            <span class="id-symbol" onclick="toggleDropdown()">Hari &#9660; <i class="fa-solid fa-circle-user fa-2xl" style="color: #5c626a;"></i></span>
+            <div class="dropdown-content" id="dropdownContent">
+                <a href="#profile">Profile</a>
+                <a href="#settings">Settings</a>
+                <a href="#logout">Logout</a>
+            </div>
+        </span>
+    </header>
+    
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#home"><i class="fas fa-home" style="color: #d66e29;"></i>Home</a></li>
+                    <li><a href="#session"><i class="fas fa-business-time" style="color: #c58326;"></i>Session</a></li>
+                    <li><a href="#employee"><i class="fas fa-chart-bar" style="color: #dd7c22;"></i>Employee</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <button class="sidebar-toggle-btn" onclick="toggleSidebar()">
+                <img src="./menuicon.jpg" alt="">
+            </button>
+            <div class="slider-container">
+                <div class="slides">
+            <img src="./16.jpg" alt="" class="slide-image active" >
+            <img src="./17.jpg" alt="" class="slide-image" >
+            <img src="./18.jpg" alt="" class="slide-image" >
+            <img src="./19.jpg" alt="" class="slide-image" >
+            <img src="./20.jpg" alt="" class="slide-image" >
+            <img src="./21.jpg" alt="" class="slide-image" >
+            <img src="./22.jpg" alt="" class="slide-image" >
+            <img src="./23.jpg" alt="" class="slide-image" >
+            <img src="./25.jpg" alt="" class="slide-image" >
+            <img src="./26.jpg" alt="" class="slide-image" >
+            <img src="./26.jpg" alt="" class="slide-image" >
+            <img src="./27.jpg" alt="" class="slide-image" >
+            <img src="./28.jpg" alt="" class="slide-image" >
+            <img src="./29.jpg" alt="" class="slide-image" >
+            <img src="./1.jpeg" alt="" class="slide-image" >
+            <img src="./2.jpeg" alt="" class="slide-image" >
+            <img src="./3.jpeg" alt="" class="slide-image" >
+            <img src="./4.jpeg" alt="" class="slide-image" >
+            <img src="./5.jpeg" alt="" class="slide-image" >
+            <img src="./6.jpeg" alt="" class="slide-image" >
+            <img src="./7.jpeg" alt="" class="slide-image" >
+            <img src="./8.jpeg" alt="" class="slide-image" >
+            <img src="./9.jpeg" alt="" class="slide-image" >
+            <img src="./10.jpeg" alt="" class="slide-image" >
+            <img src="./11.jpeg" alt="" class="slide-image" >
+            <img src="./12.jpeg" alt="" class="slide-image" >
+            <img src="./13.jpeg" alt="" class="slide-image" >
+            <img src="./15.jpeg" alt="" class="slide-image" >
+            </div>
+                <button class="prev" id="prev">&#10094;</button>
+                <button class="next" id="next">&#10095;</button>
+            </div>
+            
+        </main>
+    </div>
+
+
+ 
+    
+
+    <footer class="footer">
+        <a href="#home">Home</a> |
+        <a href="#session">Session</a> |
+        <a href="#employee">Employee</a>
+    </footer>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+
+
+
+
+
+
+
+
+
+
+        const slides = document.querySelector('.slides');
+        const slideImages = document.querySelectorAll('.slide-image');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+
+        let slideIndex = 0;
+
+        function showSlides() {
+            slideIndex++;
+            if (slideIndex >= slideImages.length) {
+                slideIndex = 0;
+            }
+            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+        }
+
+        let slideInterval = setInterval(showSlides, 3000); // Change slide every 3 seconds
+
+        function stopInterval() {
+            clearInterval(slideInterval);
+        }
+
+        function startInterval() {
+            slideInterval = setInterval(showSlides, 3000); // Change slide every 3 seconds
+        }
+
+        slides.addEventListener('mouseenter', stopInterval);
+        slides.addEventListener('mouseleave', startInterval);
+
+        prevButton.addEventListener('click', () => {
+            if (slideIndex > 0) {
+                slideIndex--;
+                slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+            }
+            stopInterval();
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (slideIndex < slideImages.length - 1) {
+                slideIndex++;
+                slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+            }
+            stopInterval();
+        });
+
+        startInterval(); // Start automatic sliding on page load
+
+
+
+
+
+        function toggleDropdown() {
+            const dropdownContent = document.getElementById('dropdownContent');
+            dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
