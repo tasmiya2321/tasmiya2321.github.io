@@ -15,9 +15,77 @@
         
         /* Header styles */
         .header {
-            background-color: lightblue;
+            background-color:orange;
             padding: 36px;
             text-align: center;
+        }
+
+
+        .headline {
+      font-size: 24px; /* Set the font size */
+      position: relative; /* Set position for animation */
+    }
+
+           /* Dropdown styles */
+        .dropdown {
+            margin-right: 64%;
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .id-symbol {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Dropdown styles for mobile */
+        @media screen and (max-width: 768px) {
+            .dropdown {
+                display: block;
+                margin-top: 10px;
+                text-align: center;
+            }
+
+            .id-symbol {
+                display: block;
+                padding: 10px;
+                cursor: pointer;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: static;
+                background-color: #f9f9f9;
+                box-shadow: none;
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                display: block;
+                padding: 10px;
+                border-bottom: 1px solid #ccc;
+            }
         }
         
         /* Container to hold sidebar and main content */
@@ -108,7 +176,7 @@
                 margin-left: 0;
             }
         }.footer {
-    background-color: lightcoral;
+    background-color: orange;
     padding: 20px;
     text-align: center;
     color: white;
@@ -185,47 +253,15 @@
 
 
 
-           /* Dropdown content styles */
-           .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            margin-left: 82%;
-            margin-top: 3%;
-            }
-   
-       
-
-        .dropdown{
-            margin-left: 82%;
-
-        }
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Styling the ID symbol */
-        .id-symbol {
-            cursor: pointer;
-        }
+        
     </style>
 </head>
 <body>
     <header class="header">
+        <div class="headline">
+            Ceating Future Employees
+        </div>
+  
         <span class="dropdown">
             <span class="id-symbol" onclick="toggleDropdown()">Hari &#9660; <i class="fa-solid fa-circle-user fa-2xl" style="color: #5c626a;"></i></span>
             <div class="dropdown-content" id="dropdownContent">
@@ -233,7 +269,7 @@
                 <a href="#settings">Settings</a>
                 <a href="#logout">Logout</a>
             </div>
-        </span>
+      
     </header>
     
     <div class="container">
