@@ -116,13 +116,13 @@
         }
         @media (max-width: 768px) {
             .modal {
-                width: 80%;
+                width: 100%;
             }
         }
 
         @media (max-width: 480px) {
-            .modal {
-                width: 90%;
+            .modal-content {
+                width: 100%;
             }
         }
 
@@ -172,7 +172,7 @@
             border-radius: 5px;
             border: 2px solid black;
             height: 65%;
-            width: 50%;
+            width: 80%;
         }
 
         .modal-content {
@@ -271,7 +271,18 @@
             justify-content: center;
             justify-content: space-evenly;
          }  
-            
+       
+        
+        /* Media query for smaller screens */
+        @media only screen and (max-width: 600px) {
+            table {
+                /* Adjust styles for smaller screens */
+                font-size: 12px; /* Example: decrease font size for small screens */
+            }
+        
+            /* Add more styles as needed for responsiveness */
+        }
+
         
     </style>
 </head>
