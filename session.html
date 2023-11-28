@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+
+    <script src="https://kit.fontawesome.com/bc0ac06df1.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: rgb(247,241,233);
+        }
+
+        .header {
+            text-align: center;
+            background: none;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .search-container {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .search-box {
+            display: inline-block;
+            padding: 10px;
+            font-size: 16px;
+            width: 60%; /* Adjusted width */
+            max-width: 300px;
+        }
+
+        .filter-icon {
+            display: inline-block;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .main-filter {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 80%;
+            left: 60%;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            display: none;
+        }
+
+        .main-filter.active .dropdown {
+            display: block;
+        }
+
+        .dropdown-item {
+            padding: 12px 16px;
+            display: block;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+        }   
+
+        .sub-dropdown {
+            position: relative;
+            display: block;
+        }
+
+        .sub-dropdown:hover .sub-dropdown-content {
+            display: block;
+        }
+        
+
+        .sub-dropdown-content {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            display: none;
+            
+        }
+
+        .sub-dropdown-item {
+            padding: 12px 16px;
+            display: block;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .actions {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px;
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .search-box {
+                width: 100%;
+            }
+        }
+        @media (max-width: 768px) {
+            .modal {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .modal {
+                width: 90%;
+            }
+        }
+
+
+   
+      
+          #fullViewButton {
+            display: block;
+            margin-bottom: 20px;
+            cursor: pointer;
+            background: orange;
+            color: black;
+          }
+
+          .sub-dropdown-content {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            display: none;
+            max-height: 400px; /* Set a maximum height for the dropdown */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 60px; /* Adjust the margin to prevent content overlap */
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 7px;
+            text-align: center;
+          
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            z-index: 1;
+            padding: 20px;
+            border-radius: 5px;
+            border: 2px solid black;
+            height: 65%;
+            width: 50%;
+        }
+
+        .modal-content {
+            background: #fff;
+            text-align: center;
+            width: 100%;
+            height: 90%;
+            display: contents;
+        }
+        .right{
+            margin-left: 20%;
+        }
+        #bts{
+            margin-left: 65%;
+            background-color: orange;
+            width: 100px;
+            height: 15%;
+        }
+        .add-btn, .edit-btn, .delete-btn {
+            cursor: pointer;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-columns {
+            display: flex;
+            justify-content: space-between;
+          }
+          
+          /* Apply styles to each form column */
+          .form-column {
+            width: 48%; /* Adjust the width as needed */
+          }
+          
+          /* Apply styles to labels */
+          label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+          }
+          
+          /* Apply styles to text inputs and select elements */
+          input[type="text"],
+          select {
+            
+            
+            margin-bottom: 10px;
+            box-sizing: border-box;
+          }
+          
+          /* Apply styles to date input */
+          .form-columns input[type="date"] {
+            width: 50%;
+            
+            margin-bottom: 10px;
+            box-sizing: border-box;
+          }
+          
+          /* Apply styles to the comment input */
+          input[type="Comment"] {
+            width: 50%;
+            padding: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+          } 
+          #onc{
+            margin-left: 42%;
+            width: 20%;
+            height: 7%;
+            background-color: orange;
+          }
+          input[type="radio"]{
+            size: 10%;
+            cursor: pointer;
+          }
+          #san{
+            display: none;
+            margin-left: 47%;
+            cursor: pointer;
+          }
+          
+          #sh{
+            margin-left: 40%;
+            display: flex;
+            justify-content:stretch;
+            display: none;
+            cursor: pointer;
+
+          }
+          #select{
+            margin-left: 3%;
+            
+          }
+         .tdtd{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-content: space-evenly;
+         }  
+            
+        
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1 style="color: black;">Sessions</h1>
+</div>
+
+<div class="search-container">
+    <input type="text" class="search-box" placeholder="Search.(Program,Project)&#128269;">
+    <span class="main-filter" onclick="toggleDropdown()">
+        <span class="filter-icon"><i class="fa-solid fa-filter"></i></span>
+       
+        <div class="dropdown">
+            <div class="dropdown-item sub-dropdown">
+                Program 
+                <div class="sub-dropdown-content">
+                    <div class="sub-dropdown-item">Bridge Course</div>
+                    <div class="sub-dropdown-item">Acadamics</div>
+                    <div class="sub-dropdown-item">After School Programming</div>
+                    <div class="sub-dropdown-item">Awarness Sessions</div>
+                    <div class="sub-dropdown-item">Camps(Summer/Winter)</div>
+                    <div class="sub-dropdown-item">Career Guidance</div>
+                    <div class="sub-dropdown-item">Computer Coaching-Advanced</div>
+                    <div class="sub-dropdown-item">Computer Coaching-Basics with Typing</div>
+                    <div class="sub-dropdown-item">Computer Coaching-Basics without Typing</div>
+                    <div class="sub-dropdown-item">Computer Coaching-Typing</div>
+                    <div class="sub-dropdown-item">Counselling</div>
+                    <div class="sub-dropdown-item">E2E(Education to Employability)</div>
+                    <div class="sub-dropdown-item">Emotional Management</div>
+                    <div class="sub-dropdown-item">Exam Readiness</div>
+                    <div class="sub-dropdown-item">Gender Sensitivity</div>
+                    <div class="sub-dropdown-item">Internship</div>
+                    <div class="sub-dropdown-item">Integrated Program</div>
+                    <div class="sub-dropdown-item">Kannada</div>
+                    <div class="sub-dropdown-item">Life Skills</div>
+                    <div class="sub-dropdown-item">Office Assistant</div>
+                    <div class="sub-dropdown-item">Parental Guidance</div>
+                    <div class="sub-dropdown-item">Personality Development</div>
+                    <div class="sub-dropdown-item">Soft Skills</div>
+                    <div class="sub-dropdown-item">Software Development</div>
+                    <div class="sub-dropdown-item">Spoken English</div>
+                    <div class="sub-dropdown-item">Tailoring</div>
+                    <div class="sub-dropdown-item">Tailoring-Tassel Typing</div>
+                    <div class="sub-dropdown-item">Tally</div>
+                    <div class="sub-dropdown-item">Teacher Development</div>
+                    <div class="sub-dropdown-item">TTT</div>
+                    <div class="sub-dropdown-item">Wellbeing</div>
+                    <div class="sub-dropdown-item">Women Development</div>
+                    <div class="sub-dropdown-item">WSD</div>
+                   
+                    
+                </div>
+            </div>
+            <!-- Repeat similar structure for other dropdown items -->
+            <div class="dropdown-item sub-dropdown" id="sa">
+                Project
+          
+            </div>
+            <div class="dropdown-item sub-dropdown" id="ha">
+                Date
+                <div class="sub-dropdown-content">
+                     
+                
+
+
+                </div>
+            </div>
+            <div class="dropdown-item sub-dropdown">
+                Center type
+                <div class="sub-dropdown-content">
+                    <div class="sub-dropdown-item">DJ Halli 1</div>
+                    <div class="sub-dropdown-item">DJ Halli 2</div>
+                    <div class="sub-dropdown-item">Kannur</div>
+                    <div class="sub-dropdown-item">Koramangalam</div>
+                    <div class="sub-dropdown-item">Bagalur</div>
+                    <div class="sub-dropdown-item">Mylanhalli</div>
+                </div>
+            </div>
+            <div class="dropdown-item sub-dropdown">
+                Trainer
+                <div class="sub-dropdown-content">
+                    <div class="sub-dropdown-item">Lead</div>
+                    <div class="sub-dropdown-item">Co-Facilator</div>
+                    <div class="sub-dropdown-item">Volunteer</div>
+                 
+                </div>
+            </div>
+        </div>
+        </div>
+    </span>
+</div>
+
+<div class="actions">
+    <button class="add-btn" id="bts" href="details" >Create</button>
+    
+</div>
+
+<div id="san">
+   
+    <select id="Centre" name="Centre">
+        <option value="">Select an option</option>
+        <option value="DJ Halli 1">DJ Halli1</option>
+        <option value="DJ Halli 2">DJ Halli2</option>
+        <option value="Bagalur">Bagalur</option>
+        <option value="Mylanahalli">Mylanahalli</option>
+        <option value="Kannur">Kannur</option>
+        <option value="Koramangala">Koramangala</option>
+</select>
+
+</div>
+<div id="sh">
+     From:<input type="date"> 
+     To:<input type="date">
+    or<select id="select" name="select month">
+        <option value="">select month</option>
+        <option value="">1 month</option>
+        <option value="DJ Halli 1">2 month</option>
+        <option value="DJ Halli 2">4 month</option>
+        <option value="Bagalur">6 month</option>
+        <option value="Mylanahalli">10 month</option>
+        <option value="Kannur">1 year</option>
+        <option value="Koramangala">2 year</option>
+</select>
+
+</div>
+
+
+
+<table>
+    <thead>
+        <tr style="background-color: orange;">
+            <th>Select</th>
+            <th>Program</th>
+            <th>Project</th>
+            <th>Activity</th>
+            <th>Center type</th>
+            <th>Beneficiaries</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Rows 1-7 -->
+        <tr>
+            <td><input type="radio"></td>
+            <td>Item 2</td>
+            <td>Item 3</td>
+            <td>Item 4</td>
+            <td>Item 5</td>
+            <td>Item 6</td>
+            <td class="tdtd">
+                <div class="add-btn" onclick="addItem()"><i class="fa-solid fa-eye" style="color: #ff7b00;"></i></div>
+                <div class="edit-btn" onclick="editItem()"><i class="fa-solid fa-pen-clip" style="color: #ff6600;"></i></div>
+              
+            </td>
+        </tr>
+        <td><input type="radio"></td>
+        <td>Item 2</td>
+        <td>Item 3</td>
+        <td>Item 4</td>
+        <td>Item 5</td>
+        <td>Item 6</td>
+        <td class="tdtd">
+            <div class="add-btn" onclick="addItem()"><i class="fa-solid fa-eye" style="color: #ff7b00;"></i></div>
+            <div class="edit-btn" onclick="editItem()"><i class="fa-solid fa-pen-clip" style="color: #ff6600;"></i></div>
+            
+        </td>
+        
+        <tr>
+            <td><input type="radio"></td>
+            <td>Item 2</td>
+            <td>Item 3</td>
+            <td>Item 4</td>
+            <td>Item 5</td>
+            <td>Item 6</td>
+            <td class="tdtd">
+                <div class="add-btn" onclick="addItem()"><i class="fa-solid fa-eye" style="color: #ff7b00;"></i></div>
+                <div class="edit-btn" onclick="editItem()"><i class="fa-solid fa-pen-clip" style="color: #ff6600;"></i></div>
+                
+            </td>
+            
+            <!-- ... -->
+        </tr>
+       
+   
+    
+</table>
+
+<!-- Add Modal -->
+<div id="addModal" class="modal">
+    <div class="modal-content">
+        <h2 style="margin-top: -20px;">Details</h2>
+        <div class="form-columns">
+            <div class="form-column">
+                <label for="EmployeeID">Employee ID</label>
+                <input type="text" id="EmployeeID" name="EmployeeID"><br>
+
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date"><br>
+
+                <label for="Program">Program</label>
+                <select id="Program" name="Program">
+                    <option value="Select an option">Select an option</option>
+                    <option value="Bridge Course"> Bridge Course</option>
+                    <option value="Academics">Academics</option>
+                    <option value="After School Program">After School Program</option>
+                    <option value="Awareness Sessions">Awareness Sessions</option>
+                    <option value="Camps(Summer/Winter)">Camps(Summer/Winter)</option>
+                    <option value="Career Guidance">Career Guidance</option>
+                    <option value="Computer Coaching-Advanced">Computer Coaching-Advanced</option>
+                    <option value="Computer Coaching-Basics with Typing">Computer Coaching-Basics with Typing</option>
+                    <option value="Computer Coaching-Basics without Typing">Computer Coaching-Basics without Typing</option>
+                    <option value="Computer Coaching-Typing">Computer Coaching-Typing</option>
+                    <option value="Counselling">Counselling</option>
+                    <option value="E2E(Education to Employability)">E2E(Education to Employability)</option>                                    <option value="program1">Program 1</option>
+                    <option value="Emotional Management">Emotional Management</option>
+                    <option value="Exam Readiness">Exam Readiness</option>
+                    <option value="Gender Sensitivity">Gender Sensitivity</option>
+                    <option value="Internship">Internship</option>
+                    <option value="Integrated Program">Integrated Program</option>
+                    <option value="Kannada">Kannada</option>
+                    <option value="Life Skills">Life Skills</option>
+                    <option value="Office Assistant">Office Assistant</option>
+                    <option value="Parental Guidance">Parental Guidance</option>
+                    <option value="Personality Development">Personality Development</option>
+                    <option value="Soft Skills">Soft Skills</option>
+                    <option value="Software Development">Software Development</option>
+                    <option value="Spoken English">Spoken English</option>
+                    <option value="Tailoring">Tailoring</option>
+                    <option value="Tailoring-Tassel Typing">Tailoring-Tassel Typing</option>
+                    <option value="Tally">Tally</option>
+                    <option value="Teacher Development">Teacher Development</option>
+                    <option value="TTT">TTT</option>
+                    <option value="Wellbeing">Wellbeing</option>
+                    <option value="Women Development">Women Development</option>
+                    <option value="WSD">WSD</option>
+                </select><br>
+
+                <label for="Project">Project</label>
+                <input type="text" id="Project" name="Project"><br>
+
+                <label for="Activity">Activity</label>
+                <input type="text" id="Activity" name="Activity"><br>
+
+                <label for="CentreType">Centre Type</label>
+                <select id="CentreType" name="CentreType">
+                            <option value="">Select an option</option>
+                            <option value="DJ Halli 1">DJ Halli1</option>
+                            <option value="DJ Halli 2">DJ Halli2</option>
+                            <option value="Bagalur">Bagalur</option>
+                            <option value="Mylanahalli">Mylanahalli</option>
+                            <option value="Kannur">Kannur</option>
+                            <option value="Koramangala">Koramangala</option>
+                </select><br>
+            </div>
+
+            <div class="form-column">
+
+                <label for="Sponsor">Sponsor</label>
+                <select id="Sponsor" name="Sponsor">
+                    <option value="">Select an option</option>
+                    <option value="Vajra">Vajra</option>
+                    <option value="Bridge">Bridge</option>
+                    <option value="Taste Master">Taste Master</option>
+                    <option value="LICT">LICT</option>
+                    <option value="Others">Others</option>
+                </select><br>
+
+                <label for="Trainer_Type">Trainer Type</label>
+                <select id="Trainer_Type" name="Trainer_Type">
+                    <option value="">Select an option</option>
+                    <option value="Lead">Lead</option>
+                    <option value="Co-Facilator">Co-Facilator</option>
+                    <option value="Volunteer">Volunteer</option>
+                </select><br>
+
+                <label for="Beneficiaries">Beneficiaries</label>
+                <input type="Beneficiaries" id="Beneficiaries" name="Beneficiaries" ><br>
+
+                <label for="Category">Category</label>
+                <select id="Category" name="Category">
+                    <option value="Select an option">Select an option</option>
+                    <option value="Consultant">Consultant</option>
+                    <option value="Employee">Employee</option>
+                    <option value="Internship">Internship</option>
+                    <option value="New-Volunteer">New-Volunteer</option>
+                    <option value="Ex-Volunteer">Ex-Volunteer</option>
+                </select><br>
+
+                <label for="Duration">Duration</label>
+                <input type="Duration" id="Duration" name="Duration"><br>
+
+                <label for="Status">Status</label>
+                <select id="Status" name="Status">
+                    <option value="Select an option">Select an option</option>
+                    <option value="Start">Start</option>
+                    <option value="On-Going">On-Going</option>
+                    <option value="On-Hold">On-Hold</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Orientation">Orientation</option>
+                    <option value="Travel">Travel</option>
+                </select><br>
+
+                <label for="Comment">Comment</label>
+                <input type="Comment" id="Comment" name="Comment"><br>
+            </div>
+        </div>
+
+        <!-- Add other form elements here -->
+
+        <button onclick="closeAddModal()" id="onc">Close</button>
+    </div>
+</div>
+
+<div id="editModal" class="modal">
+    <div class="modal-content">
+       
+        <h2 style="margin-top: -20px;">Details</h2>
+        <div class="form-columns">
+            <div class="form-column">
+                <label for="EmployeeID">Employee ID</label>
+                <input type="text" id="EmployeeID" name="EmployeeID"><br>
+
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date"><br>
+
+                <label for="Program">Program</label>
+                <select id="Program" name="Program">
+                    <option value="Select an option">Select an option</option>
+                    <option value="Bridge Course"> Bridge Course</option>
+                    <option value="Academics">Academics</option>
+                    <option value="After School Program">After School Program</option>
+                    <option value="Awareness Sessions">Awareness Sessions</option>
+                    <option value="Camps(Summer/Winter)">Camps(Summer/Winter)</option>
+                    <option value="Career Guidance">Career Guidance</option>
+                    <option value="Computer Coaching-Advanced">Computer Coaching-Advanced</option>
+                    <option value="Computer Coaching-Basics with Typing">Computer Coaching-Basics with Typing</option>
+                    <option value="Computer Coaching-Basics without Typing">Computer Coaching-Basics without Typing</option>
+                    <option value="Computer Coaching-Typing">Computer Coaching-Typing</option>
+                    <option value="Counselling">Counselling</option>
+                    <option value="E2E(Education to Employability)">E2E(Education to Employability)</option>                                    <option value="program1">Program 1</option>
+                    <option value="Emotional Management">Emotional Management</option>
+                    <option value="Exam Readiness">Exam Readiness</option>
+                    <option value="Gender Sensitivity">Gender Sensitivity</option>
+                    <option value="Internship">Internship</option>
+                    <option value="Integrated Program">Integrated Program</option>
+                    <option value="Kannada">Kannada</option>
+                    <option value="Life Skills">Life Skills</option>
+                    <option value="Office Assistant">Office Assistant</option>
+                    <option value="Parental Guidance">Parental Guidance</option>
+                    <option value="Personality Development">Personality Development</option>
+                    <option value="Soft Skills">Soft Skills</option>
+                    <option value="Software Development">Software Development</option>
+                    <option value="Spoken English">Spoken English</option>
+                    <option value="Tailoring">Tailoring</option>
+                    <option value="Tailoring-Tassel Typing">Tailoring-Tassel Typing</option>
+                    <option value="Tally">Tally</option>
+                    <option value="Teacher Development">Teacher Development</option>
+                    <option value="TTT">TTT</option>
+                    <option value="Wellbeing">Wellbeing</option>
+                    <option value="Women Development">Women Development</option>
+                    <option value="WSD">WSD</option>
+                </select><br>
+
+                <label for="Project">Project</label>
+                <input type="text" id="Project" name="Project"><br>
+
+                <label for="Activity">Activity</label>
+                <input type="text" id="Activity" name="Activity"><br>
+
+                <label for="CentreType">Centre Type</label>
+                <select id="CentreType" name="CentreType">
+                            <option value="">Select an option</option>
+                            <option value="DJ Halli 1">DJ Halli1</option>
+                            <option value="DJ Halli 2">DJ Halli2</option>
+                            <option value="Bagalur">Bagalur</option>
+                            <option value="Mylanahalli">Mylanahalli</option>
+                            <option value="Kannur">Kannur</option>
+                            <option value="Koramangala">Koramangala</option>
+                </select><br>
+            </div>
+
+            <div class="form-column">
+
+                <label for="Sponsor">Sponsor</label>
+                <select id="Sponsor" name="Sponsor">
+                    <option value="">Select an option</option>
+                    <option value="Vajra">Vajra</option>
+                    <option value="Bridge">Bridge</option>
+                    <option value="Taste Master">Taste Master</option>
+                    <option value="LICT">LICT</option>
+                    <option value="Others">Others</option>
+                </select><br>
+
+                <label for="Trainer_Type">Trainer Type</label>
+                <select id="Trainer_Type" name="Trainer_Type">
+                    <option value="">Select an option</option>
+                    <option value="Lead">Lead</option>
+                    <option value="Co-Facilator">Co-Facilator</option>
+                    <option value="Volunteer">Volunteer</option>
+                </select><br>
+
+                <label for="Beneficiaries">Beneficiaries</label>
+                <input type="Beneficiaries" id="Beneficiaries" name="Beneficiaries" ><br>
+
+                <label for="Category">Category</label>
+                <select id="Category" name="Category">
+                    <option value="Select an option">Select an option</option>
+                    <option value="Consultant">Consultant</option>
+                    <option value="Employee">Employee</option>
+                    <option value="Internship">Internship</option>
+                    <option value="New-Volunteer">New-Volunteer</option>
+                    <option value="Ex-Volunteer">Ex-Volunteer</option>
+                </select><br>
+
+                <label for="Duration">Duration</label>
+                <input type="Duration" id="Duration" name="Duration"><br>
+
+                <label for="Status">Status</label>
+                <select id="Status" name="Status">
+                    <option value="Select an option">Select an option</option>
+                    <option value="Start">Start</option>
+                    <option value="On-Going">On-Going</option>
+                    <option value="On-Hold">On-Hold</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Orientation">Orientation</option>
+                    <option value="Travel">Travel</option>
+                </select><br>
+
+                <label for="Comment">Comment</label>
+                <input type="Comment" id="Comment" name="Comment"><br>
+            </div>
+        </div>
+
+        <button onclick="closeEditModal()" id="onc">Close</button>
+    </div>
+</div>
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <!-- Use a dynamic title for add or edit -->
+        <h2 class="modal-title">Edit Item</h2>
+
+        <!-- Your input fields go here -->
+        <label for="editField1">Field 1:</label>
+        <input type="text" id="editField1" name="editField1"><br>
+
+        <!-- Repeat for other fields -->
+
+        <button onclick="closeEditModal()">Close</button>
+    </div>
+</div>
+<script>
+    function addItem() {
+        // Display the modal
+        document.getElementById('addModal').style.display = 'block';
+    }
+
+    function closeAddModal() {
+        // Close the modal
+        document.getElementById('addModal').style.display = 'none';
+    }
+
+    function editItem() {
+        // Display the modal
+        document.getElementById('editModal').style.display = 'block';
+    }
+
+    function closeEditModal() {
+        // Close the modal
+        document.getElementById('editModal').style.display = 'none';
+    }
+
+    function deleteItem() {
+        // Add your logic to handle deleting items
+        alert('Delete button clicked');
+    }
+</script>
+<script>
+    function toggleDropdown() {
+        var dropdown = document.querySelector('.main-filter .dropdown');
+        dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+        document.querySelector('.main-filter').classList.toggle('active');
+    }
+</script>
+
+
+
+
+<script>
+    function toggleDropdown() {
+        var dropdown = document.querySelector('.main-filter .dropdown');
+        dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+        document.querySelector('.main-filter').classList.toggle('active');
+    }
+</script>
+ <script>
+    document.getElementById('sa').addEventListener('click', function() {
+        var san = document.getElementById('san');
+        san.style.display = (san.style.display === 'none' || san.style.display === '') ? 'block' : 'none';
+    });
+    document.getElementById('ha').addEventListener('click', function() {
+        var sh = document.getElementById('sh');
+        sh.style.display = (san.style.display === 'none' || sh.style.display === '') ? 'block' : 'none';
+    });
+ </script>
+</body>
+</html>
