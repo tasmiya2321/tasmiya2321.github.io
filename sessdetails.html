@@ -271,7 +271,27 @@
             justify-content: center;
             justify-content: space-evenly;
          }  
-            
+         @media only screen and (max-width: 600px) {
+    /* Styles for screens up to 600px wide */
+    .search-box {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Styles for screens up to 768px wide */
+    .modal {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Styles for screens up to 480px wide */
+    .modal {
+        width: 90%;
+    }
+}
+  
         
     </style>
 </head>
