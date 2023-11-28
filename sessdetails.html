@@ -11,13 +11,13 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background: rgb(247,241,233);
+            background: rgb(247, 241, 233);
         }
 
         .header {
             text-align: center;
             background: none;
-            color: #fff;
+            color: #000; /* Changed text color */
             padding: 10px;
         }
 
@@ -48,12 +48,15 @@
 
         .dropdown {
             position: absolute;
-            top: 80%;
-            left: 60%;
+            top: 20%; /* Adjusted position */
+            left: 60%; /* Centered dropdown */
+            transform: translateX(-50%);
             background-color: #f9f9f9;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             z-index: 1;
             display: none;
+            width: 10%; /* Full width */
+            margin-top: 4%;
         }
 
         .main-filter.active .dropdown {
@@ -76,15 +79,15 @@
             display: block;
         }
         
-
         .sub-dropdown-content {
             position: absolute;
             top: 0;
             left: 100%;
             background-color: #f9f9f9;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             display: none;
-            
+            max-height: 400px;
+            overflow-y: auto;
         }
 
         .sub-dropdown-item {
@@ -114,39 +117,35 @@
                 width: 100%;
             }
         }
-        @media (max-width: 768px) {
-            .modal {
-                width: 80%;
+        @media only screen and (max-width: 600px) {
+            .search-box {
+                width: 100%;
             }
         }
-
-        @media (max-width: 480px) {
-            .modal {
-                width: 90%;
+        @media only screen and (max-width: 600px) {
+            /* Styles for screens smaller than 600px */
+            table {
+                /* Adjust styles for small screens */
+                /* Example: set width to 100% */
+                width: 100%;
             }
         }
-
-
-   
-      
-          #fullViewButton {
-            display: block;
-            margin-bottom: 20px;
-            cursor: pointer;
-            background: orange;
-            color: black;
-          }
-
-          .sub-dropdown-content {
-            position: absolute;
-            top: 0;
-            left: 100%;
-            background-color: #f9f9f9;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            display: none;
-            max-height: 400px; /* Set a maximum height for the dropdown */
-            overflow-y: auto; /* Enable vertical scrolling */
+        table {
+            width: 100%;
+            /* Add other styles as needed */
         }
+        
+        /* Media query for smaller screens */
+        @media only screen and (max-width: 600px) {
+            table {
+                /* Adjust styles for smaller screens */
+                font-size: 12px; /* Example: decrease font size for small screens */
+            }
+        
+            /* Add more styles as needed for responsiveness */
+        }
+
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -271,41 +270,18 @@
             justify-content: center;
             justify-content: space-evenly;
          }  
-         @media only screen and (max-width: 600px) {
-    /* Styles for screens up to 600px wide */
-    .search-box {
-        width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Styles for screens up to 768px wide */
-    .modal {
-        width: 80%;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Styles for screens up to 480px wide */
-    .modal {
-        width: 90%;
-    }
-}
-  
-        
     </style>
 </head>
 <body>
 
 <div class="header">
-    <h1 style="color: black;">Sessions</h1>
+    <h1>Sessions</h1>
 </div>
 
 <div class="search-container">
-    <input type="text" class="search-box" placeholder="Search.(Program,Project)&#128269;">
+    <input type="text" class="search-box" placeholder="Search.(Program,Activity).&#128269;">
     <span class="main-filter" onclick="toggleDropdown()">
         <span class="filter-icon"><i class="fa-solid fa-filter"></i></span>
-       
         <div class="dropdown">
             <div class="dropdown-item sub-dropdown">
                 Program 
@@ -348,15 +324,24 @@
                 </div>
             </div>
             <!-- Repeat similar structure for other dropdown items -->
-            <div class="dropdown-item sub-dropdown" id="sa">
+            <div class="dropdown-item sub-dropdown">
                 Project
           
             </div>
-            <div class="dropdown-item sub-dropdown" id="ha">
+            <div class="dropdown-item sub-dropdown">
                 Date
                 <div class="sub-dropdown-content">
                      
-                
+                    <div class="sub-dropdown-item">past 10 days</div>
+                        <div class="sub-dropdown-item">past 15 days</div>
+                        <div class="sub-dropdown-item">past 25 days</div>
+
+                        <div class="sub-dropdown-item">past 20 days</div>
+                    <div class="sub-dropdown-item">past 1 month</div>
+                    <div class="sub-dropdown-item">past 2 month</div>
+                    <div class="sub-dropdown-item">past 4 month</div>
+                    <div class="sub-dropdown-item">past 6 month</div>
+                    <div class="sub-dropdown-item">past 1 year</div>
 
 
                 </div>
@@ -380,48 +365,17 @@
                     <div class="sub-dropdown-item">Volunteer</div>
                  
                 </div>
-            </div>
+            
+        </div>
         </div>
         </div>
     </span>
 </div>
 
 <div class="actions">
-    <button class="add-btn" id="bts" href="details" >Create</button>
+    <button class="button">Create</button>
     
 </div>
-
-<div id="san">
-   
-    <select id="Centre" name="Centre">
-        <option value="">Select an option</option>
-        <option value="DJ Halli 1">DJ Halli1</option>
-        <option value="DJ Halli 2">DJ Halli2</option>
-        <option value="Bagalur">Bagalur</option>
-        <option value="Mylanahalli">Mylanahalli</option>
-        <option value="Kannur">Kannur</option>
-        <option value="Koramangala">Koramangala</option>
-</select>
-
-</div>
-<div id="sh">
-     From:<input type="date"> 
-     To:<input type="date">
-    or<select id="select" name="select month">
-        <option value="">select month</option>
-        <option value="">1 month</option>
-        <option value="DJ Halli 1">2 month</option>
-        <option value="DJ Halli 2">4 month</option>
-        <option value="Bagalur">6 month</option>
-        <option value="Mylanahalli">10 month</option>
-        <option value="Kannur">1 year</option>
-        <option value="Koramangala">2 year</option>
-</select>
-
-</div>
-
-
-
 <table>
     <thead>
         <tr style="background-color: orange;">
@@ -777,50 +731,6 @@
         document.querySelector('.main-filter').classList.toggle('active');
     }
 </script>
-<!-- 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const table = document.getElementById('myTable');
-      const fullViewButton = document.getElementById('fullViewButton');
-      
-      const totalColumns = 7;
-      const initialColumns = 7;
-
-      // Function to generate table rows and cells
-      function generateTable() {
-        const tbody = table.querySelector('tbody');
-        tbody.innerHTML = '';
-
-        for (let i = 1; i <= 10; i++) {
-          const row = document.createElement('tr');
-
-          for (let j = 1; j <= initialColumns; j++) {
-            const cell = document.createElement('td');
-            cell.textContent = `Row ${i}, Col ${j}`;
-            row.appendChild(cell);
-          }
-
-          tbody.appendChild(row);
-        }
-      }
-
-      // Function to show/hide additional columns
-      function toggleColumns() {
-        const cells = table.querySelectorAll('td:nth-child(n + 11)');
-        cells.forEach(cell => {
-          cell.classList.toggle('hidden-col');
-        });
-      }
-
-      // Initial table generation
-      generateTable();
-
-      // Event listener for the "Full View" button
-      fullViewButton.addEventListener('click', function () {
-        toggleColumns();
-      });
-    });
-  </script> -->
 
 
 
@@ -842,5 +752,14 @@
         sh.style.display = (san.style.display === 'none' || sh.style.display === '') ? 'block' : 'none';
     });
  </script>
+
+<script>
+    function toggleDropdown() {
+        var dropdown = document.querySelector('.main-filter .dropdown');
+        dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+        document.querySelector('.main-filter').classList.toggle('active');
+    }
+</script>
+
 </body>
 </html>
