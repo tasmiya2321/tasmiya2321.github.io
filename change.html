@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="commen_cf.css">
+    <title>Reset password</title>
+    <script src="https://kit.fontawesome.com/bc0ac06df1.js" crossorigin="anonymous"></script>
+    <style>
+
+
+        
+        img {
+           width: 62%; 
+            margin-left: 20%;
+          }
+
+   
+        
+    </style>
+</head>
+
+
+
+<body>
+    
+    <div class="login-container">
+        <form id="loginForm">
+            <div>
+              
+                <img src="./cf_logo.png" alt="Responsive Image">
+              </div>
+            <div class="animation-container">
+                <div class="word">Change password<i class="fa-solid fa-feather" style="color: black;"></i></div>
+               
+            </div>
+            <div class="input-container">
+                <input type="password" id="password1" placeholder="Old password" required>
+                <span class="toggle-password" onclick="togglePassword('password1')"></span>
+            </div>
+            <div class="input-container">
+                <input type="password" id="password2" placeholder="New Password" required>
+                <span class="toggle-password" onclick="togglePassword('password2')"></span>
+            </div>
+            <div class="input-container">
+                <input type="password" id="password3" placeholder="Confirm Password" required>
+                <span class="toggle-password" onclick="togglePassword('password3')"></span>
+            </div>
+        
+            <input type="submit" href="home mobile.html" onclick="login()" value="Save">
+        </form>
+    </div>
+
+    
+
+    
+    <script>
+        function togglePassword(passwordId) {
+            var passwordInput = document.getElementById(passwordId);
+            var toggleIcon = passwordInput.nextElementSibling;
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.style.backgroundImage = "url('eyes open.webp')";
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.style.backgroundImage = "url('eyes close.jpg')";
+            }
+        }
+
+        function login() {
+            alert("Filled the details");
+        }
+
+        function redirectToHome() {
+            window.location.href = "home.html";
+        }
+    </script>
+</body>
+
+</html>

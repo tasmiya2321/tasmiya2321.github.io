@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Details</title>
+    <script src="https://kit.fontawesome.com/bc0ac06df1.js" crossorigin="anonymous"></script>
+    <style>
+        /* Basic styling for demonstration purposes */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; /* Update margin to 0 to remove default margin */
+            background-color: #F5F0EC;
+        }
+
+        .header {
+            background-color:rgb(255, 255, 255);
+            padding: 50px;
+            text-align: center;
+        } 
+        
+        .logo {
+    width: 187px;
+    height: auto;
+    margin-top: -47px; /* Maintain aspect ratio */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+        .headline {
+      font-size: 24px; /* Set the font size */
+      position: relative; /* Set position for animation */
+      font-style:bold;
+    }
+
+           /* Dropdown styles */
+        .dropdown {
+            margin-right:-73%;
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .id-symbol {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Dropdown styles for mobile */
+        @media screen and (max-width: 768px) {
+            .dropdown {
+                display: block;
+                margin-top: 10px;
+                text-align: center;
+            }
+
+            .id-symbol {
+                display: block;
+                padding: 10px;
+                cursor: pointer;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: static;
+                background-color: #f9f9f9;
+                box-shadow: none;
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                display: block;
+                padding: 10px;
+                border-bottom: 1px solid #ccc;
+            }
+        }
+         /* Container to hold sidebar and main content */
+         .container {
+            display: flex;
+        }
+
+        /* Sidebar toggle button styles */
+        .sidebar-toggle-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .sidebar-toggle-btn img {
+            width: 30px; /* Adjust image width as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+        
+        /* Sidebar styles */
+        .sidebar {
+            background-color: #333;
+            color: white;
+            width: 0;
+            overflow: hidden;
+            transition: width 0.3s ease;
+            height: 100vh;
+        }
+        
+        .sidebar.open {
+            width: 250px;
+        }
+        
+        /* Navbar styles */
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 5%;
+        }
+        
+        .navbar ul li {
+            padding: 10px;
+            text-align: center;
+            width: 100%; /* Adjust width as needed */
+        }
+        
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+            width: 100%;
+            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 3%;
+        }
+        
+        .navbar ul li a i {
+            margin-right: 10px;
+        }
+        
+        .navbar ul li a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+        
+        /* Main content styles */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        /* Media query for mobile responsiveness */
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+            }
+            .main-content {
+                margin-left: 0;
+            }
+ 
+        }
+
+
+
+
+        /* Your existing styles */
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #555;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+            margin-bottom: 5px;
+        }
+        .section-title:hover {
+            background-color: #f9f9f9;
+        }
+        .section-content {
+            display: none;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        input[type="text"],
+        select {
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M7 10l5 5 5-5H7z" fill="#333"/></svg>') no-repeat right 10px center;
+            background-size: 20px;
+            padding-right: 30px;
+            outline: none;
+        }
+
+        .save-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-bottom: 20px;
+            margin-left: 87%;
+        }
+
+        /* Hover effect for the Save button */
+        .save-button:hover {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        
+        <img src="cf_logo.png" alt="CF Logo" class="logo">
+
+        <span class="dropdown">
+            <span class="id-symbol" onclick="toggleDropdown()">Jimmy Cherian &#9660; <i class="fa-solid fa-circle-user fa-2xl" style="color: #5c626a;"></i></span>
+            <div class="dropdown-content" id="dropdownContent">
+                <a href="employee.html">Profile</a>
+                <a href="change.html">Change password</a>
+                <a href="index.html">Logout</a>
+            </div>
+      
+    </header>
+    
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="home mobile.html"><i class="fas fa-home" style="color: #d66e29;"></i>Home</a></li>
+                    <li><a href="session.html"><i class="fas fa-business-time" style="color: #c58326;"></i>Session</a></li>
+                    <li><a href="employee.html"><i class="fas fa-chart-bar" style="color: #dd7c22;"></i>Employee</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <button class="sidebar-toggle-btn" onclick="toggleSidebar()">
+                <img src="./menuicon.jpg" alt="">
+            </button>
+    <h1>Employee Details</h1>
+
+    <div class="section">
+        <div class="section-title" onclick="toggleContent('personal')">Personal Details</div>
+        <div class="section-content" id="personal">
+            <!-- Personal details content -->
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" value="Full name">
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" value="Address">
+
+            <label for="dob">Date of Birth:</label>
+            <input type="text" id="dob" value="date">
+            
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" value="mobile Number">
+
+
+            <label>Gender:</label>
+            <div>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+    
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+    
+                <input type="radio" id="transgender" name="gender" value="transgender">
+                <label for="transgender">Others</label>
+            </div>
+            <label for="email">Email:</label>
+            <input type="text" id="email" value="johndoe@example.com">
+            <!-- Add more personal input fields as needed -->
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title" onclick="toggleContent('employee')">Employee Detail</div>
+        <div class="section-content" id="employee">
+            <!-- Employee detail content -->
+            <label for="employeeId">Employee ID:</label>
+            <input type="text" id="employeeId" value="123456">
+
+            <label for="centreType">Centre Type:</label>
+            <select id="centreType">
+                    <option value="Start">Start</option>
+                    <option value="On-Going">On-Going</option>
+                    <option value="On-Hold">On-Hold</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Orientation">Orientation</option>
+                    <option value="Travel">Travel</option>
+              
+                <!-- Add more options as needed -->
+            </select>
+
+
+            <label for="Date of joining:">Date of joining:</label>
+            <input type="text" id="position" value="Senior Manager">
+           
+            <label for="status">Status:</label>
+            <select id="status">
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+                <option value="On Leave">On Leave</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <label for="resourceType">Resource Type:</label>
+            <select id="resourceType">
+                <option value="Human">Employee</option>
+                <option value="Material">Full Time</option>
+                <option value="Financial"></option>
+            </select>
+
+            <!-- Add more employee input fields as needed -->
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title" onclick="toggleContent('account')">Account Detail</div>
+        <div class="section-content" id="account">
+            <!-- Account detail content -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" value="johndoe90">
+    
+            <label for="accountName">Account Name:</label>
+            <input type="text" id="accountName" value="John Doe">
+    
+            <label for="accountNumber">Account Number:</label>
+            <input type="text" id="accountNumber" value="1234567890">
+    
+            <label for="ifsc">IFSC:</label>
+            <input type="text" id="ifsc" value="ABCD0123456">
+    
+            <label for="branch">Branch:</label>
+            <input type="text" id="branch" value="Main Street Branch">
+    
+            <label for="accountType">Account Type:</label>
+            <select id="accountType">
+                <option value="Savings">Savings</option>
+                <option value="Current">Current</option>
+                <!-- Add more options as needed -->
+            </select>
+            <!-- Add more account input fields as needed -->
+        </div>
+    </div>
+
+    <button class="save-button" onclick="saveDetails()">Save</button>
+
+    
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+
+        
+    </script>
+        <script>
+             function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+
+
+
+
+
+
+            // JavaScript functions here
+            function toggleDropdown() {
+                var dropdownContent = document.getElementById("dropdownContent");
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            }
+        </script>
+    
+</body>
+</html>
