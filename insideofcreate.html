@@ -208,159 +208,7 @@ select {
                 <th>Category</th>
                 <th> Comments</th>
             </tr>
-            <tr>
-                <td>1/01/2023</td>
-                <td>Jimmy</td>
-                <td>Program A</td>
-                <td>Project 1</td>
-                <td>Meeting</td>
-                <td>Center X</td>
-                <td>123</td>
-                <td>Trainer 1</td>
-                <td>2</td>
-                <td>Completed</td>
-                <td>5</td>
-                <td>Category A</td>
-                <td>Good job!</td>
-            </tr>
-            <tr bgcolor="white">
-                <td>1/01/2023</td>
-                <td>Sonia</td>
-                <td>Program B</td>
-                <td>Project 2</td>
-                <td>Training</td>
-                <td>Center Y</td>
-                <td>456</td>
-                <td>Trainer 2</td>
-                <td>3</td>
-                <td>In Progress</td>
-                <td>8</td>
-                <td>Category B</td>
-                <td>Keep it up!</td>
-            </tr>
-    
-            <tr bgcolor="white">
-                <td>1/01/2023</td>
-                <td>Smita</td>
-                <td>Program C</td>
-                <td>Project 3</td>
-                <td>Workshop</td>
-                <td>Center Z</td>
-                <td>789</td>
-                <td>Trainer 3</td>
-                <td>1</td>
-                <td>Planned</td>
-                <td>12</td>
-                <td>Category C</td>
-                <td>Great effort!</td>
-            </tr>
-            <tr bgcolor="white">
-                <td>1/01/20233</td>
-                <td>Preethi</td>
-                <td>Program D</td>
-                <td>Project 4</td>
-                <td>Seminar</td>
-                <td>Center X</td>
-                <td>101</td>
-                <td>Trainer 4</td>
-                <td>2.5</td>
-                <td>Completed</td>
-                <td>6</td>
-                <td>Category D</td>
-                <td>Well done!</td>
-            </tr>
-            <tr bgcolor="white">
-                <td>1/01/2023</td>
-                <td>Sujeeth</td>
-                <td>Program E</td>
-                <td>Project 5</td>
-                <td>Discussion</td>
-                <td>Center Y</td>
-                <td>202</td>
-                <td>Trainer 5</td>
-                <td>4</td>
-                <td>In Progress</td>
-                <td>10</td>
-                <td>Category E</td>
-                <td>Excellent!</td>
-            </tr>
-            <tr bgcolor="white">
-                <td>1/01/2023</td>
-                <td>Nisha</td>
-                <td>Program F</td>
-                <td>Project 6</td>
-                <td>Presentation</td>
-                <td>Center Z</td>
-                <td>303</td>
-                <td>Trainer 6</td>
-                <td>1.5</td>
-                <td>Planned</td>
-                <td>4</td>
-                <td>Category F</td>
-                <td>Impressive work!</td>
-            </tr>
-            <tr bgcolor="white">
-                <td>1/01/2023</td>
-                <td>GeethaSuresh</td>
-                <td>Program G</td>
-                <td>Project 7</td>
-                <td>Training</td>
-                <td>Center X</td>
-                <td>404</td>
-                <td>Trainer 7</td>
-                <td>3.5</td>
-                <td>Completed</td>
-                <td>9</td>
-                <td>Category G</td>
-                <td>Keep it going!</td>
-            </tr>
-            <tr bgcolor="white">
-                <td>1/01/2023</td>
-                <td>Geetha</td>
-                <td>Program H</td>
-                <td>Project 8</td>
-                <td>Workshop</td>
-                <td>Center Y</td>
-                <td>505</td>
-                <td>Trainer 8</td>
-                <td>2</td>
-                <td>In Progress</td>
-                <td>7</td>
-                <td>Category H</td>
-                <td>Great job!</td>
-            </tr>
-            <tr bgcolor="white">
-                <td>1/01/2023</td>
-                <td>Gowthami</td>
-                <td>Program I</td>
-                <td>Project 9</td>
-                <td>Seminar</td>
-                <td>Center Z</td>
-                <td>606</td>
-                <td>Trainer 9</td>
-                <td>1.5</td>
-                <td>Planned</td>
-                <td>5</td>
-                <td>Category I</td>
-                <td>Well executed!</td>
-            </tr>
-            <tr bgcolor="white">
-                <td>1/01/2023</td>
-                <td>Chaitra</td>
-                <td>Program J</td>
-                <td>Project 10</td>
-                <td>Discussion</td>
-                <td>Center X</td>
-                <td>707</td>
-                <td>Trainer 10</td>
-                <td>3</td>
-                <td>Completed</td>
-                <td>11</td>
-                <td>Category J</td>
-                <td>Amazing work!</td>
-            </tr>
 
-         
         </table>
     </div>
 
@@ -376,6 +224,9 @@ select {
 
             <label for="date">Date</label>
             <input type="date" id="date" name="date"><br>
+
+            <label for="ResourceName">Resoure Name</label>
+            <input type="text" id="ResourceName" name="ResourceName"><br>
 
             <label for="Program">Program</label>
             <select id="Program" name="Program" required>
@@ -433,6 +284,9 @@ select {
                             <option value="Koramangala">Koramangala</option>
                 </select><br>
 
+                <label for="Sessionnumber">Session Number</label>
+                <input type="text" id="Sessionnumber" name="Sessionnumber"><br>
+
                 <label for="Sponsor">Sponsor</label>
                 <select id="Sponsor" name="Sponsor" required>
                     <option value="">Select an option</option>
@@ -488,58 +342,75 @@ select {
             <button onclick="validateAndSave(true)" id="btnSaveDuplicate">Save and Duplicate</button>
             <br>
             <br>
+            <button onclick="hidePopup()" id="btnSaveDuplicate">Close</button>
             <br>
         </div>
     </div>
 </div>
 
 <script>
-
     function showPopup() {
-            // Show the popup
-            document.getElementById('popup').style.display = 'flex';
-            }
+        document.getElementById('popup').style.display = 'flex';
+    }
 
-            function hidePopup() {
-            // Hide the popup
-            document.getElementById('popup').style.display = 'none';
-            }
-
-            function addRow() {
-                var table = document.getElementById("sessionTable");
-                var row = table.insertRow(-1); // Inserts a row at the end of the table
-                for(var i = 0; i < 9; i++) { // Assuming 9 cells per row
-                    var cell = row.insertCell(i);
-                    cell.innerHTML = "1"; // Or any default content you want
-                }
-            }
-
+    function hidePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
 
     function validateAndSave(isDuplicate = false) {
-        // Check if all required fields are filled
-        if (document.getElementById("EmployeeID").value.trim() === "" ||
-            document.getElementById("date").value.trim() === "" ||
-            document.getElementById("Program").value.trim() === "" ||
-            document.getElementById("Project").value.trim() === "" ||
-            document.getElementById("Activity").value.trim() === "" ||
-            document.getElementById("CentreType").value.trim() === "" ||
-            document.getElementById("Sponsor").value.trim() === "" ||
-            document.getElementById("Trainer_Type").value.trim() === "" ||
-            document.getElementById("Beneficiaries").value.trim() === "" ||
-            document.getElementById("Category").value.trim() === "" ||
-            document.getElementById("Duration").value.trim() === "" ||
-            document.getElementById("Status").value.trim() === "") {
-            alert("Please fill all the required fields.");
-            return; // Stop the function if validation fails
+        // Validation logic here
+        // Assuming validation passed
+        saveData(isDuplicate);
+    }
+
+    function saveData(isDuplicate) {
+        var table = document.getElementById("sessionTable");
+        var row = table.insertRow(-1);
+
+        // Assuming 13 columns in the table as per your structure
+        for (var i = 0; i < 13; i++) {
+            var cell = row.insertCell(i);
+            cell.innerHTML = getCellData(i); // Function to get data for each cell
         }
 
-        // If all fields are filled, proceed to save (or save and duplicate)
         if (isDuplicate) {
-            // Implement your logic for 'Save and Duplicate'
-            console.log("Saving and duplicating...");
+            showPopup(); // Show popup again with the form still filled
         } else {
-            // Implement your logic for 'Save'
-            console.log("Saving...");
+            hidePopup(); // Hide popup
+        }
+    }
+
+    function getCellData(index) {
+        switch (index) {
+            case 0: // For date
+                return document.getElementById("date").value;
+            case 1: // Resource Name
+                return document.getElementById("ResourceName").value;
+            case 2: // Program
+                return document.getElementById("Program").value;
+            case 3: // For Employee ID
+                return document.getElementById("Project").value;
+            case 4: // Resource Name
+                return document.getElementById("Activity").value;
+            case 7: // For date
+                return document.getElementById("Trainer_Type").value;
+            case 10: // For Benef
+                return document.getElementById("Beneficiaries").value;
+            case 11: // Resource Name
+                return document.getElementById("Category").value;
+            case 8: // For date
+                return document.getElementById("Duration").value;
+            case 9: // For Employee ID
+                return document.getElementById("Status").value;
+            case 12: // Resource Name
+                return document.getElementById("Comment").value;
+            case 6: //Sessionnumber
+                return document.getElementById("Sessionnumber").value;
+            case 5: //CenterType
+                return document.getElementById("CentreType").value;
+
+            default:
+                return ""; // Default value for unmatched cases
         }
     }
 </script>
