@@ -110,19 +110,19 @@
         }
 
         @media only screen and (max-width: 600px) {
-            .search-box ,inpu{
+            .search-box {
                 width: 100%;
             }
         }
         @media (max-width: 768px) {
             .modal {
-                width: 100%;
+                width: 80%;
             }
         }
 
         @media (max-width: 480px) {
-            .modal-content {
-                width: 100%;
+            .modal {
+                width: 90%;
             }
         }
 
@@ -172,13 +172,13 @@
             border-radius: 5px;
             border: 2px solid black;
             height: 65%;
-            width:60%;
+            width: 50%;
         }
 
         .modal-content {
             background: #fff;
             text-align: center;
-            width: 80%;
+            width: 100%;
             height: 90%;
             display: contents;
         }
@@ -206,32 +206,32 @@
             width: 48%; /* Adjust the width as needed */
           }
           
-          /* Apply styles to labels */
+         
           label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
           }
           
-          /* Apply styles to text inputs and select elements */
-          .form-columns input[type="text"],select {
+         
+          input[type="text"],
+          select {
             
             
             margin-bottom: 10px;
             box-sizing: border-box;
-            width: 20%;
           }
           
-          /* Apply styles to date input */
+          
           .form-columns input[type="date"] {
-            width: 20%;
+            width: 50%;
             
             margin-bottom: 10px;
             box-sizing: border-box;
           }
           
-          /* Apply styles to the comment input */
-          .form-columns input[type="Comment"] {
+          
+          input[type="Comment"] {
             width: 50%;
             padding: 5px;
             margin-bottom: 10px;
@@ -271,18 +271,7 @@
             justify-content: center;
             justify-content: space-evenly;
          }  
-       
-        
-        /* Media query for smaller screens */
-        @media only screen and (max-width: 600px) {
-            table {
-                /* Adjust styles for smaller screens */
-                font-size: 12px; /* Example: decrease font size for small screens */
-            }
-        
-            /* Add more styles as needed for responsiveness */
-        }
-
+            
         
     </style>
 </head>
@@ -293,7 +282,7 @@
 </div>
 
 <div class="search-container">
-    <input type="text" class="search-box" placeholder="Search.(Program,Project)&#128269;">
+    <input type="text" class="search-box" placeholder="Search.(Program,Project)">
     <span class="main-filter" onclick="toggleDropdown()">
         <span class="filter-icon"><i class="fa-solid fa-filter"></i></span>
        
@@ -378,14 +367,12 @@
 </div>
 
 <div class="actions">
-    <a href="insideofcreate.html">
-        <button class="add-btn" id="bts">Create</button>
-    </a>
+    <button class="add-btn" id="bts" href="details" >Create</button>
+    
 </div>
 
 <div id="san">
-   
-    <select id="Centre" name="Centre">
+   <select id="Centre" name="Centre">
         <option value="">Select an option</option>
         <option value="DJ Halli 1">DJ Halli1</option>
         <option value="DJ Halli 2">DJ Halli2</option>
@@ -394,7 +381,7 @@
         <option value="Kannur">Kannur</option>
         <option value="Koramangala">Koramangala</option>
 </select>
-
+   
 </div>
 <div id="sh">
      From:<input type="date"> 
@@ -417,19 +404,29 @@
 <table>
     <thead>
         <tr style="background-color: orange;">
-            <th>Select</th>
+            <th>Date</th>
+            <th>Resource Name</th>
             <th>Program</th>
-            <th>Project</th>
-            <th>Activity</th>
-            <th>Center type</th>
+            <th>Project/Assignment</th>
+            <th>Center Type</th>
+            <th>Session Number</th>
+            <th>Trainer Type</th>
+            <th>Hours</th>
+            <th>Status</th>
             <th>Beneficiaries</th>
+            <th>Category</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         <!-- Rows 1-7 -->
         <tr>
-            <td><input type="radio"></td>
+            <td>10/12/2023</td>
+            <td>Item 2</td>
+            <td>Item 3</td>
+            <td>Item 4</td>
+            <td>Item 5</td>
+            <td>Item 6</td>
             <td>Item 2</td>
             <td>Item 3</td>
             <td>Item 4</td>
@@ -441,7 +438,12 @@
               
             </td>
         </tr>
-        <td><input type="radio"></td>
+        <td>11/12/2023</td>
+        <td>Item 2</td>
+        <td>Item 3</td>
+        <td>Item 4</td>
+        <td>Item 5</td>
+        <td>Item 6</td>
         <td>Item 2</td>
         <td>Item 3</td>
         <td>Item 4</td>
@@ -454,7 +456,12 @@
         </td>
         
         <tr>
-            <td><input type="radio"></td>
+            <td>12/12/2023</td>
+            <td>Item 2</td>
+            <td>Item 3</td>
+            <td>Item 4</td>
+            <td>Item 5</td>
+            <td>Item 6</td>
             <td>Item 2</td>
             <td>Item 3</td>
             <td>Item 4</td>
