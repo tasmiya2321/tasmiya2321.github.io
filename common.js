@@ -61,6 +61,6 @@ function redirectToResetPass() {
     if (email === "") {
         alert("Please fill out the email field.");
     } else {
-        window.location.href = "Resetpass.html";
+        window.location.href = "reset.html";
     }
 }
