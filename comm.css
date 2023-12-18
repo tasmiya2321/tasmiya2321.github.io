@@ -336,14 +336,18 @@ hr {
 
 
 /* navbar */
-header {
+.header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    height: 134px;
+    /* height: 38%; */
     margin-bottom: 26px;
+    margin-top: -55px;
+    margin-left: -3%;
+    margin-right: -15%;
 }
+
 
 .logo img {
     height: 40px;
@@ -440,15 +444,15 @@ nav#sidebar {
 /* 
 jimmy */
 
-.header {
+/* .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    background-color: #f8f8f8; /* Add your desired background color */
+    background-color: #f8f8f8; 
     margin-top: -54px;
     margin-bottom: 20px;
-}
+} */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -486,20 +490,20 @@ jimmy */
 }
 
 .para {
-    font-size: 12px;
-    margin-left: 35px;
-    padding: 3px;
-    margin-top: -5px;
+    font-size: 14px;
+    margin-left: -32px;
+    /* padding: 3px; */
+    margin-top: -10px;
 }
 
 .dropbtn {
     font-size: 16px;
+    margin-left: -45%;
 }
 .left {
-    margin-left: 190%;
-    margin-bottom: -15px;
-    margin-top: 45px;
-   
+    margin-left: 187%;
+    margin-bottom: -34px;
+    margin-top: 44px;
 }
 
 .white-footer {
@@ -571,11 +575,3 @@ header {
     margin-bottom: 26px;
     margin-top: -30px;
 }
-
-
-
-
-
-
-
-
